@@ -1720,7 +1720,7 @@
         }
 
         function webCamSnapAndSubmit(imageDataSelector, formSelector) {
-            //console.log("webCamSnapAndSubmit");
+            // console.log("webCamSnapAndSubmit");
             if ($("#webcamStatus").val() == '1') {
                 Webcam.snap(function (data_uri) {
                     var raw_image_data = data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
@@ -1769,19 +1769,19 @@
                 geoLocator.start();
             }
 
-            $('.shiftId-select2').select2({
-                placeholder: "Choose...",
+            $('#PunchInOptions_ShiftId').select2({
+                placeholder: "Shift",
                 matcher: select2CustomMatch,
                 data: shiftResults
             });
 
             $('.shiftId-select2').on("select2:select", function (e) {
                 console.log("select2:select", e);
-                $('#locationdepartmentselection').toggle(e.params.data.showlocationdepartmentselection);
+                // $('#locationdepartmentselection').toggle(e.params.data.showlocationdepartmentselection);
                 $('#positionselection').toggle(e.params.data.showpositionselection);
 
-                var $locationSelect = $(".location-select2").select2();
-                $(".location-select2").empty();
+                // var $locationSelect = $(".location-select2").select2();
+                // $(".location-select2").empty();
 
                 if (e.params.data.locationsjobcodesviewmodel && e.params.data.locationsjobcodesviewmodel
                     .Select2LocationJobCodes) {
@@ -1816,22 +1816,22 @@
                 $(".location-select2").val(null).trigger("change");
             });
             $('.location-select2').select2({
-                placeholder: "Choose...",
+                placeholder: "Location/Department",
                 matcher: select2CustomMatch,
                 data: locationResults
             });
             $('.position-select2').select2({
-                placeholder: "Choose...",
+                placeholder: "Position",
                 matcher: select2CustomMatch,
                 data: positionResults
             });
-            if (true) {
-                $('#locationdepartmentselection').hide();
-                $('#positionselection').hide();
-            } else {
-                $('#locationdepartmentselection').show();
-                $('#positionselection').show();
-            }
+            // if (true) {
+            //     $('#locationdepartmentselection').hide();
+            //     $('#positionselection').hide();
+            // } else {
+            //     $('#locationdepartmentselection').show();
+            //     $('#positionselection').show();
+            // }
 
 
 
@@ -1842,6 +1842,25 @@
                 switchToLatePunchIn();
             });
 
+            jQuery('#switchPunchButton').click(function (event) {
+                event.preventDefault();
+                switchPunch();
+            });
+
+            jQuery('#cancelSwitchButton').click(function (event) {
+                event.preventDefault();
+                cancelPunch();
+            });
+            
+            jQuery('#breakPunchButton').click(function (event) {
+                event.preventDefault();
+                switchToBreak();
+            });
+
+            jQuery('#finishBreakButton').click(function (event) {
+                event.preventDefault();
+                finishBreak();
+            });
             function switchToLatePunchIn() {
                 $(".bp-select2.select2-hidden-accessible").select2("destroy");
                 jQuery('.punch-in-on-time').hide();
@@ -1851,6 +1870,30 @@
                 });
                 $('.punch-button-wrapper').css("display", "inline-block");
                 $('input[name="IsLatePunch"]').val("True");
+            }
+
+            function switchPunch() {
+                $(".bp-select2.select2-hidden-accessible").select2("destroy");
+                jQuery('#punchOnTime-form').hide();
+                jQuery('#switchPunch-form').show();
+            }
+
+            function cancelPunch() {
+                $(".bp-select2.select2-hidden-accessible").select2("destroy");
+                jQuery('#switchPunch-form').hide();
+                jQuery('#punchOnTime-form').show();
+            }
+
+            function switchToBreak() {
+                $(".bp-select2.select2-hidden-accessible").select2("destroy");
+                jQuery('#punchOnTime-form').hide();
+                jQuery('#breakPunch-form').show();
+            }
+
+            function finishBreak() {
+                $(".bp-select2.select2-hidden-accessible").select2("destroy");
+                jQuery('#breakPunch-form').hide();
+                jQuery('#punchOnTime-form').show();
             }
 
             jQuery('#latePunchIn-back-btn').click(function (event) {
