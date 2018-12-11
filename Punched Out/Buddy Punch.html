@@ -1895,6 +1895,7 @@
                 jQuery('#breakPunch-form').show();
                 breakTimer.run();
                 punchTimer.pause();
+                turnOffWebcam();
             }
 
             function finishBreak() {
@@ -1903,6 +1904,7 @@
                 jQuery('#punchOnTime-form').show();
                 breakTimer.kill();
                 punchTimer.resume();
+                turnOnWebcam();
             }
 
             jQuery('#latePunchIn-back-btn').click(function (event) {
@@ -2066,6 +2068,16 @@
         $(function () {
             Webcam.attach("#webcam");
         });
+
+        function turnOnWebcam () {
+            $(function () {
+            Webcam.attach("#webcam");
+        });
+        }
+
+        function turnOffWebcam () {
+            Webcam.reset();
+        }
     </script>
 
     <script>
