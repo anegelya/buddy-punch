@@ -444,42 +444,14 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile ">
-                            <div class="m-portlet__head">
-                                <div class="m-portlet__head-caption">
-                                    <div class="m-portlet__head-title">
-                                        <h3 class="m-portlet__head-text">
-                                            <div class="m--padding-bottom-5">Welcome Will Byers</div>
-                                            <small style="padding-left: 0;"> </small>
-                                            <span class="m-badge m-badge--danger m-badge--wide">
-                                                Punched Out
-                                            </span>
-                                        </h3>
-                                    </div>
-                                    <div class="m-portlet__head-tools">
-
-                                    </div>
-                                </div>
-                            </div>
                             <div class="m-portlet__body ">
                                 <div class="panel panel-default">
-
-
                                     <div class="panel-body">
-
-
                                         <input type="text" id="tempLatitude" class="latitude" style="display: none;">
                                         <input type="text" id="tempLongitude" class="longitude" style="display: none;">
                                         <input type="text" id="tempLocationAccuracy" class="geoLocationAccuracy" style="display: none;">
                                         <input type="text" id="tempGeoLocationTimeStamp" class="geoLocationTimeStamp"
                                             style="display: none;">
-                                        <div class="row">
-                                            <div class="col-md-12 m--margin-bottom-10">
-                                                <span style="color: #afb2c1;">
-                                                    Current login time was 10:57:58 AM on
-                                                    Monday, 12/10
-                                                </span>
-                                            </div>
-                                        </div>
                                         <div class="row">
                                             <div class="col-md-12" style="padding-bottom: 20px;">
                                                 <input type="hidden" id="webcamStatus" value="0">
@@ -489,6 +461,22 @@
                                             </div>
                                         </div>
 
+                                        <div class="row">
+                                            <div class="col-md-7 m--margin-bottom-10">
+                                                <span>
+                                                    Current login time was <b>10:57:58 AM</b> on
+                                                    <b>Monday, 12/10</b>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-5 text-right">
+                                                <span class="m-badge m-badge--danger m-badge--wide">
+                                                    Punched Out
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                        
                                         <div id="punchOnTime-form">
                                             <form action="/Employee/PunchIn" id="punchInForm" method="post" novalidate="novalidate"><input
                                                     name="__RequestVerificationToken" type="hidden" value="RxfYhnblsh5fYQG9bgTSB_GkiYcShQYRGAmbzvaVTpgkf0Or31VapjypVIYD3xu43mpZ1loZuf2fz27ruWB7xk75ipykQjI4YTUzcYt7G_kkupibT9BIkpZwRn5b1KdFg19x1gyt8bzHTkL6rvMOWQ2"><input
@@ -505,66 +493,22 @@
                                                     value=""><input class="geoLocationTimeStamp" data-val="true"
                                                     data-val-date="The field GeoLocationTimeStamp must be a date." id="GeoLocationTimeStamp"
                                                     name="GeoLocationTimeStamp" type="hidden" value="1/1/0001 12:00:00 AM">
+                                               
                                                 <div class="row late-punch-in" style="display: none">
                                                     <div class="col-md-12">
-                                                        Selected: <span class="btn btn-success disabled">Punch In &amp;
-                                                            Edit Time</span>
-                                                    </div>
-                                                </div>
-                                                <div class="row late-punch-in" style="display: none">
-                                                    <div class="col-md-8">
                                                         <div class="form-group">
-                                                            <label class="control-label" for="Punch_In_Time">Punch In
-                                                                Time</label>
                                                             <div class="controls">
                                                                 <input autocomplete="off" class="form-control timepicker-default"
                                                                     data-val="true" data-val-date="The field LatePunchInDateTime must be a date."
                                                                     id="LatePunchInDateTime" name="LatePunchInDateTime"
-                                                                    type="text">
+                                                                    type="text" style ="width:100%; max-width: 100%;">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-md-8">
-
+                                                <div class="row" id="locationdepartmentselection">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label" for="Shift">Shift</label>
-                                                            <br>
-                                                            <div>
-                                                                <select class="form-control input-medium shiftId-select2 m-select2 select2-hidden-accessible"
-                                                                    data-val="true" data-val-number="The field ShiftId must be a number."
-                                                                    data-val-required="You cannot punch in without a current shift"
-                                                                    id="PunchInOptions_ShiftId" name="PunchInOptions.ShiftId"
-                                                                    data-select2-id="PunchInOptions_ShiftId" tabindex="-1"
-                                                                    aria-hidden="true">
-                                                                    <option value="" data-select2-id="1" selected="selected">Choose...</option>
-                                                                    <option value="-1" data-select2-id="2">No Shift</option>
-                                                                </select><span class="select2 select2-container select2-container--default"
-                                                                    dir="ltr" data-select2-id="3" style="width: 240px;"><span
-                                                                        class="selection"><span class="select2-selection select2-selection--single"
-                                                                            role="combobox" aria-haspopup="true"
-                                                                            aria-expanded="false" tabindex="0"
-                                                                            aria-labelledby="select2-PunchInOptions_ShiftId-container"><span
-                                                                                class="select2-selection__rendered" id="select2-PunchInOptions_ShiftId-container"
-                                                                                role="textbox" aria-readonly="true"><span
-                                                                                    class="select2-selection__placeholder">Choose...</span></span><span
-                                                                                class="select2-selection__arrow" role="presentation"><b
-                                                                                    role="presentation"></b></span></span></span><span
-                                                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                                            </div>
-                                                            <span class="field-validation-valid" data-valmsg-for="PunchInOptions.ShiftId"
-                                                                data-valmsg-replace="true"></span>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div class="row" id="locationdepartmentselection" style="display: none;">
-                                                    <div class="col-md-8">
-
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="">Location/Department</label>
-                                                            <br>
                                                             <div>
                                                                 <select class="form-control input-medium location-select2 m-select2 select2-hidden-accessible"
                                                                     data-val="true" data-val-required="Field is required"
@@ -572,7 +516,7 @@
                                                                     name="LocationsJobCodesViewModel.LocationJobCodeId"
                                                                     data-select2-id="LocationsJobCodesViewModel_LocationJobCodeId"
                                                                     tabindex="-1" aria-hidden="true">
-                                                                    <option value="" data-select2-id="4" selected="selected">Choose...</option>
+                                                                    <option value="" data-select2-id="4" selected="selected">Location/Department</option>
                                                                     <optgroup label="Alaska" data-select2-id="5">
                                                                         <option value="13|1020" data-select2-id="6">Acme
                                                                             Corporation</option>
@@ -633,51 +577,47 @@
                                                                     <option value="21|0" data-select2-id="37">Loc 4</option>
                                                                     <option value="22|0" data-select2-id="38">Loc 5</option>
                                                                     <option value="17|0" data-select2-id="39">PHX</option>
-                                                                </select><span class="select2 select2-container select2-container--default"
-                                                                    dir="ltr" data-select2-id="40" style="width: 240px;"><span
-                                                                        class="selection"><span class="select2-selection select2-selection--single"
-                                                                            role="combobox" aria-haspopup="true"
-                                                                            aria-expanded="false" tabindex="0"
-                                                                            aria-labelledby="select2-LocationsJobCodesViewModel_LocationJobCodeId-container"><span
-                                                                                class="select2-selection__rendered" id="select2-LocationsJobCodesViewModel_LocationJobCodeId-container"
-                                                                                role="textbox" aria-readonly="true"><span
-                                                                                    class="select2-selection__placeholder">Choose...</span></span><span
-                                                                                class="select2-selection__arrow" role="presentation"><b
-                                                                                    role="presentation"></b></span></span></span><span
-                                                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                </select>
                                                             </div>
                                                             <span class="field-validation-valid" data-valmsg-for="LocationsJobCodesViewModel.LocationJobCodeId"
                                                                 data-valmsg-replace="true"></span>
                                                         </div>
-
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <div>
+                                                                    <select class="form-control input-medium shiftId-select2 m-select2 select2-hidden-accessible" 
+                                                                            data-val="true" data-val-number="The field ShiftId must be a number." 
+                                                                            data-val-required="You cannot punch in without a current shift" 
+                                                                            id="PunchInOptions_ShiftId" 
+                                                                            name="PunchInOptions.ShiftId" 
+                                                                            data-select2-id="PunchInOptions_ShiftId" 
+                                                                            tabindex="-1" 
+                                                                            aria-hidden="true">
+                                                                        <option value="">Shift</option>
+                                                                        <option value="-1">No Shift</option></select>
+                                                                </div>
+                                                                <span class="field-validation-valid" data-valmsg-for="PunchInOptions.ShiftId"
+                                                                    data-valmsg-replace="true"></span>
+                                                            </div>
+    
+                                                        </div>
+                                                </div>
                                                 <div class="row" id="positionselection" style="display: none;">
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-12">
 
                                                         <div class="form-group">
-                                                            <label class="control-label" for="Position">Position</label>
-                                                            <br>
                                                             <div>
                                                                 <select class="form-control input-medium position-select2 select2-hidden-accessible"
                                                                     data-val="true" data-val-number="The field PositionId must be a number."
                                                                     data-val-required="Position is required" id="PunchInOptions_PositionId"
                                                                     name="PunchInOptions.PositionId" data-select2-id="PunchInOptions_PositionId"
                                                                     tabindex="-1" aria-hidden="true">
-                                                                    <option value="" data-select2-id="41" selected="selected">Choose...</option>
-                                                                    <option value="1" data-select2-id="42">Vacation</option>
-                                                                </select><span class="select2 select2-container select2-container--default"
-                                                                    dir="ltr" data-select2-id="43" style="width: 240px;"><span
-                                                                        class="selection"><span class="select2-selection select2-selection--single"
-                                                                            role="combobox" aria-haspopup="true"
-                                                                            aria-expanded="false" tabindex="0"
-                                                                            aria-labelledby="select2-PunchInOptions_PositionId-container"><span
-                                                                                class="select2-selection__rendered" id="select2-PunchInOptions_PositionId-container"
-                                                                                role="textbox" aria-readonly="true"><span
-                                                                                    class="select2-selection__placeholder">Choose...</span></span><span
-                                                                                class="select2-selection__arrow" role="presentation"><b
-                                                                                    role="presentation"></b></span></span></span><span
-                                                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                    <option value="">Position</option>
+                                                                    <option value="1">Vacation</option>
+                                                                </select>
                                                             </div>
                                                             <span class="field-validation-valid" data-valmsg-for="PunchInOptions.PositionId"
                                                                 data-valmsg-replace="true"></span>
@@ -685,52 +625,55 @@
 
                                                     </div>
                                                 </div>
+                                                <br>
                                                 <div class="row">
-                                                    <div class="col-md-8">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
                                                             <textarea class="form-control" cols="20" id="Note" name="Note"
-                                                                placeholder="Enter notes here" rows="2"></textarea>
+                                                                placeholder="Enter notes here..." rows="1"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <br>
                                                 <div class="row late-punch-in" style="display: none">
-                                                    <div class="col-md-12 alert alert-info">
-                                                        Your manager will be notified of the late punch and must
-                                                        approve it.<br>
-                                                        You will receive an email notification of the punch status when
-                                                        it is reviewed.
+                                                    <div class="col-md-12">
+                                                        <div class="alert alert-info">
+                                                            Your manager will be notified of the late punch and must
+                                                            approve it.<br>
+                                                            You will receive an email notification of the punch status when
+                                                            it is reviewed.
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <br>
                                                 <div class="row">
-                                                    <div class="col-md-6">
 
-                                                        <button type="button" id="latePunchIn-back-btn" class="btn bp-punch-btn late-punch-in"
-                                                            style="display: none">
-                                                            Back
-                                                        </button>
-
+                                                    <div class="form-group col-md-12">
                                                         <div class="punch-button-wrapper">
-
                                                             <a href="#" onclick="punchInUsingKey()" class="btn btn-success bp-punch-btn"
                                                                 style="width: 100%">
                                                                 Punch In
                                                             </a>
-
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
 
-                                                        <button class="btn bp-punch-btn grey  punch-in-on-time" id="latePunchInButton"
-                                                            style="width: 100%">
-                                                            Punch In &amp; Edit Time
+                                                    <div class="form-group col-md-12">
+                                                        <button type="button" id="latePunchIn-back-btn" class="btn bp-punch-btn late-punch-in"
+                                                            style="display: none; width: 100%;">
+                                                            Back
                                                         </button>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                            <button class="btn bp-punch-btn grey  punch-in-on-time" id="latePunchInButton"
+                                                                style="width: 100%">
+                                                                Punch In &amp; Edit Time
+                                                            </button>
+
                                                     </div>
                                                 </div>
                                             </form>
-
-
                                         </div>
-
 
 
                                         <div id="latePunchOut-form" style="display: none;">
@@ -748,12 +691,6 @@
                                                             data-val-date="The field GeoLocationTimeStamp must be a date."
                                                             id="GeoLocationTimeStamp" name="GeoLocationTimeStamp" type="hidden"
                                                             value="1/1/0001 12:00:00 AM">
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                Selected: <span class="btn btn-danger disabled">Punch
-                                                                    Out &amp; Edit Time</span>
-                                                            </div>
-                                                        </div>
                                                         <div class="row">
                                                             <div class="col-md-8">
                                                                 <div class="form-group">
@@ -797,6 +734,277 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile ">
+                            <div class="m-portlet__body ">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <input type="text" id="tempLatitude" class="latitude" style="display: none;">
+                                        <input type="text" id="tempLongitude" class="longitude" style="display: none;">
+                                        <input type="text" id="tempLocationAccuracy" class="geoLocationAccuracy" style="display: none;">
+                                        <input type="text" id="tempGeoLocationTimeStamp" class="geoLocationTimeStamp"
+                                            style="display: none;">
+                                        <div class="row">
+                                            <div class="col-md-12" style="padding-bottom: 20px;">
+                                                <input type="hidden" id="webcamStatus" value="0">
+                                                <div id="webcam" style="width: 320px; height: 240px; overflow: hidden; display: none;">
+                                                    <div></div><video autoplay="autoplay" playsinline="true" style="width: 320px; height: 240px;"></video>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-7 m--margin-bottom-10">
+                                                <span>You are working on <b>Alaska - Expenses - Vacation</b></small>
+                                            </div>
+                                            <div class="col-md-5 text-right">
+                                                <span class="m-badge m-badge--success m-badge--wide">
+                                                    Punched In
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+
+                                            </div>
+                                        </div>
+                                        
+                                        <br>
+
+                                            <div id="punchOnTime-form">
+                                                <form action="/Employee/PunchOut" id="punchOutForm" method="post"
+                                                novalidate="novalidate"><input name="__RequestVerificationToken" type="hidden"
+                                                    value="0pLlTmW-4BmLB64wLBXg6U-ZSK8TZ7xhL8sDXJ0J7h274GhtR1X3pQHhHHIP5B1NqxF3UreR6oab6LP8r-vUtLMcY-MOUIeq875r6eGNQ_fTxDhuaQF0ULHIoA_SizeBIua3-ugbYQ7YG5H4y7mZaQ2"><input
+                                                    id="ImageData" name="ImageData" type="hidden" value=""><input class="latitude"
+                                                    id="Latitude" name="Latitude" type="hidden" value=""><input class="longitude"
+                                                    id="Longitude" name="Longitude" type="hidden" value=""><input class="geoLocationAccuracy"
+                                                    id="GeoLocationAccuracy" name="GeoLocationAccuracy" type="hidden"
+                                                    value=""><input class="geoLocationTimeStamp" data-val="true"
+                                                    data-val-date="The field GeoLocationTimeStamp must be a date." id="GeoLocationTimeStamp"
+                                                    name="GeoLocationTimeStamp" type="hidden" value="1/1/0001 12:00:00 AM">
+                                                    <div class="row">
+                                                        <p class="timer-count col" id="punch-timer"></p>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <textarea class="form-control" cols="20" id="Note" name="Note"
+                                                                    placeholder="Enter notes here..." rows="1"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <br>
+                                                    <br>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <div class="punch-button-wrapper">
+                                                                <input type="button" value="Punch Out" class="btn btn-danger bp-punch-btn btn-block "
+                                                                    onclick=" punchOut() ">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <button class="btn m-btn-primary" id="switchPunchButton" style="width: 100%">Switch</button>
+                                                            </div>
+
+                                                            <div class="col-md-6">
+                                                                <button class="btn m-btn-primary" id="breakPunchButton" style="width: 100%">Break</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <button class="btn bp-punch-btn  punch-in-on-time" id="latePunchInButton"
+                                                                style="width: 100%">
+                                                            Punch In &amp; Edit Time
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div id="switchPunch-form" style="display: none;">
+                                                    <form action="/Employee/PunchIn" id="punchInForm" method="post" novalidate="novalidate"><input
+                                                        name="__RequestVerificationToken" type="hidden" value="RxfYhnblsh5fYQG9bgTSB_GkiYcShQYRGAmbzvaVTpgkf0Or31VapjypVIYD3xu43mpZ1loZuf2fz27ruWB7xk75ipykQjI4YTUzcYt7G_kkupibT9BIkpZwRn5b1KdFg19x1gyt8bzHTkL6rvMOWQ2"><input
+                                                        id="IsLatePunch" name="IsLatePunch" type="hidden" value="False"><input
+                                                        data-val="true" data-val-number="The field JobCodeId must be a number."
+                                                        id="JobCodeId" name="JobCodeId" type="hidden" value="0"><input id="JobCodeId"
+                                                        name="JobCodeId" type="hidden" value="0"><input data-val="true"
+                                                        data-val-number="The field LocationId must be a number." id="LocationId"
+                                                        name="LocationId" type="hidden" value="0"><input id="ImageData"
+                                                        name="ImageData" type="hidden" value=""><input class="latitude" id="Latitude"
+                                                        name="Latitude" type="hidden" value=""><input class="longitude" id="Longitude"
+                                                        name="Longitude" type="hidden" value=""><input class="geoLocationAccuracy"
+                                                        id="GeoLocationAccuracy" name="GeoLocationAccuracy" type="hidden"
+                                                        value=""><input class="geoLocationTimeStamp" data-val="true"
+                                                        data-val-date="The field GeoLocationTimeStamp must be a date." id="GeoLocationTimeStamp"
+                                                        name="GeoLocationTimeStamp" type="hidden" value="1/1/0001 12:00:00 AM">
+                                                
+                                                    <br>
+                                                    <div class="row" id="locationdepartmentselection">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <div>
+                                                                        <select class="form-control input-medium location-select2 m-select2 select2-hidden-accessible"
+                                                                            data-val="true" data-val-required="Field is required"
+                                                                            id="LocationsJobCodesViewModel_LocationJobCodeId"
+                                                                            name="LocationsJobCodesViewModel.LocationJobCodeId"
+                                                                            data-select2-id="LocationsJobCodesViewModel_LocationJobCodeId"
+                                                                            tabindex="-1" aria-hidden="true">
+                                                                            <option value="" data-select2-id="4" selected="selected">Location/Department</option>
+                                                                            <optgroup label="Alaska" data-select2-id="5">
+                                                                                <option value="13|1020" data-select2-id="6">Acme
+                                                                                    Corporation</option>
+                                                                                <option value="13|1015" data-select2-id="7">Department
+                                                                                    Code 456</option>
+                                                                                <option value="13|1010" data-select2-id="8">Expenses</option>
+                                                                                <option value="13|1017" data-select2-id="9">Job
+                                                                                    ABC</option>
+                                                                                <option value="13|1016" data-select2-id="10">Job
+                                                                                    Code 321</option>
+                                                                                <option value="13|1021" data-select2-id="11">Job
+                                                                                    ZYX</option>
+                                                                                <option value="13|1019" data-select2-id="12">Sanitation</option>
+                                                                                <option value="13|1022" data-select2-id="13">Taco
+                                                                                    Bell</option>
+                                                                                <option value="13|1018" data-select2-id="14">XYZ
+                                                                                    Company</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Chicago" data-select2-id="15">
+                                                                                <option value="9|1020" data-select2-id="16">Acme
+                                                                                    Corporation</option>
+                                                                                <option value="9|1015" data-select2-id="17">Department
+                                                                                    Code 456</option>
+                                                                                <option value="9|1017" data-select2-id="18">Job
+                                                                                    ABC</option>
+                                                                                <option value="9|1016" data-select2-id="19">Job
+                                                                                    Code 321</option>
+                                                                                <option value="9|1021" data-select2-id="20">Job
+                                                                                    ZYX</option>
+                                                                                <option value="9|1019" data-select2-id="21">Sanitation</option>
+                                                                                <option value="9|1022" data-select2-id="22">Taco
+                                                                                    Bell</option>
+                                                                                <option value="9|1018" data-select2-id="23">XYZ
+                                                                                    Company</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="New York City" data-select2-id="24">
+                                                                                <option value="16|1020" data-select2-id="25">Acme
+                                                                                    Corporation</option>
+                                                                                <option value="16|1015" data-select2-id="26">Department
+                                                                                    Code 456</option>
+                                                                                <option value="16|1010" data-select2-id="27">Expenses</option>
+                                                                                <option value="16|1017" data-select2-id="28">Job
+                                                                                    ABC</option>
+                                                                                <option value="16|1016" data-select2-id="29">Job
+                                                                                    Code 321</option>
+                                                                                <option value="16|1021" data-select2-id="30">Job
+                                                                                    ZYX</option>
+                                                                                <option value="16|1019" data-select2-id="31">Sanitation</option>
+                                                                                <option value="16|1022" data-select2-id="32">Taco
+                                                                                    Bell</option>
+                                                                                <option value="16|1018" data-select2-id="33">XYZ
+                                                                                    Company</option>
+                                                                            </optgroup>
+                                                                            <option value="18|0" data-select2-id="34">Hot
+                                                                                Pockets</option>
+                                                                            <option value="19|0" data-select2-id="35">Loc 2</option>
+                                                                            <option value="20|0" data-select2-id="36">Loc 3</option>
+                                                                            <option value="21|0" data-select2-id="37">Loc 4</option>
+                                                                            <option value="22|0" data-select2-id="38">Loc 5</option>
+                                                                            <option value="17|0" data-select2-id="39">PHX</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <span class="field-validation-valid" data-valmsg-for="LocationsJobCodesViewModel.LocationJobCodeId"
+                                                                        data-valmsg-replace="true"></span>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <div>
+                                                                            <select class="form-control input-medium shiftId-select2 m-select2 select2-hidden-accessible" 
+                                                                                    data-val="true" data-val-number="The field ShiftId must be a number." 
+                                                                                    data-val-required="You cannot punch in without a current shift" 
+                                                                                    id="PunchInOptions_ShiftId" 
+                                                                                    name="PunchInOptions.ShiftId" 
+                                                                                    data-select2-id="PunchInOptions_ShiftId" 
+                                                                                    tabindex="-1" 
+                                                                                    aria-hidden="true">
+                                                                                <option value="">Shift</option>
+                                                                                <option value="-1">No Shift</option></select>
+                                                                        </div>
+                                                                        <span class="field-validation-valid" data-valmsg-for="PunchInOptions.ShiftId"
+                                                                            data-valmsg-replace="true"></span>
+                                                                    </div>
+            
+                                                                </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <div class="punch-button-wrapper">
+                                                                <a href="#" onclick="punchInUsingKey()" class="btn m-btn-primary bp-punch-btn"
+                                                                    style="width: 100%">
+                                                                    Confirm Switch
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <button class="btn bp-punch-btn  punch-in-on-time" id="cancelSwitchButton"
+                                                                    style="width: 100%">
+                                                                Cancel Switch
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <div id="breakPunch-form" style="display: none;">
+                                                    <form action="" method="post"
+                                                        novalidate="novalidate">
+                                                            <input name="__RequestVerificationToken" type="hidden"
+                                                            value=""><input id="ImageData" name="ImageData" type="hidden" value=""><input class="latitude"
+                                                            id="Latitude" name="Latitude" type="hidden" value=""><input class="longitude"
+                                                            id="Longitude" name="Longitude" type="hidden" value=""><input class="geoLocationAccuracy"
+                                                            id="GeoLocationAccuracy" name="GeoLocationAccuracy" type="hidden"
+                                                            value=""><input class="geoLocationTimeStamp" data-val="true"
+                                                            data-val-date="The field GeoLocationTimeStamp must be a date." id="GeoLocationTimeStamp"
+                                                            name="GeoLocationTimeStamp" type="hidden" value="1/1/0001 12:00:00 AM">
+                                                    
+                                                    <div class="row">
+                                                        <p class="timer-count col" id="breakPunch-timer"></p>
+                                                    </div>
+                                        
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <div class="punch-button-wrapper">
+                                                                <button class="btn m-btn-primary bp-punch-btn" id="finishBreakButton"
+                                                                        style="width: 100%">
+                                                                    Finish Break
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                     </div>
                                 </div>
                             </div>
