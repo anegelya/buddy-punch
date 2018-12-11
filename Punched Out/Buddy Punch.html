@@ -1861,6 +1861,12 @@
                 event.preventDefault();
                 finishBreak();
             });
+
+            var breakTimer = new Timer(document.getElementById('breakPunch-timer'));
+
+            var punchTimer = new Timer(document.getElementById('punch-timer'));
+            punchTimer.run();
+
             function switchToLatePunchIn() {
                 $(".bp-select2.select2-hidden-accessible").select2("destroy");
                 jQuery('.punch-in-on-time').hide();
@@ -1868,7 +1874,6 @@
                 $(".bp-select2:visible").select2({
                     matcher: select2CustomMatch
                 });
-                $('.punch-button-wrapper').css("display", "inline-block");
                 $('input[name="IsLatePunch"]').val("True");
             }
 
@@ -1888,12 +1893,16 @@
                 $(".bp-select2.select2-hidden-accessible").select2("destroy");
                 jQuery('#punchOnTime-form').hide();
                 jQuery('#breakPunch-form').show();
+                breakTimer.run();
+                punchTimer.pause();
             }
 
             function finishBreak() {
                 $(".bp-select2.select2-hidden-accessible").select2("destroy");
                 jQuery('#breakPunch-form').hide();
                 jQuery('#punchOnTime-form').show();
+                breakTimer.kill();
+                punchTimer.resume();
             }
 
             jQuery('#latePunchIn-back-btn').click(function (event) {
@@ -1954,6 +1963,72 @@
             //    opacity: "0.9",
             //    message: "Please wait..."
             //});
+        }
+
+        /**
+         * Timer Conctructor
+         * */
+        function Timer (wrapper) {
+
+            var s = 0, 
+                m = 0, 
+                h = 0,
+                interval,
+                date;
+
+            function getT(date) {
+                return (new Date().getTime() - date.getTime());
+            }
+
+            function update() {
+                s = getT(date);
+                s = parseInt(s / 1000);
+
+                h = parseInt(s / 3600);
+                s -= h * 3600;
+                m = parseInt(s / 60);
+                s -= m * 60;
+            }
+
+            function getMS() {
+                ms = h * 3600 + m * 60 + s;
+                return ms * 1000;
+            }
+
+            function render() {
+                wrapper.innerHTML = (h > 0 ? h + ":" : "") + m + ":" + (s >= 10 ? s : "0" + s);
+            }
+
+            this.run = function() {
+                date = new Date();
+                interval = setInterval(function() {
+                    update();
+                    render();
+                 }, 1000 );
+            }
+
+            this.pause = function() {
+                clearInterval(interval);
+            }
+
+            this.resume = function() {
+                newDate = new Date().getTime() - getMS();
+                date = new Date(newDate);
+                interval = setInterval(function() {
+                    update();
+                    render();
+                }, 1000 );
+            }
+
+            this.kill = function() {
+                clearInterval(interval);
+                s = 0;
+                m = 0;
+                h = 0;
+                render();
+            }
+
+            render();
         }
     </script>
 
