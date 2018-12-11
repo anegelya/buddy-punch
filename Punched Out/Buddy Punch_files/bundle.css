@@ -72525,4 +72525,14 @@ fieldset.container {
 .input-validation-error + .select2-container--default .select2-selection--single {
     color: #e84556;
 }
+
+.timer-count {
+    color: #364151;
+    font-size: 36px;
+}
+
+#webcam {
+    background: url('./video-call.png');
+    background-position: center;
+    background-size: cover;
 }
