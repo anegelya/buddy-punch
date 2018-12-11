@@ -835,6 +835,24 @@
                                         class="btn m-btn-primary">Edit</a>
                                 </div>
                             </div>
+                            <div class="m-portlet__body container">
+                                <div class="row">
+                                    <div class="col row">
+                                        <div class="col-md-auto">
+                                            <p class="h6 ">Total PTO</p>
+                                            <p class="m-icon m-icon-expand">3.5 Hs </p>
+                                        </div>
+                                        <div class="col-md-auto">
+                                            <span class="h6">Total Hours</span>
+                                            <p class="m-icon m-icon-expand">38.30 Hs </p>
+                                        </div>
+                                    </div>
+                                    <div class="col text-right">
+                                        <a class="m-btn btn m-btn-secondary" href="https://buddypunchapp-qa.azurewebsites.net/Employee/EmployeePTOSummary">PTO Summary</a>
+                                                
+                                        <a class="m-btn btn m-btn-secondary" href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCards">Past Time Cards</a>
+                                    </div>
+                                    
                                 </div>
                                 <br>
                                 <br>
@@ -842,10 +860,17 @@
                                     <thead>
                                         <tr>
                                             <th></th>
+                                            <th></th>
                                             <th>Time</th>
                                             <th>Status</th>
                                             <th>
                                                 <abbr title="Regular Hours">Reg</abbr>
+                                            </th>
+                                            <th>
+                                                <abbr title="">OT</abbr>
+                                            </th>
+                                            <th>
+                                                <abbr title="">DBT</abbr>
                                             </th>
                                             <th>
                                                 <abbr title="Paid Time Off">PTO</abbr>
@@ -857,11 +882,15 @@
                                     <tbody>
 
                                         <tr class="row-white">
+                                            <td rowspan="2" style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-1" class="clickable">
+                                                <span class="m-icon m-icon-chevron"></span>
+                                            </td>
                                             <td style="width: 20px;">
-                                                In
+                                                <b>In</b>
                                             </td>
                                             <td>
-                                                Friday, 12/7 </td>
+                                                Friday, 12/7
+                                            </td>
                                             <td>
 
                                                 <span class="label label-success">
@@ -869,17 +898,19 @@
                                                 </span>
                                             </td>
                                             <td></td>
-
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td class="active"></td>
-                                            <td>
+                                            <td  rowspan="2">
 
 
                                             </td>
 
                                         </tr>
                                         <tr class="row-white">
-                                            <td>Out</td>
+                                            
+                                            <td><b>Out</b></td>
                                             <td>
                                                 Friday, 12/7 </td>
                                             <td>
@@ -892,16 +923,49 @@
                                                 0.000
                                             </td>
                                             <td>
+                                                0.000
+                                            </td>
+                                            <td>
+                                                0.000
+                                            </td>
+                                            <td>
                                                 8.000 <br>
                                                 <span class="badge badge-primary badge-roundless">Holiday</span>
                                             </td>
                                             <td class="active">8.000 </td>
-                                            <td></td>
 
                                         </tr>
+                                        <tr class="row-white">
+                                            <td></td>
+                                            <td colspan="5">
+                                                <div class="collapse timecard-table__notes accordion-targets-1">
+                                                    <div>
+                                                        <div><b>Notes</b></div>
+                                                        <div><b>In:</b> Shift automatically closed after 10 minutes.</div>
+                                                        <div><b>Out:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="3">
+                                                <div class="collapse timecard-table__notes accordion-targets-1">
+                                                    <div>
+                                                        <div>
+                                                            <b>Break</b>
+                                                        </div>
+                                                        <div>
+                                                            4:38 AM - Time: 00:30
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
                                         <tr class="row-light">
+                                            <td rowspan="2" style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-2" class="clickable">
+                                                <span class="m-icon m-icon-chevron"></span>
+                                            </td>
                                             <td style="width: 20px;">
-                                                In
+                                                <b>In</b>
                                             </td>
                                             <td>
                                                 Monday, 12/10, 9:08 AM </td>
@@ -909,10 +973,16 @@
 
                                             </td>
                                             <td></td>
+                                            <td>
+                                                0.000
+                                            </td>
+                                            <td>
+                                                0.000
+                                            </td>
 
                                             <td></td>
                                             <td class="active"></td>
-                                            <td>
+                                            <td  rowspan="2">
                                                 <div>Location: Alaska</div>
 
                                                 <div>Department: Department Code 456</div>
@@ -922,7 +992,7 @@
 
                                         </tr>
                                         <tr class="row-light">
-                                            <td>Out</td>
+                                            <td><b>Out</b></td>
                                             <td>
                                                 Monday, 12/10, 9:30 AM </td>
                                             <td>
@@ -932,34 +1002,78 @@
                                                 0.367
                                             </td>
                                             <td>
+                                                0.000
+                                            </td>
+                                            <td>
+                                                0.000
+                                            </td>
+                                            <td>
                                             </td>
                                             <td class="active">0.367 </td>
-                                            <td></td>
 
                                         </tr>
-                                        <tr class="m--font-boldest">
+                                        <tr class="row-light">
+                                            <td></td>
+                                            <td colspan="5">
+                                                <div class="collapse timecard-table__notes accordion-targets-2">
+                                                    <div>
+                                                        <div><b>Notes</b></div>
+                                                        <div><b>In:</b> Shift automatically closed after 10 minutes.</div>
+                                                        <div><b>Out:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td colspan="3">
+                                                <div class="collapse timecard-table__notes accordion-targets-2">
+                                                    <div>
+                                                        <div>
+                                                            <b>Break</b>
+                                                        </div>
+                                                        <div>
+                                                            4:38 AM - Time: 00:30
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="row-white">
 
-                                            <td colspan="2">
+                                            <td colspan="3" class="m--font-boldest ">
                                                 Week of 12/5-12/11 Sub Total
                                             </td>
                                             <td></td>
 
 
                                             <td>0.367 </td>
-
+                                            <td>
+                                                0.000
+                                            </td>
+                                            <td>
+                                                0.000
+                                            </td>
                                             <td>8.000</td>
                                             <td class="active">8.367 </td>
-                                            <td></td>
                                             <td></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
+                                            <td colspan="3">
+                                            </td>
                                             <td>
                                                 <span class="m--font-boldest">
                                                     Total
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="m--font-boldest">
+                                                    0.367
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="m--font-boldest">
+                                                    0.367
                                                 </span>
                                             </td>
                                             <td>
@@ -987,14 +1101,9 @@
                     </div>
                 </div>
 
-
-
-
-
-
-
             </div>
         </div>
+
         <div class="m-grid__item m-footer">
             <div class="m-container m-container--fluid m-container--full-height m-page__container">
                 <div class="m-footer__wrapper">
