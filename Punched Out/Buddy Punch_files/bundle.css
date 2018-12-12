@@ -72409,6 +72409,7 @@ table.dataTable thead .sorting_desc_disabled::before {
     content: "";
     color: #0c67c4;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .m-icon-chevron::after {
@@ -72535,4 +72536,30 @@ fieldset.container {
     background: url('./video-call.png');
     background-position: center;
     background-size: cover;
+}
+
+.modal {
+    color: #575962;
+}
+
+.modal .modal-content .modal-header .modal-title {
+    color: #364151;
+    font-weight: bold;
+}
+
+.modal .h1 {
+    color: #364151;
+    font-size: 36px;
+}
+
+.modal .text-muted {
+    color: #a3a5ad !important;
+}
+
+.modal-table {
+    width: 100%;
+}
+
+.modal-table th {
+    color: #364151;
 }

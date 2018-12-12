@@ -1047,12 +1047,16 @@
                                 <div class="row">
                                     <div class="col row">
                                         <div class="col-md-auto">
-                                            <p class="h6 ">Total PTO</p>
-                                            <p class="m-icon m-icon-expand">3.5 Hs </p>
+                                            <p class="h6">Total PTO</p>
+                                            <p class="m-icon m-icon-expand" data-toggle="modal" data-target="#totalPTOModal">
+                                                    3.5 Hs 
+                                            </p>
                                         </div>
                                         <div class="col-md-auto">
                                             <span class="h6">Total Hours</span>
-                                            <p class="m-icon m-icon-expand">38.30 Hs </p>
+                                            <p class="m-icon m-icon-expand" data-toggle="modal" data-target="#totalHoursModal">
+                                                    38.30 Hs 
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="col text-right">
@@ -1385,6 +1389,110 @@
             </script>
 
 
+        </div>
+
+        <!-- Total PTO Modal -->
+        <div class="modal fade" id="totalPTOModal" tabindex="-1" role="dialog" aria-labelledby="totalPTOModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="totalPTOModalLabel">Total PTO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p class="h1">3.5 hs</p>
+                    <p class="text-muted">Worked hours for 19/06/2018 - 10/19/2018</p>
+                    <br>
+                    <table class="modal-table">
+                        <thead>
+                            <tr>
+                                <th>Location/Department</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>England - Construction</td>
+                                <td class="text-right">30 hs</td>
+                            </tr>
+                            <tr>
+                                <td>England - Finance</td>
+                                <td class="text-right">8.30 hs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table class="modal-table">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td class="text-right"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Total Hours Modal -->
+        <div class="modal fade" id="totalHoursModal" tabindex="-1" role="dialog" aria-labelledby="totalHoursModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="totalHoursModalLabel">Total Hours</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <p class="h1">38.30 hs</p>
+                    <p class="text-muted">Worked hours for 19/06/2018 - 10/19/2018</p>
+                    <br>
+                    <table class="modal-table">
+                        <thead>
+                            <tr>
+                                <th>Location/Department</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>England - Construction</td>
+                                <td class="text-right">30 hs</td>
+                            </tr>
+                            <tr>
+                                <td>England - Finance</td>
+                                <td class="text-right">8.30 hs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table class="modal-table">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td class="text-right"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
 
