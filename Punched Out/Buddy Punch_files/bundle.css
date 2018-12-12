@@ -72456,9 +72456,9 @@ td[aria-expanded="true"] .m-icon-chevron::after {
     padding: 0;
 }
 
-.timecard-table tbody tr:nth-child(3n)::before {
+.timecard-table tbody tr:nth-child(3n) td::before {
     display: block;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -72467,7 +72467,7 @@ td[aria-expanded="true"] .m-icon-chevron::after {
     background-color: #eceef1;
 }
 
-.timecard-table tbody .row-light:nth-child(3n)::before {
+.timecard-table tbody .row-light:nth-child(3n) td::before {
     background-color: #fff;
 }
 
