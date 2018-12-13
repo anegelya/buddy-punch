@@ -1,0 +1,232 @@
+
+    body.m-content--skin-light2 {
+        background-color: #ECEEF1;
+    }
+.login-options ul {
+    list-style: none;
+    line-height: normal;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    align-items: center;
+}
+
+.login-options li {
+    list-style-type: none;
+}
+
+.login-icons li {
+    margin-right: 5px;
+}
+
+.login-options .login-with {
+    position: absolute;
+    left: 0;
+}
+
+.m-login__form-sub {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+
+.g-recaptcha {
+    display: inline-block;
+}
+
+.row-logo {
+    border-bottom: 1px lightgray solid;
+    padding: 10px;
+    align-items: flex-end;
+}
+
+.m-login.m-login--5 .m-login__wrapper-2 {
+    padding-top: 2.5%;
+}
+
+.m-btn--icon > span {
+    display: inline
+}
+
+.m-topbar .support-dropdown dropdown-toggle span {
+    color: rgb(61, 59, 86);
+    font-weight: 500;
+}
+
+.support-dropdown .m-dropdown__wrapper {
+    width: 160px;
+}
+
+.username-dropdown, .m-topbar__userpic {
+    color: rgb(61, 59, 86);
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+.table-striped thead {
+    background: #F0F4F7;
+}
+
+.table-striped th {
+    background: #F0F4F7;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background: #F7F9FB;
+}
+
+.m-datatable.m-datatable--default > .m-datatable__table > .m-datatable__body .m-datatable__row.m-datatable__row--even > .m-datatable__cell {
+    background-color: #F7F9FB;
+}
+
+.m-datatable.m-datatable--default > .m-datatable__table > .m-datatable__body .m-datatable__row.m-datatable__row--hover:not(.m-datatable__row--active) > .m-datatable__cell {
+    background-color: #F5FAFE;
+}
+/*.dashboard .m-portlet .m-portlet__body {
+    padding: 0.2rem 0.55rem;
+}*/
+.m-subheader {
+    padding: 0;
+}
+
+.m-menu__inner {
+    padding-top: 20px !important
+}
+
+.m-datatable .highlight-last-col td:last-of-type {
+    background: #E8E8E8 !important;
+}
+
+.dataTable.highlight-last-col td:last-of-type {
+    background: #E8E8E8 !important;
+}
+
+.export-button {
+    width: 90px;
+}
+
+.export-buttons-label {
+    margin-bottom: 0;
+}
+
+.timeCardPunchImage {
+    width: 30px;
+}
+
+.AnyTime-pkr {
+    z-index: 9999
+}
+
+.add-pto td, .edit-pto td, .timecard-table td {
+    vertical-align: middle;
+}
+
+.m-wrapper {
+    padding-top: 25px;
+}
+
+.validation-summary-valid > ul {
+    list-style-type: none;
+}
+
+.input-validation-error, .input-validation-error:focus {
+    border-color: #E84556;
+}
+
+.field-validation-error {
+    color: #E84556;
+}
+
+.setup-progress hr {
+    margin-top: 0.5rem;
+    border-top: 2px solid #EEEEEE;
+}
+
+@media (min-width: 993px) {
+    .m-header.wizard {
+        height: 70px !important;
+    }
+}
+
+.m-header--fixed .m-body.wizard {
+    padding-top: 100px !important;
+}
+
+@media (max-width: 992px) {
+    .m-header--fixed-mobile .m-body.wizard {
+        padding-top: 70px !important;
+    }
+}
+
+.profile-mini-picture, .profile-medium-picture {
+    border-radius: 50% !important;
+}
+
+.m-login .m-portlet__head {
+    border: 0px;
+}
+
+.m-login .m-portlet__head-title {
+    width: 100%
+}
+
+.m-login .m-portlet__head-text {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.login-form .sub-title {
+    text-align: center;
+}
+
+.m-login {
+    display: flex;
+    justify-content: center;
+}
+
+.m-login__contanier {
+    width: 440px;
+}
+
+.login-copyright {    
+    text-align: center;
+    margin: 0 auto 30px 0;
+    padding: 10px;
+    color: #7a8ca5;
+    font-size: 13px;
+}
+
+.m-widget4 .m-widget4__item .m-widget4__info .m-widget4__title {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.m-widget4 .m-widget4__item .m-widget4__info .m-widget4__sub {
+    font-weight: 500;
+}
+
+@media (min-width: 993px) {
+    .m-header--fixed.m-header--minimize-off .m-header .m-header__top { height: 55px; }
+
+    .m-header .m-header__top { height: 55px; }
+
+    .m-header--fixed.m-header--minimize-off .m-header { height: 105px; }
+
+    .m-header--fixed .m-body {
+        padding-top: 110px !important
+    }
+
+    .m-header .m-header__bottom{
+        height:50px;
+    }
+}
+.m-datatable.m-datatable--default > .m-datatable__table > .m-datatable__foot .m-datatable__row > .m-datatable__cell, .m-datatable.m-datatable--default > .m-datatable__table > .m-datatable__head .m-datatable__row > .m-datatable__cell {
+    background-color: #F0F4F7;
+}
+
+.m-widget4 .m-widget4__item {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}

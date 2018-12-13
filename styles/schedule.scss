@@ -1,0 +1,477 @@
+﻿#schedule_calendar .fc-view-container {
+    margin: 20px;
+
+
+    th,
+    td,
+    thead,
+    tbody,
+    .fc-divider,
+    .fc-row,
+    .fc-content,
+    .fc-popover,
+    .fc-list-view,
+    .fc-list-heading td {
+        border-color: #CCC;
+    }
+
+    thead.fc-head td {
+        border: 0;
+        border-bottom: 3px solid #364150;
+    }
+
+
+    .fc-resource-area td {
+        border-bottom-color: #fff;
+    }
+
+    .fc-timeline .fc-head > tr > .fc-divider {
+        background-color: #fff;
+    }
+
+
+    .fc-body .fc-resource-area .fc-widget-content {
+        background: #f4f5f8;
+    }
+
+    tr[data-resource-id="0"],
+    tr[data-resource-id="0"] .fc-cell-content {
+        background: #F0F7FF !important;
+    }
+
+    .fc-event {
+        padding: 5px;
+        border-color: #CCC;
+        -webkit-box-shadow: 0px 1px 15px 1px rgba(77, 77, 92, 0.08);
+        -moz-box-shadow: 0px 1px 15px 1px rgba(77, 77, 92, 0.08);
+        box-shadow: 0px 1px 15px 1px rgba(77, 77, 92, 0.08);
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .fc-event .fc-bg {
+        opacity: 0 !important;
+    }
+
+    .fc-body .fc-today {
+        background: #FFF !important;
+    }
+
+    .fc-content th {
+        background-color: #FFF;
+        border: 0;
+    }
+
+    .fc-content::before {
+        display: none !important;
+    }
+
+    .fc-event .fc-content {
+        padding: 0 !important;
+    }
+
+    .fc-axis {
+        width: 120px !important;
+    }
+
+    sticky {
+        position: relative;
+        top: 81%;
+        width: 91.7%
+    }
+
+    .sticky-2 {
+        position: relative;
+        top: 87%;
+        width: 91.7%
+    }
+
+    .resourceTitle {
+        font-weight: bold;
+    }
+
+    .fc-timeline .fc-body .fc-scroller {
+        overflow-x: hidden !important;
+    }
+
+    .fc-scroller-canvas > .fc-content {
+        border: none !important;
+    }
+}
+
+
+/****/
+
+.fc-timeline .fc-divider {
+    width: 0px !important;
+}
+
+#schedule_calendar .fc-view-container .fc-timeline .fc-body .fc-scroller {
+    margin: 0px -20px 0px 0px !important;
+}
+
+.fc-unthemed .fc-toolbar .fc-button {
+    outline: 0 !important;
+    height: 2.25rem;
+    padding: 0 .75rem;
+    font-size: 1rem;
+}
+
+.fc-unthemed .fc-toolbar h2 {
+    font-size: 1rem !important;
+}
+
+.fc .fc-toolbar > .fc-right > * {
+    float: left;
+    margin-left: 0px;
+    border-radius: 0px !important;
+}
+
+.fc .fc-toolbar > .fc-right > .fc-timelineDay-button {
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+}
+
+.fc .fc-toolbar > .fc-right > .fc-month-button {
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+}
+
+.fc-header-toolbar .fc-center h2 {
+    font-weight: bold;
+}
+
+.fc-today-button {
+    text-transform: capitalize;
+    color: #364151 !important;
+}
+
+#schedule_calendar .fc-view-container .fc-event .fc-content {
+    text-align: left;
+}
+
+#schedule_calendar .fc-view-container .fc-event.shift-blue1 {
+    border-color: rgb(66, 110, 134) !important;
+    border-width: 1px !important;
+}
+
+#schedule_calendar .fc-view-container .fc-event.shift-blue1 .fc-title {
+    color: blue !important;
+    font-weight: bold;
+}
+
+.fc-timeline-event .fc-content .fc-hour-count {
+    padding: 1px 5px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    background: green;
+    float: right;
+    margin-right: 5px;
+}
+
+.fc-timeline-event .fc-content .fc-hour-count.red {
+    background: red;
+}
+
+.fc-ltr .fc-timeline-event .fc-title {
+    margin-left: 0px !important;
+}
+
+#m_calendar .fc-view-container .fc-content, #m_calendar .fc-view-container .fc-divider, #m_calendar .fc-view-container .fc-list-heading td, #m_calendar .fc-view-container .fc-list-view, #m_calendar .fc-view-container .fc-popover, #m_calendar .fc-view-container .fc-row, #m_calendar .fc-view-container tbody, #m_calendar .fc-view-container td, #m_calendar .fc-view-container th, #m_calendar .fc-view-container thead, #schedule_calendar .fc-view-container .fc-content, #schedule_calendar .fc-view-container .fc-divider, #schedule_calendar .fc-view-container .fc-list-heading td, #schedule_calendar .fc-view-container .fc-list-view, #schedule_calendar .fc-view-container .fc-popover, #schedule_calendar .fc-view-container .fc-row, #schedule_calendar .fc-view-container tbody, #schedule_calendar .fc-view-container td, #schedule_calendar .fc-view-container th, #schedule_calendar .fc-view-container thead {
+    border-color: #ebedf2;
+}
+
+#schedule_calendar .fc-view-container .fc-event.open-shift {
+    border: none !important;
+    border-left: 5px solid red !important;
+}
+
+#schedule_calendar .fc-view-container .fc-event.open-shift .fc-title {
+    font-weight: bold;
+    color: black !important;
+}
+
+#schedule_calendar .fc-view-container .fc-event.open-shift > div {
+    color: black !important;
+}
+
+#schedule_calendar .fc-view-container .open-shift.shift-blue1 {
+    border-left: 5px solid rgb(66, 110, 134) !important;
+}
+
+#schedule_calendar .fc-view-container .open-shift.shift-blue1 .fc-content > .fc-hour-count {
+    background: rgb(66, 110, 134) !important;
+    color: white !important;
+}
+
+.fc-description {
+    text-align: left;
+    margin-left: 10px;
+}
+
+#schedule_calendar .fc-view-container tr[data-resource-id="0"] .fc-cell-content {
+    padding-bottom: 15px;
+}
+
+#schedule_calendar .fc-view-container tr[data-resource-id="0"] {
+    height: 55px !important;
+}
+
+.fc-button {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.bootstrap-select > .dropdown-toggle.btn-light {
+    font-weight: bold !important;
+}
+
+.fc-cell-content .fc-cell-text {
+    font-size: 13px !important;
+}
+
+/*****/
+
+
+
+.m-badge.m-badge--blue1 {
+    background-color: #426E86;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--blue2 {
+    background-color: #128277;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--green1 {
+    background-color: #5B7065;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--green2 {
+    background-color: #ACBD78;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--red1 {
+    background-color: #D24136;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--red2 {
+    background-color: #FF6E82;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--orange1 {
+    background-color: #F47D4A;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--orange2 {
+    background-color: #CD7213;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--purple {
+    background-color: #727077;
+    color: #ffffff;
+}
+
+.m-badge.m-badge--yellow {
+    background-color: #F0D014;
+    color: #ffffff;
+}
+
+.m-radio.m-radio--state-success.m-radio--solid {
+    /*
+        &:hover > input:not([disabled]) ~ span {
+            background: $color-solid-bg-hover; 
+        }
+        */
+}
+
+.m-radio.m-radio--state-blue1.m-radio--solid > span {
+    background: #426E86;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-blue1.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-blue1.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-blue1.m-radio--solid > input:checked ~ span {
+    background: #426E86;
+}
+
+.m-radio.m-radio--state-blue2.m-radio--solid > span {
+    background: #128277;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-blue2.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-blue2.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-blue2.m-radio--solid > input:checked ~ span {
+    background: #128277;
+}
+/*green 1*/
+.m-radio.m-radio--state-green1.m-radio--solid > span {
+    background: #5B7065;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-green1.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-green1.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-green1.m-radio--solid > input:checked ~ span {
+    background: #5B7065;
+}
+/*green 2*/
+.m-radio.m-radio--state-green2.m-radio--solid > span {
+    background: #ACBD78;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-green2.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-green2.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-green2.m-radio--solid > input:checked ~ span {
+    background: #ACBD78;
+}
+
+/*red 1*/
+.m-radio.m-radio--state-red1.m-radio--solid > span {
+    background: #D24136;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-red1.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-red1.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-red1.m-radio--solid > input:checked ~ span {
+    background: #D24136;
+}
+/*red 2*/
+.m-radio.m-radio--state-red2.m-radio--solid > span {
+    background: #FF6E82;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-red2.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-red2.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-red2.m-radio--solid > input:checked ~ span {
+    background: #FF6E82;
+}
+
+/*orange 1*/
+.m-radio.m-radio--state-orange1.m-radio--solid > span {
+    background: #F47D4A;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-orange1.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-orange1.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-orange1.m-radio--solid > input:checked ~ span {
+    background: #F47D4A;
+}
+/*orange 2*/
+.m-radio.m-radio--state-orange2.m-radio--solid > span {
+    background: #CD7213;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-orange2.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-orange2.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-orange2.m-radio--solid > input:checked ~ span {
+    background: #CD7213;
+}
+
+.m-radio.m-radio--state-purple.m-radio--solid > span {
+    background: #727077;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-purple.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-purple.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-purple.m-radio--solid > input:checked ~ span {
+    background: #727077;
+}
+
+.m-radio.m-radio--state-yellow.m-radio--solid > span {
+    background: #F0D014;
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-yellow.m-radio--solid > span:after {
+    border: solid #ffffff;
+    background: #ffffff;
+}
+
+.m-radio.m-radio--state-yellow.m-radio--solid > input:focus ~ span {
+    border: 1px solid transparent !important;
+}
+
+.m-radio.m-radio--state-yellow.m-radio--solid > input:checked ~ span {
+    background: #F0D014;
+}
