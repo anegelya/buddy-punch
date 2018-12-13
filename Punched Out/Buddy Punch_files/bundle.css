@@ -4559,7 +4559,7 @@ body.swal2-toast-shown>.swal2-container.swal2-shown {
 @font-face {
     font-family: FontAwesome;
     src: url(fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0);
-    src: url(fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"), url(fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0) format("woff2"), url(fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0) format("woff"), url(fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0) format("truetype"), url(fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg");
+    src: url(fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"), url(fonts/font-awesome/fontawesome-webfont.woff2) format("woff2"), url(fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0) format("woff"), url(fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0) format("truetype"), url(fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg");
     font-weight: 400;
     font-style: normal
 }
@@ -7558,7 +7558,7 @@ body.swal2-toast-shown>.swal2-container.swal2-shown {
 @font-face {
     font-family: LineAwesome;
     src: url(fonts/line-awesome/line-awesome.eot?v=1.1.);
-    src: url(fonts/line-awesome/line-awesome.eot??v=1.1.#iefix) format("embedded-opentype"), url(fonts/line-awesome/line-awesome.woff2?v=1.1.) format("woff2"), url(fonts/line-awesome/line-awesome.woff?v=1.1.) format("woff"), url(fonts/line-awesome/line-awesome.ttf?v=1.1.) format("truetype"), url(fonts/line-awesome/line-awesome.svg?v=1.1.#fa) format("svg");
+    src: url(fonts/line-awesome/line-awesome.eot??v=1.1.#iefix) format("embedded-opentype"), url(fonts/line-awesome/line-awesome.woff2) format("woff2"), url(fonts/line-awesome/line-awesome.woff) format("woff"), url(fonts/line-awesome/line-awesome.ttf) format("truetype"), url(fonts/line-awesome/line-awesome.svg?v=1.1.#fa) format("svg");
     font-weight: 400;
     font-style: normal
 }
