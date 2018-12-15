@@ -72363,17 +72363,18 @@ table.dataTable thead .sorting_desc_disabled::before {
 }
 
 .m-badge.m-badge--wide {
-    color: #fff;
     padding: 0.3em 0.8em;
     border-radius: 1em;
     font-weight: bold;
 }
 
 .m-badge.m-badge--danger {
+    color: #fff;
     background-color: #e84556;
 }
 
 .m-badge.m-badge--success {
+    color: #fff;
     background-color: #00b47d;
 }
 
