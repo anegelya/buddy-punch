@@ -72435,39 +72435,31 @@ td[aria-expanded="true"] .m-icon-chevron::after {
     position: relative;
 }
 
-.timecard-table tbody tr:last-child {
-    border-top: 1px solid #364151;
+.timecard-table tbody .row-weekly {
+    border-top: 2px solid #364151;
+    border-bottom: 1.5px solid #364151;
 }
 
-.timecard-table tbody tr:nth-child(3n + 1) td {
-    border-bottom: 1px solid #eceef1;
-}
-
-.timecard-table tbody .row-light:nth-of-type(3n + 1) td {
-    border-bottom: 1px solid #fff;
-}
-
-.timecard-table tbody tr:nth-child(3n + 1) td[rowspan="2"] {
+.timecard-table tbody tr:last-of-type {
     border-bottom: 0;
 }
 
-.timecard-table tbody tr:nth-child(3n) td {
+.timecard-table tbody .row-note td {
     vertical-align: top;
     padding: 0;
 }
 
-.timecard-table tbody tr:nth-child(3n) td::before {
-    display: block;
-    position: relative;
+.timecard-table tbody .row-note td::before {
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 1px;
-    content: '';
     background-color: #eceef1;
 }
 
-.timecard-table tbody .row-light:nth-child(3n) td::before {
+.timecard-table tbody .row-light.row-note td::before {
     background-color: #fff;
 }
 

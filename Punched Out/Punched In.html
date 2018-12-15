@@ -787,77 +787,101 @@
                                                     <th>Type</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                
-                                                <tr class="row-white">
-                                                    <td rowspan="2" style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-22369" class="clickable" aria-expanded="true">
-                                                        <span class="m-icon m-icon-chevron"></span>
-                                                    </td>
-                                                    <td style="width: 20px;">
-                                                        <b> In</b>
-                                                    </td>
-                                                    <td>
-                                Wednesday, 12/12                    </td>
-                                                    <td>
-                                
-                                                                <span class="label label-warning">
-                                                                    Pending Approval
-                                                                </span>
-                                                    </td>
-                                                        <td></td>
-                                
-                                                                                                <td></td>
-                                                                            <td class="active"></td>
-                                                                            <td>
-                                
-                                
-                                                        </td>
-                                
-                                                </tr>
-                                                    <tr class="row-white">                       
-                                                        <td><b>Out</b></td>
-                                                        <td>
-                                Wednesday, 12/12                        </td>
-                                                        <td>
-                                
-                                                                    <span class="label label-warning">Pending Approval</span>
-                                                        </td>
-                                                        <td>
-                                                            0.000
-                                                        </td>
-                                                                                                            <td>
-                                3.000                                                                    <br>
-                                                                    <span class="badge badge-primary badge-roundless">Personal</span>
-                                                            </td>
-                                                        <td class="active"> </td>
-                                                            <td></td>
-                                
-                                                    </tr>
-                                                <tr class="row-white">
-                                                    <td></td>
-                                                    <td colspan="4">
-                                                        <div class="timecard-table__notes accordion-targets-22369 collapse show" style="">
+                                        <tbody>                   
+                                            <tr class="row-white">
+                                                <!-- First td of first row within punch 
+                                                    has rowspan="2" for clickable chevron icon, 
+                                                    that opens Notes section for this punch.
+                                                    NOTE: This is ONLY neccesery if
+                                                    there are IN and ON rows for Punch.
+                                                    In other case should be deleted
+                                                    -->
+                                                <td rowspan="2"
+                                                    style="width: 20px;" 
+                                                    data-toggle="collapse" 
+                                                    data-target=".accordion-targets-22369" 
+                                                    class="clickable">
+                                                    <span class="m-icon m-icon-chevron"></span>
+                                                </td>
+                                                <td>
+                                                    <b>In</b>
+                                                </td>
+                                                <td>
+                                                    Wednesday, 12/12 
+                                                </td>
+                                                <td>
+                                                    <span class="label label-warning">
+                                                        Pending Approval
+                                                    </span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="active"></td>
+                                                <!-- Also below is other td that should be with rowspan="2"
+                                                    This is Location cell for punch.
+                                                    NOTE: This is ONLY neccesery if
+                                                    there are IN and ON rows for Punch.
+                                                    In other case should be deleted -->
+                                                <td rowspan="2"></td>
+                                            </tr>
+                                            <tr class="row-white">
+                                                <!-- In the second row for default punch
+                                                    the first and last td`s should be missed. That's because 
+                                                    of rowspan="2" from row above.
+                                                    So we have only 6 td insted of 8 
+                                                    NOTE: This is ONLY neccesery if
+                                                    there are IN and ON rows for Punch.
+                                                    In other case should be deleted-->
+                                                <td>
+                                                    <b>Out</b>
+                                                </td>
+                                                <td>
+                                                    Wednesday, 12/12
+                                                </td>
+                                                <td>
+                                                    <span class="label label-warning">Pending Approval</span>
+                                                </td>
+                                                <td>
+                                                    0.000
+                                                </td>
+                                                <td>
+                                                    3.000 
+                                                    <br>
+                                                    <span class="badge badge-primary badge-roundless">Personal</span>
+                                                </td>
+                                                <td class="active"></td>
+                                            </tr>
+                                            <tr class="row-white row-note">
+                                                <!-- In Note Row we have only 4 td
+                                                    Second has colspan="4"
+                                                    Third has colspan="2"
+                                                    NOTE: Note row template are the same
+                                                    for punch and time entries
+                                                    Also additional class 'row-note' is needed -->
+                                                <td></td>
+                                                <td colspan="4">
+                                                    <div class="timecard-table__notes accordion-targets-22369 collapse">
+                                                        <div>
+                                                            <div><b>Notes</b></div>
+                                                            <div><b>In:</b> Shift automatically closed after 10 minutes.</div>
+                                                            <div><b>Out:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td colspan="2">
+                                                    <div class="timecard-table__notes accordion-targets-22369 collapse">
+                                                        <div>
                                                             <div>
-                                                                <div><b>Notes</b></div>
-                                                                <div><b>In:</b> Shift automatically closed after 10 minutes.</div>
-                                                                <div><b>Out:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                                <b>Break</b>
+                                                            </div>
+                                                            <div>
+                                                                4:38 AM - Time: 00:30
                                                             </div>
                                                         </div>
-                                                    </td>
-                                                    <td colspan="3">
-                                                        <div class="timecard-table__notes accordion-targets-22369 collapse show" style="">
-                                                            <div>
-                                                                <div>
-                                                                    <b>Break</b>
-                                                                </div>
-                                                                <div>
-                                                                    4:38 AM - Time: 00:30
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td></td>
-                                                </tr>
+                                                    </div>
+                                                </td>
+                                                <td></td>
+                                            </tr>
                                                 <tr class="row-light">
                                                     <td rowspan="2" style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-22367" class="clickable">
                                                         <span class="m-icon m-icon-chevron"></span>
@@ -874,7 +898,7 @@
                                 
                                                                                                 <td></td>
                                                                             <td class="active"></td>
-                                                                            <td>
+                                                                            <td rowspan="2">
                                                                 <div>Location: Alaska</div>
                                 
                                                                 <div>Department: Expenses</div>
@@ -897,12 +921,11 @@
                                                                                                             <td>
                                                                                             </td>
                                                         <td class="active"> </td>
-                                                            <td></td>
                                 
                                                     </tr>
-                                                <tr class="row-light">
+                                                <tr class="row-light row-note">
                                                     <td></td>
-                                                    <td colspan="5">
+                                                    <td colspan="4">
                                                         <div class="collapse timecard-table__notes accordion-targets-22367">
                                                             <div>
                                                                 <div><b>Notes</b></div>
@@ -911,7 +934,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="2">
                                                         <div class="collapse timecard-table__notes accordion-targets-22367">
                                                             <div>
                                                                 <div>
@@ -926,7 +949,7 @@
                                                     <td></td>
                                                 </tr>
                                                 <tr class="row-white">
-                                                    <td rowspan="2" style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-22370" class="clickable">
+                                                    <td style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-22370" class="clickable">
                                                         <span class="m-icon m-icon-chevron"></span>
                                                     </td>
                                                     <td style="width: 20px;">
@@ -949,9 +972,9 @@
                                                         </td>
                                 
                                                 </tr>
-                                                <tr class="row-white">
+                                                <tr class="row-white row-note">
                                                     <td></td>
-                                                    <td colspan="5">
+                                                    <td colspan="4">
                                                         <div class="collapse timecard-table__notes accordion-targets-22370">
                                                             <div>
                                                                 <div><b>Notes</b></div>
@@ -960,7 +983,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="2">
                                                         <div class="collapse timecard-table__notes accordion-targets-22370">
                                                             <div>
                                                                 <div>
@@ -975,7 +998,7 @@
                                                     <td></td>
                                                 </tr>
                                                 <tr class="row-light">
-                                                    <td rowspan="2" style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-22368" class="clickable">
+                                                    <td style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-22368" class="clickable">
                                                         <span class="m-icon m-icon-chevron"></span>
                                                     </td>
                                                     <td style="width: 20px;">
@@ -998,9 +1021,9 @@
                                                         </td>
                                 
                                                 </tr>
-                                                <tr class="row-light">
+                                                <tr class="row-light row-note">
                                                     <td></td>
-                                                    <td colspan="5">
+                                                    <td colspan="4">
                                                         <div class="collapse timecard-table__notes accordion-targets-22368">
                                                             <div>
                                                                 <div><b>Notes</b></div>
@@ -1009,7 +1032,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="2">
                                                         <div class="collapse timecard-table__notes accordion-targets-22368">
                                                             <div>
                                                                 <div>
@@ -1035,11 +1058,11 @@
                                                     <td>
                                 
                                                     </td>
-                                                        <td></td>
                                 
                                                                                                 <td></td>
+                                                                                                <td></td>
                                                                             <td class="active"></td>
-                                                                            <td>
+                                                                            <td rowspan="2">
                                                                 <div>Location: Alaska</div>
                                 
                                                                 <div>Department: Expenses</div>
@@ -1061,12 +1084,11 @@
                                                                                                             <td>
                                                                                             </td>
                                                         <td class="active"> </td>
-                                                            <td></td>
                                 
                                                     </tr>
-                                                <tr class="row-white">
+                                                <tr class="row-white row-note">
                                                     <td></td>
-                                                    <td colspan="5">
+                                                    <td colspan="4">
                                                         <div class="collapse timecard-table__notes accordion-targets-22371">
                                                             <div>
                                                                 <div><b>Notes</b></div>
@@ -1075,7 +1097,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="2">
                                                         <div class="collapse timecard-table__notes accordion-targets-22371">
                                                             <div>
                                                                 <div>
@@ -1105,7 +1127,7 @@
                                 
                                                                                                 <td></td>
                                                                             <td class="active"></td>
-                                                                            <td>
+                                                                            <td rowspan="2">
                                                                 <div>Location: Alaska</div>
                                 
                                                                 <div>Department: Expenses</div>
@@ -1127,12 +1149,11 @@
                                                                                                             <td>
                                                                                             </td>
                                                         <td class="active">4.234 </td>
-                                                            <td></td>
                                 
                                                     </tr>
-                                                <tr class="row-light">
+                                                <tr class="row-light row-note">
                                                     <td></td>
-                                                    <td colspan="5">
+                                                    <td colspan="4">
                                                         <div class="collapse timecard-table__notes accordion-targets-22372">
                                                             <div>
                                                                 <div><b>Notes</b></div>
@@ -1141,7 +1162,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="2">
                                                         <div class="collapse timecard-table__notes accordion-targets-22372">
                                                             <div>
                                                                 <div>
@@ -1155,7 +1176,7 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
-                                                    <tr class="m--font-boldest">
+                                                    <tr class="m--font-boldest row-weekly">
                                 
                                                         <td colspan="3">
                                                             Week of 12/8-12/14 Sub Total
@@ -1171,7 +1192,7 @@
                                 
                                                     </tr>
                                                 <tr class="row-white">
-                                                    <td rowspan="2" style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-22374" class="clickable">
+                                                    <td style="width: 20px;" data-toggle="collapse" data-target=".accordion-targets-22374" class="clickable">
                                                         <span class="m-icon m-icon-chevron"></span>
                                                     </td>
                                                     <td style="width: 20px;">
@@ -1194,9 +1215,9 @@
                                                         </td>
                                 
                                                 </tr>
-                                                <tr class="row-white">
+                                                <tr class="row-white row-note">
                                                     <td></td>
-                                                    <td colspan="5">
+                                                    <td colspan="4">
                                                         <div class="collapse timecard-table__notes accordion-targets-22374">
                                                             <div>
                                                                 <div><b>Notes</b></div>
@@ -1205,7 +1226,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="2">
                                                         <div class="collapse timecard-table__notes accordion-targets-22374">
                                                             <div>
                                                                 <div>
@@ -1238,7 +1259,7 @@
                                 
                                                                                                 <td></td>
                                                                             <td class="active"></td>
-                                                                            <td>
+                                                                            <td rowspan="2">
                                 
                                 
                                                         </td>
@@ -1262,12 +1283,11 @@
                                                                     <span class="badge badge-primary badge-roundless">Holiday</span>
                                                             </td>
                                                         <td class="active">8.000 </td>
-                                                            <td></td>
                                 
                                                     </tr>
-                                                <tr class="row-light">
+                                                <tr class="row-light row-note">
                                                     <td></td>
-                                                    <td colspan="5">
+                                                    <td colspan="4">
                                                         <div class="collapse timecard-table__notes accordion-targets-22373">
                                                             <div>
                                                                 <div><b>Notes</b></div>
@@ -1276,7 +1296,7 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="2">
                                                         <div class="collapse timecard-table__notes accordion-targets-22373">
                                                             <div>
                                                                 <div>
@@ -1290,7 +1310,7 @@
                                                     </td>
                                                     <td></td>
                                                 </tr>
-                                                    <tr class="m--font-boldest">
+                                                    <tr class="m--font-boldest row-weekly">
                                 
                                                         <td colspan="3">
                                                             Week of 12/15-12/21 Sub Total
