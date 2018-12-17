@@ -31584,6 +31584,9 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
         }
     ];
 
+    // FIXME: Here is json with PTO. Should be removed
+    var ptoEvents = [{"Hours":24,"Title":"Janey Doe","StaffId":"12060","Start":"\/Date(1544918400000)\/","Code":"Vac","EarningCodeId":20,"Id":22376,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":24,"Title":"James Cummingham","StaffId":"14185","Start":"\/Date(1544918400000)\/","Code":"Vac","EarningCodeId":20,"Id":22377,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":3,"Title":"Will Byers","StaffId":"14218","Start":"\/Date(1544572800000)\/","Code":"Personal","EarningCodeId":2443,"Id":22369,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":2,"StatusName":"Approved","StatusId":2,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":8,"Title":"Will Byers","StaffId":"14218","Start":"\/Date(1545091200000)\/","Code":"Holiday","EarningCodeId":118,"Id":22373,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":10,"Title":"Will Byers","StaffId":"14218","Start":"\/Date(1544832000000)\/","Code":"Sick","EarningCodeId":69,"Id":22375,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true}];
+
     var sources = {
         pto: function (start, end, timezone, callback) {
             var ptoTypeIds = $('#pto-select').val();
@@ -31604,7 +31607,19 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                         return key;
                     }));
                 }).fail(function () {
-                    callback([]);
+                    // FIXME: Here is the function. Should be removed
+                    callback(ptoEvents.map(function (pto) {
+                        //console.log(value);
+                        var key = toLowerCaseKeys(pto);
+                        key.id = "pto|" + key.id;
+                        key.resourceId = key.staffid;
+                        key.end = key.start;
+                        key.eventTypeId = eventTypeEnum.PTO;
+                        key.published = true;
+                        console.log('PTO: ' + JSON.stringify(key));
+                        key.editable = false;
+                        return key;
+                    }));
                 });
         },
         schedule: function (start, end, timezone, callback) {
@@ -31708,14 +31723,13 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 }).always(function () {
                     refreshUi();
                 });
-                //}
 
             },
             eventResize: function (event, delta, revertFunc) {
 
                 var shift = mapEventToShiftDto(event);
                 scheduleService.UpdateShift(event.id, shift).done(function (data) {
-                    //notificationService.ShowSuccess("Shift Updated");
+                    // notificationService.ShowSuccess("Shift Updated");
                     $('#schedule_calendar').fullCalendar('updateEvent', event);
                 }).fail(function () {
                     //alert("UpdateShift failed!");
@@ -31765,53 +31779,25 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                     //$('.fc-time-area .fc-content .fc-rows table tbody tr').eq(0).find(".fc-timeline-event").append('<div class="fc-description">UK-Construction</div>');
                 }
 
-                $("#schedule_calendar .fc-view-container .fc-event .fc-content").append('<span class="fc-hour-count">8hs</span>');
                 $(".fc-resource-area .resourceTitle").parent().find(".resourceTotalHour").remove();
-                $(".fc-resource-area .resourceTitle").after('<br/><span class="resourceTotalHour" style="font-size:11px;color:#a3a5ad;">Scheduled <span class="scheduled_hrs">0 </span>hrs</span>');
+                $(".fc-resource-area .resourceTitle").after('<br/><span class="resourceTotalHour" style="font-size:11px;">Scheduled <span class="scheduled_hrs">0 </span>hrs</span>');
                 $(".fc-resource-area .resourceTitle").eq(0).parent().find(".resourceTotalHour").remove();
-
-                $("#schedule_calendar .fc-view-container .fc-event").find("div:nth-child(7)").addClass("position1");
-
-                $("#schedule_calendar .fc-view-container .fc-event").each(function () {
-
-                    //console.log($(this).css("borderColor")+"<br/>");
-
-                    if ($(this).find(".position1").text().length > 0) {
-                        if (($(this).find("div:nth-child(5)").text().length > 0) || ($(this).find("div:nth-child(6)").text().length > 0)) {
-                            $(this).find("div:nth-child(5)").before('<div class="fc-details">(' + $(this).find("div:nth-child(5)").text() + ',' + $(this).find("div:nth-child(6)").text() + ')</div>');
-                            $(this).find("div:nth-child(6)").text("");
-                            $(this).find("div:nth-child(7)").text("");
-                        }
-                        $(this).find(".fc-title").before('<i style="font-size:16px;" class="fa fa-clock-o" aria-hidden="true"></i>');
-                        $(this).find(".fa").after('<span class="position" style="margin-left:10px;font-size:12px;font-weight:bold;">' + $(this).find(".position1").text() + '</span>');
-                        $(this).find(".fc-title").clone().insertAfter($(this).find(".fc-content"));
-                        $(this).find(".fc-title").eq(0).remove();
-                        $(this).find(".position1").remove();
-
-                    }
-
-                    if (($(this).find("div:nth-child(5)").text().length > 0)) {
-                        $(this).find("div:nth-child(5)").before('<div class="fc-details">(' + $(this).find("div:nth-child(5)").text() + ',' + $(this).find("div:nth-child(6)").text() + ' )</div>');
-                        $(this).find("div:nth-child(6)").text("");
-                        $(this).find("div:nth-child(7)").text("");
-                    }
-                    console.log($(this).find(".fc-title").text() + " ");
-
-                });
             },
             selectable: true,
             defaultView: 'timelineWeek',
             views: {
                 timelineDay: {
-                    slotDuration: '1:00'
+                    slotDuration: '1:00',
+                    slotWidth: 75
                 },
                 timelineWeek: {
                     slotDuration: '24:00',
-                    slotLabelFormat: 'ddd M/D'
+                    slotLabelFormat: 'ddd M/D',
+                    slotWidth: 150
                 }
             },
             resourceLabelText: 'Employees',
-            resourceAreaWidth: '15%',
+            resourceAreaWidth: '25%',
             //resourceGroupField: 'groupId',
 
             header: {
@@ -31881,54 +31867,101 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 }
             },
             eventRender: function (event, element, view) {
-                //console.log(event);
+
+                var title,
+                    classes,
+                    css = {},
+                    hoursCount,
+                    hoursCountCss = {},
+                    eventDetails,
+                    positionDetails;
+                
                 if (event.eventTypeId === eventTypeEnum.PTO) {
-                    element.css('background-color', '#CCCCCC');
-                    element.find('.fc-title').css('color', '#5F5F5F');
-                    element.css('color', '#5F5F5F');
+
+                    title = view.name === "month" ? event.title : event.code;
+                    classes = 'event-pto event-pto-' + event.code.toLowerCase();
+                    hoursCount = event.hours;
+                    eventDetails = (view.name === "month" ? (event.code + " ") : "") + "8AM - 5PM" // FIXME: Replace this dummy text
+
                 } else {
 
-                    console.log(element);
-                    element.css('cursor', 'pointer');
-                    if (event.shiftcolorname != undefined) {
-                        element.addClass('shift-' + event.shiftcolorname.toLowerCase());
-                    } else {
-                        event.shiftcolorcode = '#aaa';
-                    }
-                    if (event.published) {
-                        element.css('background-color', event.shiftcolorcode);
-                        element.css('color', '#FFF');
-                        element.find('.fc-title').css('color', '#FFF');
-                        element.css('border-color', event.shiftcolorcode);
-                        element.css('border-width', '2px');
-                    } else {
-                        element.css('border-color', event.shiftcolorcode);
-                        element.css('color', event.shiftcolorcode);
-                        element.find('.fc-title').css('color', event.shiftcolorcode);
-                        element.css('border-width', '2px');
-                    }
+                    var duration = moment.duration(event.end - event.start).hours();
+                    hoursCount = duration;
 
-                    if (view.name === "month") {
-                        var staffName = event.staffname;
-                        if (staffName === 'Open Shifts') {
-                            staffName = 'Open Shift';
+                    if (event.staffname === 'Open Shifts') {
+
+                        classes = 'event-openshift';
+                        eventDetails = event.locationname ? (event.locationname) : "";
+                        eventDetails += event.jobcodename ? (" - " + event.jobcodename) : "";
+                        hoursCountCss = {'background-color': event.shiftcolorcode};
+
+                        // Create Open Shift Label
+                        $("<span/>", {
+                            "class": "event-openshift-label"
+                        })
+                        .css('background-color', event.shiftcolorcode)
+                        .appendTo(element);
+
+                    } else {
+
+                        if (event.published) {
+
+                            classes = 'event-published';
+                            css = {
+                                'background-color': event.shiftcolorcode,
+                                'border-color': event.shiftcolorcode,
+                            };
+                            hoursCountCss = {'color': event.shiftcolorcode};
+
+                        } else {
+
+                            classes = 'event-unpublished';
+                            css = {
+                                'color': event.shiftcolorcode,
+                                'border-color': event.shiftcolorcode,
+                            };
+                            hoursCountCss = {'background-color': event.shiftcolorcode};
                         }
-                        var staffLine = $("<div/>").text(staffName);
-                        element.append(staffLine);
-                    } else {
 
+                        if (view.name === "month") 
+                            title = event.staffname;
 
-                        //element.css('background-color', '#FFF');
-                        //var timeLine = $("<div/>");
-                        var locationLine = $("<div/>").text(event.locationname);
-                        element.append(locationLine);
-                        var jobCodeLine = $("<div/>").text(event.jobcodename);
-                        element.append(jobCodeLine);
-                        var positionLine = $("<div/>").text(event.positionname);
-                        element.append(positionLine);
+                        eventDetails = view.name === "month" ? event.title : "";
+                        eventDetails += event.locationname ? ((view.name === "month" ? " / " : "") + event.locationname) : "";
+                        eventDetails += event.jobcodename ? (" - " + event.jobcodename) : "";
+
+                        positionDetails = event.positionname;
                     }
-
                 }
+
+                // Replace title
+                element.find('.fc-title').text(title);
+
+                // Style element
+                element.css(css);
+                element.addClass(classes);
+
+                // Create hours count tag
+                $("<span/>", {
+                    "class": "fc-hour-count",
+                    "text": hoursCount + " hs"
+                })
+                .css(hoursCountCss)
+                .insertAfter(element.find('.fc-title'));
+
+                // Create details line
+                $("<div/>", {
+                    "class": "fc-details",
+                    "text": eventDetails
+                })
+                .appendTo(element);
+
+                // Create position details line
+                $("<div/>", {
+                    "class": "fc-details fc-position",
+                    text: positionDetails
+                })
+                .appendTo(element);
      
                 return element;
             },

@@ -742,13 +742,13 @@ fbq('track', 'PageView');
 
 
 
-<div class="m-portlet m-portlet--metal m-portlet--head-solid-bg m-portlet--responsive-mobile m-portlet--mobile" style="background: #f4f5f8; border-color: #f4f5f8">
-     <div class="m-portlet__head" style="background: #f4f5f8; border-color: #f4f5f8">
+<div class="m-portlet m-portlet--metal fc-filter-header m-portlet--head-solid-bg m-portlet--responsive-mobile m-portlet--mobile" style="background: #f4f5f8; border-color: #f4f5f8">
+     <div class="m-portlet__head" style="background: #f7fafc; border-color: #f7fafc">
          <div class="m-portlet__head-caption">
-             <div class="form-group m-form__group row">
+             <div class="m-form__group row align-items-center ">
                  <label class="col-form-label col-lg-1 col-sm-2"><span class="la la-filter" style="font-size: 30px;"></span></label>
 
-                 <div class="col-lg-2 col-md-9 col-sm-12">
+                 <div class="col-lg-auto col-md-auto col-sm-12">
                      <div class="dropdown bootstrap-select form-control m-bootstrap-select locations-select">
                          <div class="dropdown bootstrap-select show-tick form-control m-bootstrap-select m-bootstrap-select--solid m_">
                             <select id="location-select" class="form-control m-bootstrap-select m-bootstrap-select--solid m_selectpicker" data-live-search="true" data-actions-box="true" data-selected-text-format="count &gt; 1" data-count-selected-text="{0} locations selected" title="Locations" multiple="multiple" tabindex="-98">
@@ -765,7 +765,7 @@ fbq('track', 'PageView');
                         </div>
                      </div>
                  </div>
-                 <div class="col-lg-2 col-md-9 col-sm-12">
+                 <div class="col-lg-auto col-md-auto col-sm-12">
                      <div class="dropdown bootstrap-select form-control m-bootstrap-select departments-select">
                          <div class="dropdown bootstrap-select show-tick form-control m-bootstrap-select m-bootstrap-select--solid m_">
                          <select id="department-select" class="form-control m-bootstrap-select m-bootstrap-select--solid m_selectpicker" data-live-search="true" data-actions-box="true" data-selected-text-format="count &gt; 1" data-count-selected-text="{0} department codes selected" title="Department Codes" multiple="multiple" tabindex="-98">
@@ -782,7 +782,7 @@ fbq('track', 'PageView');
                         </div>
                      </div>
                  </div>
-                 <div class="col-lg-2 col-md-9 col-sm-12">
+                 <div class="col-lg-auto col-md-auto col-sm-12">
                      <div class="dropdown bootstrap-select form-control m-bootstrap-select positions-select">
                          <div class="dropdown bootstrap-select show-tick form-control m-bootstrap-select m-bootstrap-select--solid m_"><select id="position-select" class="form-control m-bootstrap-select m-bootstrap-select--solid m_selectpicker" data-live-search="true" data-actions-box="true" data-selected-text-format="count &gt; 1" data-count-selected-text="{0} positions selected" title="Positions" multiple="multiple" tabindex="-98">
                                  <option value="1">Vacation</option>
@@ -790,7 +790,7 @@ fbq('track', 'PageView');
                          </div>
                      </div>
                  </div>
-                 <div class="col-lg-2 col-md-9 col-sm-12">
+                 <div class="col-lg-auto col-md-auto col-sm-12">
                      <div class="dropdown bootstrap-select form-control m-bootstrap-select ptos-select">
                          <div class="dropdown bootstrap-select show-tick form-control m-bootstrap-select m-bootstrap-select--solid m_"><select id="pto-select" class="form-control m-bootstrap-select m-bootstrap-select--solid m_selectpicker" data-live-search="false" data-actions-box="true" data-selected-text-format="count &gt; 1" data-count-selected-text="{0} pto types selected" title="PTO" multiple="multiple" tabindex="-98">
                                  <option value="118">Holiday</option>
@@ -801,7 +801,7 @@ fbq('track', 'PageView');
                          </div>
                      </div>
                  </div>
-                 <div class="col-lg-2 col-md-9 col-sm-12">
+                 <div class="col-lg-auto col-md-auto col-sm-12">
                      <div class="dropdown bootstrap-select form-control m-bootstrap-select scheduleemployees-select">
                          <div class="dropdown bootstrap-select show-tick form-control m-bootstrap-select m-bootstrap-select--solid m_"><select id="employee-select" class="form-control m-bootstrap-select m-bootstrap-select--solid m_selectpicker" data-live-search="true" data-actions-box="true" data-selected-text-format="count &gt; 1" data-count-selected-text="{0} employees selected" title="Employees" multiple="multiple" tabindex="-98">
                                  <option value="14218">Will Byers</option>
@@ -930,7 +930,9 @@ fbq('track', 'PageView');
 
                                             </td>
                                             <td>
-                                                <input autocomplete="off" class="form-control m-input timepicker" id="StartTime" name="StartTime" type="text" value="8:00 AM">
+                                                <div class="dropdown bootstrap-select form-control m-bootstrap-select m_">
+                                                    <input autocomplete="off" class="form-control m-input timepicker" id="StartTime" name="StartTime" type="text" value="8:00 AM">
+                                                </div>
                                                 <span class="field-validation-valid" data-valmsg-for="StartTime" data-valmsg-replace="true"></span>
                                                 <input data-val="true" data-val-date="The field StartDateTime must be a date." id="StartDateTime" name="StartDateTime" type="hidden" value="1/1/0001 12:00:00 AM">
                                             </td>
@@ -960,7 +962,9 @@ fbq('track', 'PageView');
 
                                             </td>
                                             <td>
-                                                <input autocomplete="off" class="form-control m-input timepicker" id="EndTime" name="EndTime" type="text" value="5:00 PM">
+                                                <div class="dropdown bootstrap-select form-control m-bootstrap-select m_">
+                                                    <input autocomplete="off" class="form-control m-input timepicker m-bootstrap-select m_selectpicker" id="EndTime" name="EndTime" type="text" value="5:00 PM">
+                                                </div>
                                                 <span class="field-validation-valid" data-valmsg-for="EndTime" data-valmsg-replace="true"></span>
                                                 <input data-val="true" data-val-date="The field EndDateTime must be a date." id="EndDateTime" name="EndDateTime" type="hidden" value="1/1/0001 12:00:00 AM">
                                             </td>
@@ -973,11 +977,11 @@ fbq('track', 'PageView');
 
                                 <div class="col-lg-8 col-sm-12">
                                     <div class="m-checkbox-inline">
-                                        <label class="m-checkbox m-checkbox--square">
+                                        <label class="m-checkbox m-checkbox">
                                             <input type="checkbox" id="btnDurationBreak"> Duration
                                             <span></span>
                                         </label>
-                                        <label class="m-checkbox m-checkbox--square">
+                                        <label class="m-checkbox m-checkbox">
                                             <input type="checkbox" id="btnStartEndBreak"> Start/End
                                             <span></span>
                                         </label>                                      
@@ -1171,8 +1175,8 @@ fbq('track', 'PageView');
                     </div>
 </form>            </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary " data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary btnSave">Add Shift</button>
+                    <button class="btn m-btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-dark btnSave">Add Shift</button>
                 </div>
 
             </div>
@@ -1232,7 +1236,8 @@ fbq('track', 'PageView');
                         <option value="14093">Bart Star</option>
                         <option value="14208">Jon Trump</option>
                         <option value="14211">Sam Wise</option>
-                </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" data-id="StaffId" title="Open Shift"><div class="filter-option"><div class="filter-option-inner">Open Shift</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                </select>
+            </div>
             </div>
         </div>
         <div class="form-group m-form__group row">
@@ -1272,7 +1277,9 @@ fbq('track', 'PageView');
 
                         <td>
                             <div class="dropdown bootstrap-select form-control m-bootstrap-select ">
-                                <div class="dropdown bootstrap-select form-control m-bootstrap-select m_"><select id="EndDate" name="EndDate" class="form-control m-bootstrap-select m_selectpicker" data-live-search="false" data-actions-box="false" data-max-options="1" tabindex="-98"></select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" data-id="EndDate" title="Nothing selected"><div class="filter-option"><div class="filter-option-inner">Nothing selected</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                                <div class="dropdown bootstrap-select form-control m-bootstrap-select m_">
+                                    <select id="EndDate" name="EndDate" class="form-control m-bootstrap-select m_selectpicker" data-live-search="false" data-actions-box="false" data-max-options="1" tabindex="-98"></select>
+                                </div>
                             </div>
                             <span class="field-validation-valid" data-valmsg-for="EndDate" data-valmsg-replace="true"></span>
 
@@ -1291,11 +1298,11 @@ fbq('track', 'PageView');
 
             <div class="col-lg-8 col-sm-12">
                 <div class="m-checkbox-inline">
-                    <label class="m-checkbox m-checkbox--square">
+                    <label class="m-checkbox m-checkbox">
                         <input type="checkbox" id="btnDurationBreak"> Duration
                         <span></span>
                     </label>
-                    <label class="m-checkbox m-checkbox--square">
+                    <label class="m-checkbox m-checkbox">
                         <input type="checkbox" id="btnStartEndBreak"> Start/End
                         <span></span>
                     </label>
@@ -1373,7 +1380,8 @@ fbq('track', 'PageView');
                             <option value="22">Loc 5</option>
                             <option value="16">New York City</option>
                             <option value="17">PHX</option>
-                    </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" data-id="LocationId" title="Select"><div class="filter-option"><div class="filter-option-inner">Select</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                    </select>
+                </div>
                 </div>
 
                 <span class="field-validation-valid" data-valmsg-for="LocationId" data-valmsg-replace="true"></span>
@@ -1395,7 +1403,7 @@ fbq('track', 'PageView');
                             <option value="1019">Sanitation</option>
                             <option value="1022">Taco Bell</option>
                             <option value="1018">XYZ Company</option>
-                    </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" data-id="JobCodeId" title="Select"><div class="filter-option"><div class="filter-option-inner">Select</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                    </select></div>
                 </div>
 
                 <span class="field-validation-valid" data-valmsg-for="JobCodeId" data-valmsg-replace="true"></span>
@@ -1409,7 +1417,8 @@ fbq('track', 'PageView');
                 <div class="dropdown bootstrap-select form-control m-bootstrap-select ">
                     <div class="dropdown bootstrap-select show-tick form-control m-bootstrap-select m_"><select id="PositionId" name="PositionId" class="form-control m-bootstrap-select m_selectpicker" data-live-search="true" data-actions-box="false" title="Select" data-max-options="1" multiple="multiple" tabindex="-98">
                             <option value="1">Vacation</option>
-                    </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" data-id="PositionId" title="Select"><div class="filter-option"><div class="filter-option-inner">Select</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search"></div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                    </select>
+                </div>
                 </div>
                 <span class="field-validation-valid" data-valmsg-for="StaffId" data-valmsg-replace="true"></span>
             </div>
@@ -1453,7 +1462,8 @@ fbq('track', 'PageView');
                         <option title="&lt;span class='m-badge m-badge--wide m-badge--rounded m-badge--blue2'&gt;&lt;/span&gt; Color" data-content="&lt;span class='m-badge m-badge--wide m-badge--rounded m-badge--blue2'&gt;&lt;/span&gt;" value="9">
                             Blue2
                         </option>
-                </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" data-id="ShiftColorId" title="Color"><div class="filter-option"><div class="filter-option-inner">Color</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                </select>
+            </div>
             </div>
             <div class="col-lg-4 col-sm-12 m--padding-left-5">
                 <div class="dropdown bootstrap-select show-tick form-control m-bootstrap-select m_"><select id="SelectedDays" name="SelectedDays" class="form-control m-bootstrap-select m_selectpicker" data-live-search="false" data-actions-box="false" title="Copy Shift to..." data-selected-text-format="count &gt; 1" data-count-selected-text="Copy to {0} days" data-header="Copy Shift to" multiple="multiple" tabindex="-98">
@@ -1464,7 +1474,7 @@ fbq('track', 'PageView');
                         <option title="Copy to Sun" value="0">Sun</option>
                         <option title="Copy to Mon" value="1">Mon</option>
                         <option title="Copy to Tue" value="2">Tue</option>
-                </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" data-id="SelectedDays" title="Copy Shift to..."><div class="filter-option"><div class="filter-option-inner">Copy Shift to...</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="popover-title"><button type="button" class="close" aria-hidden="true">×</button>Copy Shift to</div><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                </select></div>
                 
             </div>
         </div>
@@ -1483,11 +1493,10 @@ fbq('track', 'PageView');
     </div>
 </form></div>
 <div class="modal-footer">
-    <button class="btn btn-secondary " data-dismiss="modal">Cancel</button>
                 
-    <button class="btn btn-danger btnDelete">Delete</button>
+    <button class="btn btn-danger btnDelete">Remove Shift</button>
                          
-    <button class="btn btn-primary btnSave">Save</button>
+    <button class="btn btn-dark btnSave">Save</button>
                                        
              
 </div>
@@ -1675,16 +1684,16 @@ fbq('track', 'PageView');
     <script type="text/javascript" src="Buddy%20Punch_files/fullcalendar.js"></script>
     <script src="Buddy%20Punch_files/scheduler.js"></script>
     <script type="text/javascript">
-        jQuery(document).ready(function () {
-            var defaultView = 'month';
-            var startDate = '';
-            var employeeId = '0';
-            var punchApprovalStatusId = '0';
-            var schedule = new Schedule("https://buddypunchapiapp-qa.azurewebsites.net/api/", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSIsImtpZCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSJ9.eyJpc3MiOiJodHRwczovL2J1ZGR5cHVuY2h3ZWJhdXRob3JpemF0aW9uLXFhLmF6dXJld2Vic2l0ZXMubmV0L2lkZW50aXR5IiwiYXVkIjoiaHR0cHM6Ly9idWRkeXB1bmNod2ViYXV0aG9yaXphdGlvbi1xYS5henVyZXdlYnNpdGVzLm5ldC9pZGVudGl0eS9yZXNvdXJjZXMiLCJleHAiOjE1NDQ4MDgwMjEsIm5iZiI6MTU0NDcyMTYyMSwiY2xpZW50X2lkIjoiQnVkZHlQdW5jaFdlYkFwcCIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwib3BlbmlkIiwicHJvZmlsZSIsInJvbGVzIl0sInN1YiI6IjE0MTA1IiwiYXV0aF90aW1lIjoxNTQ0NzIxNjIxLCJpZHAiOiJpZHNydiIsImFtciI6WyJwYXNzd29yZCJdfQ.TIPRK-kl8YCqb8vaQUwq93sK37QmJC4brd1_Hhu7Z7ITrja0HMrSET3xSNLZ4F-qNinBhhbYxk2SYEEKwlezRT1tHOZ_99FZrPZTCL_ydGdGJZGhC-mfbLSnEZ1BoZeWYqtirnUDvG__QOB4iesGha-YdBtXri2lCqGk5YYqsU6CUdAWcpcs4RJ5lXyv5J4JKVg3NNkWjVMdL_FRHAC3-F7Eu8w6jn1gMyJvzPMhHKwaFhIgYRI1jSLDj_EWpw_ayE8TctJw2GKd7rrkCEPBZNGQZVVTRszYKgE6eDmru4DZCbOGotB_ODvA4ez8cHPMNOYStrYgxNcFj-kq5i5aCg", 3, "/Employee/EditPto", "/PTO/EditPtoRequest", undefined, 'PTOCalendar');
-            schedule.Init(defaultView, startDate, employeeId, punchApprovalStatusId);
+            jQuery(document).ready(function () {
+                        var defaultView = 'month';
+                        var startDate = '';
+                        var employeeId = '0';
+                        var punchApprovalStatusId = '0';
+                        var schedule = new Schedule("https://buddypunchapiapp-qa.azurewebsites.net/api/", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSIsImtpZCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSJ9.eyJpc3MiOiJodHRwczovL2J1ZGR5cHVuY2h3ZWJhdXRob3JpemF0aW9uLXFhLmF6dXJld2Vic2l0ZXMubmV0L2lkZW50aXR5IiwiYXVkIjoiaHR0cHM6Ly9idWRkeXB1bmNod2ViYXV0aG9yaXphdGlvbi1xYS5henVyZXdlYnNpdGVzLm5ldC9pZGVudGl0eS9yZXNvdXJjZXMiLCJleHAiOjE1NDUxMDY1MzcsIm5iZiI6MTU0NTAyMDEzNywiY2xpZW50X2lkIjoiQnVkZHlQdW5jaFdlYkFwcCIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwib3BlbmlkIiwicHJvZmlsZSIsInJvbGVzIl0sInN1YiI6IjE0MTA1IiwiYXV0aF90aW1lIjoxNTQ1MDIwMTM3LCJpZHAiOiJpZHNydiIsImFtciI6WyJwYXNzd29yZCJdfQ.fiTg8RhK5CJTtxsThWl86Nqcib1JPaNu6XKjTcwAaCCcXefW4lmtEbnmFm7EzjwK1UyhYvoNVIUM5GWxyhjHzrEEcHLaDVxojiKLY8S0xqA_28ScjDrRaA2OJ9I1U9EY1ACoGcow9DUqV37BBeim9Sdd3TUwsvK6iyQtEca0j9-FSW0bNdW43KJdpIeIReU_lxm4sowrqDN_fGvqgCP3VuS6Imcf0acp9ecZKY0dh1LC8VafQ5pUu6GfI520H-pIxd9zu9R1dKDdOVyNnYo4PS2J64uJvVx3IIt6eBph4meFohGDY1QHIo2u9pdiPXBPx5DFBUMnGpRBomUCzFk3Lw", 3, "/Employee/EditPto", "/PTO/EditPtoRequest", undefined, 'PTOCalendar');
+                        schedule.Init(defaultView, startDate, employeeId, punchApprovalStatusId);
 
 
-        });
+                    });
     </script>
 
     <script>

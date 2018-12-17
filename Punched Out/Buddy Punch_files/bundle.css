@@ -46673,11 +46673,11 @@ th>.m-radio.m-radio--single {
 }
 
 .m-checkbox>span {
-    border: 1px solid #bdc3d4
+    border: 1px solid #e0e3e7;
 }
 
 .m-checkbox>span:after {
-    border: solid #7281a4
+    border: solid #fff;
 }
 
 .m-checkbox>input:disabled~span:after {
@@ -46685,7 +46685,8 @@ th>.m-radio.m-radio--single {
 }
 
 .m-checkbox>input:checked~span {
-    border: 1px solid #bdc3d4
+    border: none;
+    background-color: #0c67c4;
 }
 
 .m-checkbox.m-checkbox--check-bold>input:checked~span {
@@ -50191,9 +50192,9 @@ select.m-bootstrap-select {
 }
 
 .form-control[disabled] {
-    border-color: #f4f5f8;
-    color: #6f727d;
-    background-color: #f4f5f8
+    border-color: #e0e3e7;
+    color: #a3a5ad;
+    background-color: #ECEEF1;
 }
 
 .form-control.m-input--solid {
@@ -55473,7 +55474,7 @@ html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
 }
 
 .bootstrap-select>.dropdown-toggle.bs-placeholder.btn-light {
-    color: #282a3c
+    color: #a3a5ad;
 }
 
 .bootstrap-select>.dropdown-toggle.bs-placeholder.btn-accent,
@@ -56779,7 +56780,7 @@ select.m-select2 {
 }
 
 .fc-unthemed .fc-day-grid td:not(.fc-axis).fc-event-container {
-    padding: .2rem .5rem
+    padding: 0;
 }
 
 .fc-unthemed .fc-axis {
@@ -56791,10 +56792,10 @@ select.m-select2 {
     padding: .5rem
 }
 
-.fc-unthemed th.fc-day-header {
+.fc-unthemed th {
     padding: .75rem .5rem;
     font-size: 1rem;
-    font-weight: 500
+    font-weight: bold;
 }
 
 .fc-unthemed .fc-list-heading .fc-widget-header,
@@ -56872,16 +56873,19 @@ select.m-select2 {
 
 .fc-unthemed .fc-event .fc-title,
 .fc-unthemed .fc-event-dot .fc-title {
-    font-size: .85rem;
-    font-weight: 400;
-    color: #3f4047
+    font-size: .9rem;
+    font-weight: bold;
+    color: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .fc-unthemed .fc-description {
     font-size: .85rem;
     margin-top: .25rem;
-    font-weight: 300;
-    color: #7b7e8a
+    font-weight: 400;
+    /*! color: #7b7e8a; */
+    margin-left: 0;
 }
 
 .fc-unthemed .fc-list-item-title>a {
@@ -57116,10 +57120,7 @@ select.m-select2 {
 .fc-unthemed .fc-event,
 .fc-unthemed .fc-event-dot {
     background: #fff;
-    border: 1px solid #ebedf2;
-    -webkit-box-shadow: 0 1px 15px 1px rgba(81, 77, 92, .08);
-    -moz-box-shadow: 0 1px 15px 1px rgba(81, 77, 92, .08);
-    box-shadow: 0 1px 15px 1px rgba(81, 77, 92, .08)
+    border: 1.5px solid #ebedf2;
 }
 
 .fc-unthemed .fc-event-dot.fc-not-start.fc-not-end,
@@ -57743,8 +57744,9 @@ select.m-select2 {
 }
 
 .fc-unthemed .fc-toolbar .fc-button.fc-state-disabled {
-    background: #f7f8fa;
-    color: #afb2c1
+    background: #e3e8ee;
+    color: #afb2c1;
+    opacity: 0.38;
 }
 
 #session-timeout-dialog .modal-header .close {
@@ -70207,7 +70209,7 @@ body.m-content--skin-light2 {
 }
 
 .timecard-table .row-light {
-    background: #ecf3fb
+    background: #ecf3fb;
 }
 
 .timecard-table.table-bordered td,
@@ -70226,7 +70228,7 @@ body.m-content--skin-light2 {
 .add-pto td,
 .edit-pto td,
 .timecard-table td {
-    vertical-align: middle
+    vertical-align: middle;
 }
 
 .m-wrapper {
@@ -71302,10 +71304,6 @@ body.m-content--skin-light2 {
     box-shadow: 0 1px 15px 1px rgba(77, 77, 92, .08)
 }
 
-#schedule_calendar .fc-view-container {
-    margin: 20px
-}
-
 #schedule_calendar .fc-view-container thead.fc-head td {
     border: 0;
     border-bottom: 3px solid #364150
@@ -71320,22 +71318,26 @@ body.m-content--skin-light2 {
 }
 
 #schedule_calendar .fc-view-container .fc-body .fc-resource-area .fc-widget-content {
-    background: #f4f5f8
+    background: #eceef1;
 }
 
 #schedule_calendar .fc-view-container tr[data-resource-id="0"],
-#schedule_calendar .fc-view-container tr[data-resource-id="0"] .fc-cell-content {
-    background: #F0F7FF !important
+#schedule_calendar .fc-view-container tr[data-resource-id="0"] .fc-widget-content {
+    background: #eff8ff !important
 }
 
 #schedule_calendar .fc-view-container .fc-event {
-    padding: 5px;
-    border-color: #CCC;
-    -webkit-box-shadow: 0 1px 15px 1px rgba(77, 77, 92, .08);
-    -moz-box-shadow: 0 1px 15px 1px rgba(77, 77, 92, .08);
-    box-shadow: 0 1px 15px 1px rgba(77, 77, 92, .08);
-    border-radius: 0;
-    text-align: center
+    padding: 6px 6px 6px 12px;
+    border-color: #eceef1;
+    border-radius: 2px;
+    line-height: 1.5;
+    margin: 3px 2px 0 2px;
+}
+
+#schedule_calendar .fc-view-container .fc-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .btn-brand.focus,
@@ -71370,7 +71372,8 @@ body.m-content--skin-light2 {
 
 #schedule_calendar .fc-view-container .fc-event .fc-content {
     padding: 0 !important;
-    text-align: left
+    text-align: left;
+    display: flex;
 }
 
 #schedule_calendar .fc-view-container .fc-axis {
@@ -71389,10 +71392,6 @@ body.m-content--skin-light2 {
     width: 91.7%
 }
 
-#schedule_calendar .fc-view-container .resourceTitle {
-    font-weight: 700
-}
-
 #schedule_calendar .fc-view-container .fc-timeline .fc-body .fc-scroller {
     overflow-x: hidden !important;
     margin: 0 -20px 0 0 !important
@@ -71408,9 +71407,10 @@ body.m-content--skin-light2 {
 
 .fc-unthemed .fc-toolbar .fc-button {
     outline: 0 !important;
-    height: 2.25rem;
+    height: 2.5rem;
     padding: 0 .75rem;
-    font-size: 1rem
+    font-size: 1rem;
+    background-color: #e3e8ee;
 }
 
 .fc-unthemed .fc-toolbar h2 {
@@ -71442,25 +71442,25 @@ body.m-content--skin-light2 {
     color: #364151 !important
 }
 
-#schedule_calendar .fc-view-container .fc-event.shift-blue1 {
+/* #schedule_calendar .fc-view-container .fc-event.shift-blue1 {
     border-color: #426e86 !important;
-    border-width: 1px !important
-}
+    border-width: 1px !important;
+} */
 
 #schedule_calendar .fc-view-container .fc-event.shift-blue1 .fc-title {
-    color: #00f !important;
-    font-weight: 700
+    /* color: #00f !important; */
+    font-weight: 700;
 }
 
-.fc-timeline-event .fc-content .fc-hour-count {
-    padding: 1px 5px;
-    border: 1px solid transparent;
+.fc-event .fc-hour-count {
+    padding: 0 5px;
+    border: 0;
     border-radius: 10px;
     font-weight: 700;
-    color: #fff;
-    background: green;
-    float: right;
-    margin-right: 5px
+    color: #426e86;
+    background: #fff;
+    margin-left: auto;
+    align-self: self-start;
 }
 
 .fc-timeline-event .fc-content .fc-hour-count.red {
@@ -71522,6 +71522,11 @@ body.m-content--skin-light2 {
     margin-left: 10px
 }
 
+#schedule_calendar .fc-view-container tr[data-resource-id="0"] .fc-widget-content > div {
+    display: flex;
+    align-items: center;
+}
+
 #schedule_calendar .fc-view-container tr[data-resource-id="0"] .fc-cell-content {
     padding-bottom: 15px
 }
@@ -71536,7 +71541,7 @@ body.m-content--skin-light2 {
 }
 
 .bootstrap-select>.dropdown-toggle.btn-light {
-    font-weight: 700 !important
+    font-weight: 400;
 }
 
 .fc-cell-content .fc-cell-text {
@@ -71885,7 +71890,8 @@ a:hover {
 
 input[type=text],
 select {
-    max-width: 300px
+    max-width: 300px;
+    font-weight: 500;
 }
 
 .geofence-form input[type=text],
@@ -72368,6 +72374,10 @@ table.dataTable thead .sorting_desc_disabled::before {
     font-weight: bold;
 }
 
+.m-badge.m-badge--wide.m-badge--rounded {
+    border-radius: 0.25em;
+}
+
 .m-badge.m-badge--danger {
     color: #fff;
     background-color: #e84556;
@@ -72551,6 +72561,175 @@ fieldset.container {
 
 .modal-table th {
     color: #364151;
+}
+
+.fc-state-default {
+    box-shadow: none;
+}
+
+.fc .fc-toolbar .fc-button:not(:first-child) {
+    border-left: 1px solid #fff;
+}
+
+.fc-unthemed th {
+    border: 0;
+}
+
+.fc td {
+    font-weight: 500;
+}
+
+.fc td .resourceTitle {
+    font-weight: bold;
+}
+
+.fc-unthemed th.fc-day-header > a, .fc-unthemed th.fc-day-header > span {
+    color: #364151;
+    font-weight: bold;
+}
+
+.fc-ltr a.fc-timeline-event .fc-title {
+    padding-left: 0;
+}
+
+.fc-event .fc-details {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#schedule_calendar .fc-body .fc-resource-area .fc-cell-content {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+}
+
+.fc-cell-content > div {
+    min-height: 70px;
+}
+
+.fc-unthemed .fc-event {
+    font-weight: 500;
+}
+
+#schedule_calendar .fc-view-container .event-pto {
+    border: 0;
+    padding-left: 25px;
+}
+
+#schedule_calendar .fc-view-container .event-pto::before {
+    content: "\f017";
+    font-family: FontAwesome;
+    font-size: 16px;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+}
+
+/* Personal PTO */
+#schedule_calendar .fc-view-container .event-pto-personal {
+    background: #e3e1f4;
+    color: #716aca;
+}
+
+#schedule_calendar .fc-view-container .event-pto-personal .fc-hour-count {
+    background-color: #716aca;
+}
+
+/* Vacation PTO */
+#schedule_calendar .fc-view-container .event-pto-vac {
+    background: #ccf0e5;
+    color: #00b47d;
+}
+
+#schedule_calendar .fc-view-container .event-pto-vac .fc-hour-count {
+    background-color: #00b47d;
+}
+
+/* Sick PTO */
+#schedule_calendar .fc-view-container .event-pto-sick {
+    background: #dce6fe;
+    color: #4f83f8;
+}
+
+#schedule_calendar .fc-view-container .event-pto-sick .fc-hour-count {
+    background-color: #4f83f8;
+}
+
+/* Holiday PTO */
+#schedule_calendar .fc-view-container .event-pto-holiday {
+    background: #fad9dd;
+    color: #e84556;
+}
+
+#schedule_calendar .fc-view-container .event-pto-holiday .fc-hour-count {
+    background-color: #e84556;
+}
+
+#schedule_calendar .event-published {
+    color: #fff;
+}
+
+#schedule_calendar .event-unpublished .fc-hour-count,
+#schedule_calendar .event-openshift .fc-hour-count,
+#schedule_calendar .fc-view-container .event-pto .fc-hour-count {
+    color: #fff;
+}
+
+#schedule_calendar .event-openshift {
+    color: #364151;
+    border-width: 0.5px;
+}
+
+#schedule_calendar .event-openshift .event-openshift-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+#schedule_calendar .event-openshift .fc-details {
+    opacity: 0.75;
+}
+
+#schedule_calendar .fc-timelineWeek-view .fc-event:not(.event-pto) .fc-details:not(:empty) {
+    margin-top: 1em;
+}
+
+#schedule_calendar .fc-timelineWeek-view .fc-event:not(.event-pto) .fc-details.fc-position {
+    margin-top: 0;
+}
+
+.m-checkbox > span {
+    border-radius: 2px;
+}
+
+.fc-filter-header .m-portlet__head{
+    border-bottom: 1px solid #e3e8ee;
+}
+
+.fc-filter-header .m-portlet__head .col-lg-auto,
+.fc-filter-header .m-portlet__head .dropdown .btn.dropdown-toggle.btn-light {
+    padding: 0;
+    padding-right: .5em;
+}
+
+.fc-filter-header .m-portlet__head .dropdown .btn.dropdown-toggle.btn-light {
+    background: #f7fafc;
+    border-color: #f7fafc;
+}
+
+.fc-filter-header .m-portlet__head .dropdown .btn.dropdown-toggle.btn-light .filter-option {
+    position: static;
+    padding-left: 1em;
+    padding-right: 2em;
+    color: #364151;
+    font-weight: bold;
+}
+
 .m-badge--small {
     font-size: .9em;
     height: 1em;
