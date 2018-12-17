@@ -72504,13 +72504,15 @@ fieldset.container {
     font-weight: bold;
 }
 
-.input-validation-error + .select2-container--default .select2-selection--single {
+.input-validation-error + .select2-container--default .select2-selection--single,
+.input-validation-error {
     background-color: #F6E0E3;
     border: 1px solid #E84556;
 }
 
 .input-validation-error + .select2-container--default .select2-selection--single .select2-selection__placeholder,
-.input-validation-error + .select2-container--default .select2-selection--single {
+.input-validation-error + .select2-container--default .select2-selection--single,
+.input-validation-error {
     color: #e84556;
 }
 
