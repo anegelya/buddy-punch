@@ -480,7 +480,7 @@
                                         
                                         <br>
 
-                                            <div id="punchOnTime-form">
+                                            <div id="punchOnTime-form" class="punch-in-on-time">
                                                 <form action="/Employee/PunchOut" id="punchOutForm" method="post"
                                                 novalidate="novalidate"><input name="__RequestVerificationToken" type="hidden"
                                                     value="0pLlTmW-4BmLB64wLBXg6U-ZSK8TZ7xhL8sDXJ0J7h274GhtR1X3pQHhHHIP5B1NqxF3UreR6oab6LP8r-vUtLMcY-MOUIeq875r6eGNQ_fTxDhuaQF0ULHIoA_SizeBIua3-ugbYQ7YG5H4y7mZaQ2"><input
@@ -528,14 +528,188 @@
                                                         </div>
                                                     </div>
 
+                                                    <div class="row">
                                                     <div class="col-md-12">
-                                                        <button class="btn bp-punch-btn  punch-in-on-time" id="latePunchInButton"
+                                                        <button class="btn bp-punch-btn" id="latePunchInButton"
                                                                 style="width: 100%">
                                                             Punch In &amp; Edit Time
                                                         </button>
                                                     </div>
+                                                    </div>
                                                 </form>
                                             </div>
+
+                                            <div id="latePunchOut-form" class="late-punch-in" style="display: none;">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <form action="/Employee/LatePunchOut" id="latePunchOutForm" method="post"
+                                                                novalidate="novalidate"><input name="__RequestVerificationToken"
+                                                                    type="hidden" value="fmsnk4pCtfcI3qI97W8TCQCsGcT9gyMLNIZJt-DuNgwga8Dk-ru0eCwwuem0xcrkmYz5V_Tk-677YHOcVj3MEf65El2SGGJm05dubjalP93d9uhLMMT5_TpWmrkNobR2o719vjF1KMFsWRIMzvHHeA2"><input
+                                                                    id="ImageData" name="ImageData" type="hidden" value=""><input
+                                                                    class="latitude" id="Latitude" name="Latitude" type="hidden"
+                                                                    value=""><input class="longitude" id="Longitude" name="Longitude"
+                                                                    type="hidden" value=""><input class="geoLocationAccuracy"
+                                                                    id="GeoLocationAccuracy" name="GeoLocationAccuracy" type="hidden"
+                                                                    value=""><input class="geoLocationTimeStamp" data-val="true"
+                                                                    data-val-date="The field GeoLocationTimeStamp must be a date."
+                                                                    id="GeoLocationTimeStamp" name="GeoLocationTimeStamp" type="hidden"
+                                                                    value="1/1/0001 12:00:00 AM">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <div class="controls">
+                                                                                <input autocomplete="off" class="form-control timepicker-default"
+                                                                                    data-val="true" data-val-date="The field LatePunchOutDateTime must be a date."
+                                                                                    data-val-required="Field is required"
+                                                                                    id="LatePunchOutDateTime" name="LatePunchOutDateTime"
+                                                                                    type="text" style ="width:100%; max-width: 100%;"
+                                                                                    placeholder="Select Time">
+                                                                                <span class="field-validation-valid" data-valmsg-for="LatePunchInDateTime"
+                                                                                    data-valmsg-replace="true"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row" id="late-locationdepartmentselection">
+                                                                        <div class="col-md-12">
+                                                                            <div class="form-group">
+                                                                                <div>
+                                                                                    <select class="form-control input-medium location-select2 m-select2 select2-wide select2-hidden-accessible"
+                                                                                        data-val="true" data-val-required="Field is required"
+                                                                                        id="late-LocationsJobCodesViewModel_LocationJobCodeId"
+                                                                                        name="LocationsJobCodesViewModel.LocationJobCodeId"
+                                                                                        data-select2-id="late-LocationsJobCodesViewModel_LocationJobCodeId"
+                                                                                        tabindex="-1" aria-hidden="true">
+                                                                                        <option value="" data-select2-id="4" selected="selected">Location/Department</option>
+                                                                                        <optgroup label="Alaska" data-select2-id="5">
+                                                                                            <option value="13|1020" data-select2-id="6">Acme
+                                                                                                Corporation</option>
+                                                                                            <option value="13|1015" data-select2-id="7">Department
+                                                                                                Code 456</option>
+                                                                                            <option value="13|1010" data-select2-id="8">Expenses</option>
+                                                                                            <option value="13|1017" data-select2-id="9">Job
+                                                                                                ABC</option>
+                                                                                            <option value="13|1016" data-select2-id="10">Job
+                                                                                                Code 321</option>
+                                                                                            <option value="13|1021" data-select2-id="11">Job
+                                                                                                ZYX</option>
+                                                                                            <option value="13|1019" data-select2-id="12">Sanitation</option>
+                                                                                            <option value="13|1022" data-select2-id="13">Taco
+                                                                                                Bell</option>
+                                                                                            <option value="13|1018" data-select2-id="14">XYZ
+                                                                                                Company</option>
+                                                                                        </optgroup>
+                                                                                        <optgroup label="Chicago" data-select2-id="15">
+                                                                                            <option value="9|1020" data-select2-id="16">Acme
+                                                                                                Corporation</option>
+                                                                                            <option value="9|1015" data-select2-id="17">Department
+                                                                                                Code 456</option>
+                                                                                            <option value="9|1017" data-select2-id="18">Job
+                                                                                                ABC</option>
+                                                                                            <option value="9|1016" data-select2-id="19">Job
+                                                                                                Code 321</option>
+                                                                                            <option value="9|1021" data-select2-id="20">Job
+                                                                                                ZYX</option>
+                                                                                            <option value="9|1019" data-select2-id="21">Sanitation</option>
+                                                                                            <option value="9|1022" data-select2-id="22">Taco
+                                                                                                Bell</option>
+                                                                                            <option value="9|1018" data-select2-id="23">XYZ
+                                                                                                Company</option>
+                                                                                        </optgroup>
+                                                                                        <optgroup label="New York City" data-select2-id="24">
+                                                                                            <option value="16|1020" data-select2-id="25">Acme
+                                                                                                Corporation</option>
+                                                                                            <option value="16|1015" data-select2-id="26">Department
+                                                                                                Code 456</option>
+                                                                                            <option value="16|1010" data-select2-id="27">Expenses</option>
+                                                                                            <option value="16|1017" data-select2-id="28">Job
+                                                                                                ABC</option>
+                                                                                            <option value="16|1016" data-select2-id="29">Job
+                                                                                                Code 321</option>
+                                                                                            <option value="16|1021" data-select2-id="30">Job
+                                                                                                ZYX</option>
+                                                                                            <option value="16|1019" data-select2-id="31">Sanitation</option>
+                                                                                            <option value="16|1022" data-select2-id="32">Taco
+                                                                                                Bell</option>
+                                                                                            <option value="16|1018" data-select2-id="33">XYZ
+                                                                                                Company</option>
+                                                                                        </optgroup>
+                                                                                        <option value="18|0" data-select2-id="34">Hot
+                                                                                            Pockets</option>
+                                                                                        <option value="19|0" data-select2-id="35">Loc 2</option>
+                                                                                        <option value="20|0" data-select2-id="36">Loc 3</option>
+                                                                                        <option value="21|0" data-select2-id="37">Loc 4</option>
+                                                                                        <option value="22|0" data-select2-id="38">Loc 5</option>
+                                                                                        <option value="17|0" data-select2-id="39">PHX</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <span class="field-validation-valid" data-valmsg-for="LocationsJobCodesViewModel.LocationJobCodeId"
+                                                                                    data-valmsg-replace="true"></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <div>
+                                                                                        <select class="form-control input-medium shiftId-select2 m-select2 select2-wide select2-hidden-accessible" 
+                                                                                                data-val="true" data-val-number="The field ShiftId must be a number." 
+                                                                                                data-val-required="You cannot punch in without a current shift" 
+                                                                                                id="late-PunchInOptions_ShiftId" 
+                                                                                                name="PunchInOptions.ShiftId" 
+                                                                                                data-select2-id="late-PunchInOptions_ShiftId" 
+                                                                                                tabindex="-1" 
+                                                                                                aria-hidden="true">
+                                                                                            <option value="">Shift</option>
+                                                                                            <option value="-1">No Shift</option></select>
+                                                                                    </div>
+                                                                                    <span class="field-validation-valid" data-valmsg-for="PunchInOptions.ShiftId"
+                                                                                        data-valmsg-replace="true"></span>
+                                                                                </div>
+                        
+                                                                            </div>
+                                                                    </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <textarea class="form-control" cols="20" id="Note"
+                                                                                name="Note" placeholder="Enter notes here" rows="2"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="col-md-12 alert alert-info">
+                                                                            Your manager will be notified of the late punch and
+                                                                            must approve it.<br>
+                                                                            You will receive an email notification of the punch
+                                                                            status when it is reviewed.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="punch-button-wrapper">
+                                                                            <a href="#" onclick="punchInUsingKey()" class="btn btn-success bp-punch-btn"
+                                                                                style="width: 100%">
+                                                                                Punch In
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <button type="button" id="latePunchOut-back-btn" class="btn bp-punch-btn mt-3" style="width: 100%;">
+                                                                            Back
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                             <div id="switchPunch-form" style="display: none;">
                                                     <form action="/Employee/PunchIn" id="punchInForm" method="post" novalidate="novalidate"><input
