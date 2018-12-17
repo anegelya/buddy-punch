@@ -36499,7 +36499,7 @@ strong {
 }
 
 .m-badge.m-badge--info {
-    background-color: #36a3f7;
+    background-color: #227de7;
     color: #fff
 }
 
@@ -72549,4 +72549,17 @@ fieldset.container {
 
 .modal-table th {
     color: #364151;
+.m-badge--small {
+    font-size: .9em;
+    height: 1em;
+    line-height: 1em;
+}
+
+.m-portlet-alert.m-portlet-alert--warning {
+    background-color: #fcf8e2;
+}
+
+.m-portlet.m-portlet-alert.m-portlet-alert--warning .m-portlet__head .m-portlet__head-text,
+.m-portlet.m-portlet-alert.m-portlet-alert--warning .m-portlet__body {
+    color: #665154;
 }

@@ -742,7 +742,40 @@
 
                     <div class="col-md-8">
 
-
+                        <div id="time-card-approvals-alert" class="collapse">
+                            <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile m-portlet-alert m-portlet-alert--warning">
+                                <div class="m-portlet__head">
+                                    <div class="m-portlet__head-caption">
+                                        <div class="m-portlet__head-title">
+                                            <h3 class="m-portlet__head-text">Time Cards Awaiting Submission!</h3>
+                                        </div>
+                                    </div>
+                                    <div class="m-portlet__head-tools">
+                                        <div class="btn-group">
+                                            <a class="btn btn-danger" href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37403">Review and Submit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-portlet__body container">
+                                    <div class="row">
+                                        <div class="col row">
+                                            <div class="col-md-auto">
+                                                <p class="h6 font-weight-bold">Pay Period:</p>
+                                                <p>
+                                                    12/5/2018 - 12/11/2018 
+                                                </p>
+                                            </div>
+                                            <div class="col-md-auto">
+                                                <p class="h6 font-weight-bold">Status:</p>
+                                                <p>
+                                                    <span class="m-badge m-badge--info m-badge--wide m-badge--small">Draft</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile ">
                             <div class="m-portlet__head">
@@ -770,6 +803,12 @@
                                     </div>
                                     <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37403"
                                         class="btn m-btn-primary">Edit</a>
+
+                                    <button class="m-btn btn btn-primary" 
+                                            data-toggle="collapse" 
+                                            data-target="#time-card-approvals-alert">
+                                            Submit for Approval
+                                    </button>
                                 </div>
                             </div>
                             <div class="m-portlet__body container">
