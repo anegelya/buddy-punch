@@ -71532,7 +71532,7 @@ body.m-content--skin-light2 {
 }
 
 #schedule_calendar .fc-view-container tr[data-resource-id="0"] {
-    height: 55px !important
+    height: auto !important
 }
 
 .fc-button {

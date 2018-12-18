@@ -31782,6 +31782,8 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 $(".fc-resource-area .resourceTitle").parent().find(".resourceTotalHour").remove();
                 $(".fc-resource-area .resourceTitle").after('<br/><span class="resourceTotalHour" style="font-size:11px;">Scheduled <span class="scheduled_hrs">0 </span>hrs</span>');
                 $(".fc-resource-area .resourceTitle").eq(0).parent().find(".resourceTotalHour").remove();
+
+                $('#schedule_calendar .fc-scroller').animate({ scrollTop: (0) }, 'slow');
             },
             selectable: true,
             defaultView: 'timelineWeek',
