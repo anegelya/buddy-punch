@@ -72632,7 +72632,8 @@ fieldset.container {
     color: #716aca;
 }
 
-#schedule_calendar .fc-view-container .event-pto-personal .fc-hour-count {
+#schedule_calendar .fc-view-container .event-pto-personal .fc-hour-count,
+.badge-personal {
     background-color: #716aca;
 }
 
@@ -72642,7 +72643,8 @@ fieldset.container {
     color: #00b47d;
 }
 
-#schedule_calendar .fc-view-container .event-pto-vac .fc-hour-count {
+#schedule_calendar .fc-view-container .event-pto-vac .fc-hour-count,
+.badge-vac {
     background-color: #00b47d;
 }
 
@@ -72652,7 +72654,8 @@ fieldset.container {
     color: #4f83f8;
 }
 
-#schedule_calendar .fc-view-container .event-pto-sick .fc-hour-count {
+#schedule_calendar .fc-view-container .event-pto-sick .fc-hour-count,
+.badge-sick {
     background-color: #4f83f8;
 }
 
@@ -72662,7 +72665,8 @@ fieldset.container {
     color: #e84556;
 }
 
-#schedule_calendar .fc-view-container .event-pto-holiday .fc-hour-count {
+#schedule_calendar .fc-view-container .event-pto-holiday .fc-hour-count,
+.badge-holiday {
     background-color: #e84556;
 }
 
@@ -72743,4 +72747,23 @@ fieldset.container {
 .m-portlet.m-portlet-alert.m-portlet-alert--warning .m-portlet__head .m-portlet__head-text,
 .m-portlet.m-portlet-alert.m-portlet-alert--warning .m-portlet__body {
     color: #665154;
+}
+
+.badge-pto {
+    padding: 0;
+    margin: 5px;
+    min-height: 8px;
+    min-width: 8px;
+    width: 8px;
+}
+
+.resource_hours {
+    margin-bottom: .5em;
+}
+
+.resource_pto_hours_duration {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #a3a5ad;
+    font-weight: normal;
 }

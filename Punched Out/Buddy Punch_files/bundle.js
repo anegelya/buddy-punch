@@ -31745,6 +31745,10 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                     return event.start >= view.start && event.end <= view.end && event.eventTypeId === eventTypeEnum.Shift;
                 });
 
+                var ptos = $('#schedule_calendar').fullCalendar('clientEvents', function (event) {
+                    return event.eventTypeId === eventTypeEnum.PTO;
+                });
+
                 var unpublishedShifts = $.grep(shifts,
                     function (el, index) {
                         return (!el.published && el.resourceId != '0');
@@ -31771,7 +31775,44 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                     currentTotal.add(shiftDuration);
                     $('#resource_' + shift.resourceId + '_totalDuration').val(currentTotal.toISOString());
                     $('#resource_' + shift.resourceId + '_totalHours').text((currentTotal.hours() + (currentTotal.minutes() / 60.0)).toFixed(2));
-                }));                
+                })); 
+
+                $.each(ptos, (function (index, pto) {
+                    var ptoDuration = pto.hours;
+                    
+                    if(currentTotal = $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration').val()) {
+                        
+                        var newTotal = moment.duration(currentTotal).add(moment.duration(ptoDuration, 'hours'));
+
+                        $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration')
+                        .val(currentTotal + ptoDuration);
+
+                        $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours')
+                        .text(pto.code + " " + newTotal.hours() + " hs")
+                        .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
+
+                    } else {
+
+                        $('<input/>', {
+                            type: 'hidden',
+                            value: moment.duration(ptoDuration, 'hours').toISOString(),
+                            id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration'
+                        })
+                        .insertAfter('#resource_' + pto.resourceId + '_totalDuration');
+
+                        $('<p/>', {
+                            class: 'resource_pto_hours_duration',
+                            type: 'hidden',
+                            id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours'
+                        })
+                        .text(pto.code + " " + ptoDuration + " hs")
+                        .insertAfter($('#resource_' + pto.resourceId + '_totalHours').parent())
+                        .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
+                        
+                        $('#schedule_calendar').fullCalendar('render');
+                    }
+                }));
+
                 if ($('.fc-time-area .fc-content .fc-rows table tbody tr').eq(0).attr("data-resource-id") == "0") {
 
                     if ($('.fc-time-area .fc-content .fc-rows table tbody tr').eq(0).find(".fc-timeline-event").hasClass("shift-blue1"))
@@ -31780,7 +31821,6 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 }
 
                 $(".fc-resource-area .resourceTitle").parent().find(".resourceTotalHour").remove();
-                $(".fc-resource-area .resourceTitle").after('<br/><span class="resourceTotalHour" style="font-size:11px;">Scheduled <span class="scheduled_hrs">0 </span>hrs</span>');
                 $(".fc-resource-area .resourceTitle").eq(0).parent().find(".resourceTotalHour").remove();
 
                 $('#schedule_calendar .fc-scroller').animate({ scrollTop: (0) }, 'slow');
@@ -32016,21 +32056,23 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 //newElement.append(stackContainer);
                 $td.eq(0).find('.fc-cell-content').html(resourceTable);
                 
-                //$td.eq(0).find('.fc-cell-content')
-                //    .append(
-                //        $('<br/>' +
-                //        '<input type="hidden" id="resource_' +
-                //            resourceObj.id +
-                //            '_totalDuration" class="resource_totalDuration" value="0"/>' +
-                //            '<strong><span id="resource_' +
-                //            resourceObj.id +
-                //            '_totalHours" class="resource_totalHours">0</span> hrs</strong>')
-                //);
-                //if (resourceObj.profileminiimageurl) {
-                //    $td.eq(0).find('.fc-cell-content').prepend($('<img class="profile-mini-picture" src="' +
-                //        resourceObj.profileminiimageurl +
-                //        '" height="30" width="30" />'));
-                //}
+                if(resourceObj.id !== '0') {
+
+                    $td.eq(0).find('.fc-cell-content .resourceTitle')
+                    .append(
+                        $('<br/>' +
+                        '<input type="hidden" id="resource_' +
+                            resourceObj.id +
+                            '_totalDuration" class="resource_totalDuration" value="0"/>' +
+                            '<p class="resource_hours"><span id="resource_' +
+                            resourceObj.id +
+                            '_totalHours" class="resource_totalHours">0</span> hrs</p>'));
+                    // if (resourceObj.profileminiimageurl) {
+                    //    $td.eq(0).find('.fc-cell-content').prepend($('<img class="profile-mini-picture" src="' +
+                    //        resourceObj.profileminiimageurl +
+                    //        '" height="30" width="30" />'));
+                    // }
+                }
             },
             viewRender: function (view, element) {
                 $("#copyPreviousWeekButton").toggle(view.name === 'timelineWeek');
