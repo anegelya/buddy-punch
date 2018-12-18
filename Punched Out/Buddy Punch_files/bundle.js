@@ -32093,12 +32093,12 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                             '<td style="border-color:transparent;padding:5px;color:#ddd;">Non</td>' +
                             '</tr></tbody></table></tr></tfoot>');
                         $(".fc-view table").eq(0).after(
-                            '<div style="display:block;height:45px;background:#dfdfdf;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;" id="totalHoursScheduledLabel"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#5198e3;">1600hs</span><br/><span style="color:#A3A5AD;">' +
+                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;" id="totalHoursScheduledLabel"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#5198e3;font-weight:bold;">1600hs</span><br/><span style="color:#A3A5AD;">' +
                             $(".fc-header-toolbar .fc-center h2").text() +
                             '</span></span></div>');
                     } else {
                         $(".fc-view table").eq(0).after(
-                            '<div style="display:block;height:45px;background:#dfdfdf;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;" id="totalHoursScheduledLabel"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#5198e3;">1600hs</span><br/><span style="color:#f8f8f8;">' +
+                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;" id="totalHoursScheduledLabel"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#5198e3;font-weight:bold;">1600hs</span><br/><span style="color:#f8f8f8;">' +
                             $(".fc-header-toolbar .fc-center h2").text() +
                             '</span></span></div>');
                     }
