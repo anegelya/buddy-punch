@@ -72460,12 +72460,13 @@ td[aria-expanded="true"] .m-icon-chevron::after {
     padding: 0;
 }
 
-.timecard-table tbody .row-note td {
-    border-top: 1px solid #eceef1;
+.timecard-table tbody .row-note {
+    -webkit-box-shadow: inset 0px 2px 0px 0px rgba(236,238,241,1);
+    box-shadow: inset 0px 2px 0px 0px rgba(236,238,241,1);
 }
 
-.timecard-table tbody .row-light.row-note td {
-    border-top-color: #fff;
+.timecard-table tbody .row-light.row-note {
+    box-shadow: inset 0px 2px 0px 0px rgba(255,255,255,1);
 }
 
 .timecard-table__notes > * {
