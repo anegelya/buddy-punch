@@ -71393,8 +71393,8 @@ body.m-content--skin-light2 {
 }
 
 #schedule_calendar .fc-view-container .fc-timeline .fc-body .fc-scroller {
-    overflow-x: hidden !important;
-    margin: 0 -20px 0 0 !important
+    /*! overflow-x: hidden !important; */
+    /*! margin: 0 -20px 0 0 !important */
 }
 
 #schedule_calendar .fc-view-container .fc-scroller-canvas>.fc-content {
