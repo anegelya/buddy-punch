@@ -31839,7 +31839,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 }
             },
             resourceLabelText: 'Employees',
-            resourceAreaWidth: '25%',
+            resourceAreaWidth: '20%',
             //resourceGroupField: 'groupId',
 
             header: {
