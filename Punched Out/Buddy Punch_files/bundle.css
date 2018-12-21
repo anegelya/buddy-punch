@@ -72768,3 +72768,91 @@ fieldset.container {
     color: #a3a5ad;
     font-weight: normal;
 }
+
+#pending-pills-tab .nav-link {
+    color: #364151;
+    font-weight: bold;
+    background-color: #eceef1;
+}
+
+#pending-pills-tab .nav-link.active {
+    color: #fff;
+    background-color: #0c67c4;
+}
+
+.table.m-table tr td {
+    vertical-align: top;
+}
+
+.m-table thead th {
+    border-top: none;
+    border-bottom-color: #364151;
+    color: #364151;
+}
+
+.m-table .m-widget4__img--pic img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.m-table .m-widget4__info a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #0c67c4;
+}
+
+.m-table .m-widget4__info small {
+    color: #a3a5ad;
+}
+
+.m-table .m-widget4__ext .btn {
+    border-color: #e0e3e7;
+    color: #a3a5ad;
+}
+
+.m-table .btn.m-btn--hover-success:hover,
+.m-table .btn.m-btn--hover-success:focus {
+    background-color: #00ca8d !important;
+}
+
+.m-table .m-widget4__ext {
+    min-width: 130px;
+}
+
+.m-table .m-widget4__num,
+.m-table .m-widget4__img--pic, 
+.m-table .m-widget4__ext {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.m-table .btn-group.nav-pills {
+    display: flex;
+}
+
+.overflow-y-scroll {
+    max-height: 22em;
+    overflow-y: scroll;
+}
+
+.m-table .badge {
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 2em;
+}
+
+.m-badge-danger.m-badge-ghostly {
+    background-color: rgba(232, 69, 86, 0.2);
+    color: #e84556;
+}
+
+.m-badge-success.m-badge-ghostly {
+    background-color: rgba(0, 202, 141, 0.2);
+    color: #00ca8d;
+}
+
+.m-badge-info.m-badge-ghostly {
+    background-color: rgba(113, 106, 202, 0.19);
+    color: #716aca;
+}
