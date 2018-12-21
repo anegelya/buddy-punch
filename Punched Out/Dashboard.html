@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js wf-poppins-n3-active wf-poppins-n4-active wf-poppins-n5-active wf-poppins-n6-active wf-poppins-n7-active wf-roboto-n3-active wf-roboto-n4-active wf-roboto-n5-active wf-roboto-n6-active wf-roboto-n7-active wf-active" lang="en"><!--<![endif]--><!-- BEGIN HEAD --><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="MobileOptimized" content="320">
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <script type="text/javascript" async="" src="Buddy%20Punch_files/u0j03ozi"></script><script type="text/javascript" async="" src="Buddy%20Punch_files/insight.js"></script><script async="" src="Buddy%20Punch_files/profitwell.js"></script><script async="" src="Buddy%20Punch_files/fbevents.js"></script><script type="text/javascript" async="" src="Buddy%20Punch_files/mixpanel-2.js"></script><script async="" src="Buddy%20Punch_files/analytics.js"></script><script src="Buddy%20Punch_files/webfont.js"></script>
+    <link rel="stylesheet" href="Buddy%20Punch_files/css.css" media="all"><script>
+        WebFont.load({ google: { "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"] }, active: function () { sessionStorage.fonts = true; } });
+    </script>
+    <link href="Buddy%20Punch_files/bundle.css" rel="stylesheet" type="text/css">
+
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+
+    <style type="text/css">
+        #map {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+
+
+    <!-- END PAGE LEVEL STYLES -->
+
+    <link rel="shortcut icon" href="https://buddypunchapp-qa.azurewebsites.net/dist/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://buddypunchapp-qa.azurewebsites.net/apple-touch-icon-152x152.png">
+
+    <title>Dashboard</title>
+
+    <!--
+     menuProxy - The URL of  the code on your site that fetches and displays the HTML for the Intuit
+     "blue dot" menu.  This URL points to the Menu Proxy Code.
+
+     grantUrl - The URL of the code on your site that begins the user authorization
+     flow by getting an OAuth request token.  The flow is initiated when the user
+     clicks the Connect to QuickBooks button.  This URL points to the Request Token Code.
+     The host name in this URL must match the Host Name Domain field on the Manage Apps tab in
+     My Developer Center.
+
+    The intuit.ipp.anywhere.setup() function specifies
+    the URLs needed by the Intuit "blue dot" menu and the Connect to QuickBooks button.
+    If a page displays either of these widgets, it must include a call to
+    the intuit.ipp.anywhere.setup() function.
+    -->
+    <script type="text/javascript" src="Buddy%20Punch_files/intuit.js"></script><script type="text/javascript" src="Buddy%20Punch_files/jquery_002.js"></script>
+    <script type="text/javascript">
+        intuit.ipp.anywhere.setup({
+            menuProxy: 'https://buddypunchapp-qa.azurewebsites.net/MenuProxy',
+            grantUrl: 'https://buddypunchapp-qa.azurewebsites.net/OauthGrant'
+        });
+    </script>
+    <script type="text/javascript">
+<!--
+    function confirmPost(url) {
+        var agree = confirm("You will no longer be able to access QuickBooks data. Continue?");
+        if (agree)
+            window.location = url;
+        else
+            return false;
+    }
+    // -->
+
+
+
+    </script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-42211102-1', 'buddypunch.com');
+    ga('require', 'displayfeatures');
+    ga('set', 'userId', '14105'); // Set the user ID using signed-in user_id.
+    ga('set', 'dimension1', '14105');
+    ga('set', 'dimension2', '2009');
+    ga('send', 'pageview');
+</script>
+
+<script type="text/javascript">  var appInsights=window.appInsights||function(config){    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t    }({        instrumentationKey:"55a44f62-1c24-4b09-ac5f-75e96db1a42a"    });           window.appInsights=appInsights;    appInsights.trackPageView();</script><script src="Buddy%20Punch_files/ai.js"></script>
+
+<!-- start Mixpanel -->
+<script type="text/javascript">
+    (function (f, b) {
+        if (!b.__SV) {
+            var a, e, i, g; window.mixpanel = b; b._i = []; b.init = function (a, e, d) {
+                function f(b, h) { var a = h.split("."); 2 == a.length && (b = b[a[0]], h = a[1]); b[h] = function () { b.push([h].concat(Array.prototype.slice.call(arguments, 0))) } } var c = b; "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel"; c.people = c.people || []; c.toString = function (b) { var a = "mixpanel"; "mixpanel" !== d && (a += "." + d); b || (a += " (stub)"); return a }; c.people.toString = function () { return c.toString(1) + ".people (stub)" }; i = "disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+                for (g = 0; g < i.length; g++) f(c, i[g]); b._i.push([a, e, d])
+            }; b.__SV = 1.2; a = f.createElement("script"); a.type = "text/javascript"; a.async = !0; a.src = "//cdn.mxpnl.com/libs/mixpanel-2.2.min.js"; e = f.getElementsByTagName("script")[0]; e.parentNode.insertBefore(a, e)
+        }
+    })(document, window.mixpanel || []);
+    mixpanel.init("f3ccbdde5578f7527af8bc66ec513c32");</script><!-- end Mixpanel -->
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1681883588778820', {
+em: 'etczerwonka+demo1@gmail.com'
+});
+fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1681883588778820&ev=PageView&noscript=1" />
+</noscript>
+<!-- DO NOT MODIFY -->
+        <!-- End Facebook Pixel Code -->
+
+
+
+<script src="Buddy%20Punch_files/jquery.js"></script><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><link rel="stylesheet" href="Buddy%20Punch_files/intuit.css" type="text/css" media="all"><!--[if IE 7]><style type='text/css'>.intuitPlatformConnectButton, .intuitPlatformReconnectButton, .intuitPlatformLoginButtonVertical, .intuitPlatformLoginButtonHorizontal, .intuitPlatformLoginButtonLogo { font-size:0; text-indent: 0; line-height: 0; overflow: hidden; }</style><![endif]--><style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="m-page--fluid m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-footer--push m-aside--offcanvas-default m-header--minimize-off">
+    <!-- BEGIN HEADER -->
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+        <!-- BEGIN TOP NAVIGATION BAR -->
+
+
+
+
+
+
+<header class="m-grid__item		m-header " data-minimize="minimize" data-minimize-offset="200" data-minimize-mobile-offset="200">
+    <div class="m-header__top">
+        <div class="m-container m-container--fluid m-container--full-height m-page__container">
+            <div class="m-stack m-stack--ver m-stack--desktop">
+                <!-- begin::Brand -->
+                <div class="m-stack__item m-brand">
+                    <div class="m-stack m-stack--ver m-stack--general m-stack--inline">
+                        <div class="m-stack__item m-stack__item--middle m-brand__logo">
+                            <a href="https://buddypunchapp-qa.azurewebsites.net/" class="m-brand__logo-wrapper">
+                                <img alt="" src="Buddy%20Punch_files/Buddy-Punch_41.png">
+                            </a>
+                        </div>
+                        <div class="m-stack__item m-stack__item--middle m-brand__tools">
+                            <!-- begin::Responsive Header Menu Toggler-->
+                            <a id="m_aside_header_menu_mobile_toggle" href="javascript:;" class="m-brand__icon m-brand__toggler m--visible-tablet-and-mobile-inline-block">
+                                <span></span>
+                            </a>
+                            <!-- end::Responsive Header Menu Toggler-->
+                            <!-- begin::Topbar Toggler-->
+                            <a id="m_aside_header_topbar_mobile_toggle" href="javascript:;" class="m-brand__icon m--visible-tablet-and-mobile-inline-block">
+                                <i class="flaticon-more"></i>
+                            </a>
+                            <!--end::Topbar Toggler-->
+                        </div>
+                    </div>
+                </div>
+                <!-- end::Brand -->
+                <!-- begin::Topbar -->
+                <div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
+                    <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+                            <div class="m-stack__item m-stack__item--middle m-dropdown m-dropdown--arrow m-dropdown--large m-dropdown--mobile-full-width m-dropdown--align-right m-dropdown--skin-light m-header-search m-header-search--expandable m-header-search--skin-light" id="bp_quicksearch" m-quicksearch-mode="default">
+                                <!--BEGIN: Search Form -->
+                                <form class="m-header-search__form">
+                                    <div class="m-header-search__wrapper">
+                                        <span class="m-header-search__icon-search" id="m_quicksearch_search">
+                                            <i class="la la-search"></i>
+                                        </span>
+                                        <span class="m-header-search__input-wrapper">
+                                            <input autocomplete="off" type="text" name="q" class="m-header-search__input" placeholder="Search..." id="m_quicksearch_input">
+                                        </span>
+                                        <span class="m-header-search__icon-close" id="m_quicksearch_close">
+                                            <i class="la la-remove"></i>
+                                        </span>
+                                        <span class="m-header-search__icon-cancel" id="m_quicksearch_cancel">
+                                            <i class="la la-remove"></i>
+                                        </span>
+                                    </div>
+                                </form>
+                                <!--END: Search Form -->
+                                <!--BEGIN: Search Results -->
+                                <div class="m-dropdown__wrapper" style="z-index: 101;">
+                                    <div class="m-dropdown__arrow m-dropdown__arrow--center"></div>
+                                    <div class="m-dropdown__inner">
+                                        <div class="m-dropdown__body">
+                                            <div class="m-dropdown__scrollable m-scrollable mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar" data-scrollable="true" data-max-height="300" data-mobile-max-height="200" style="max-height: 300px; height: 300px; position: relative; overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: 300px;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                                <div class="m-dropdown__content m-list-search m-list-search--skin-light"></div>
+                                            </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--BEGIN: END Results -->
+                            </div>
+                        <div class="m-stack__item m-topbar__nav-wrapper">
+                            <ul class="m-topbar__nav m-nav m-nav--inline text-nowrap">
+                                <li class="support-dropdown m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-left m-dropdown--align-push" m-dropdown-toggle="click" aria-expanded="true">
+                                    <a href="#" class="dropdown-toggle m-dropdown__toggle btn m-btn  m-btn--icon">
+                                        <span>Support</span>
+                                    </a>
+                                    <div class="m-dropdown__wrapper">
+                                        <span class="m-dropdown__arrow m-dropdown__arrow--left m-dropdown__arrow--adjust" style="right: auto; left: 65.0315px;"></span>
+                                        <div class="m-dropdown__inner">
+                                            <div class="m-dropdown__body">
+                                                <div class="m-dropdown__content">
+                                                    <ul class="m-nav">
+    <li class="m-nav__item">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Help/GettingStartedFrame" class="m-nav__link" target="">
+            <span class="m-nav__link-text"><i class="icon-info"></i> Getting Started</span>
+        </a>
+    </li>
+
+                                                            <li class="m-nav__item">
+        <a href="https://docs.buddypunch.com/" class="m-nav__link" target="_blank">
+            <span class="m-nav__link-text"><i class="icon-question"></i> Knowledge Base</span>
+        </a>
+    </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="m-nav__item m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" m-dropdown-toggle="click">
+                                    <a href="#" class="m-nav__link m-dropdown__toggle">
+                                        <span class="username-dropdown">Admin Demo</span>
+                                        <span class="m-topbar__userpic m--padding-left-10">
+                                                <img alt="" id="logged-in-user-mini-picture" class="profile-mini-picture" src="Buddy%20Punch_files/e4c9158d-445d-409e-b03b-9d0cfe5adb90.dms" data-default-src="/dist/images/bp_user.png" width="30" height="30">
+                                        </span>
+                                    </a>
+                                    <div class="m-dropdown__wrapper">
+                                        <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                                        <div class="m-dropdown__inner">
+                                            <div class="m-dropdown__body">
+                                                <div class="m-dropdown__content">
+                                                    <ul class="m-nav m-nav--skin-light">
+                                                            <li class="m-nav__item">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Profile" class="m-nav__link" target="">
+            <span class="m-nav__link-text"><i class="icon-user"></i> My Profile</span>
+        </a>
+    </li>
+
+
+    <li class="m-nav__item">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/LogOff" class="m-nav__link" target="">
+            <span class="m-nav__link-text"><i class="icon-key"></i> Log Out</span>
+        </a>
+    </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end::Topbar -->
+            </div>
+        </div>
+    </div>
+<div class="m-header__bottom">
+
+        <div class="m-container m-container--fluid m-container--full-height m-page__container">
+            <div class="m-stack m-stack--ver m-stack--desktop">
+                <!-- begin::Horizontal Menu -->
+                <div class="m-stack__item m-stack__item--middle m-stack__item--fluid">
+
+                    <button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-light " id="m_aside_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+
+                    <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
+                        <ul class="m-menu__nav  m-menu__nav--submenu-arrow ">
+    <li class="m-menu__item
+    m-menu__item--active m-menu__item--rel" aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/" class="m-menu__link ">
+            <span class="m-menu__item-here"></span>
+            <span class="m-menu__link-text">Dashboard</span>
+        </a>
+    </li>
+         <li class="m-menu__item m-menu__item--submenu
+     m-menu__item--rel" m-menu-submenu-toggle="click" aria-haspopup="true">
+        <a href="javascript:;" class="m-menu__link m-menu__toggle">
+            <span class="m-menu__item-here"></span>
+            <span class="m-menu__link-text">Timecards</span>
+                <i class="m-menu__hor-arrow la la-angle-down"></i>
+                <i class="m-menu__ver-arrow la la-angle-right"></i>
+        </a>
+            <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left" style="width: 300px">
+                <span class="m-menu__arrow m-menu__arrow--adjust" style="left: 58.8px;"></span>
+                    <ul class="m-menu__subnav">
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCards" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">View All</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/PTO/PTOCalendar" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">PTO Calendar</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/TimeCard/PendingApproval" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Pending (3)</span>
+                </span>
+            </span>
+        </a>
+    </li>
+                    </ul>
+            </div>
+    </li>
+
+    <li class="m-menu__item
+     m-menu__item--rel" aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Employee" class="m-menu__link ">
+            <span class="m-menu__item-here"></span>
+            <span class="m-menu__link-text">Employees</span>
+        </a>
+    </li>
+         <li class="m-menu__item m-menu__item--submenu
+     m-menu__item--rel" m-menu-submenu-toggle="click" aria-haspopup="true">
+        <a href="javascript:;" class="m-menu__link m-menu__toggle">
+            <span class="m-menu__item-here"></span>
+            <span class="m-menu__link-text">Reports</span>
+                <i class="m-menu__hor-arrow la la-angle-down"></i>
+                <i class="m-menu__ver-arrow la la-angle-right"></i>
+        </a>
+            <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--left" style="width: 300px">
+                <span class="m-menu__arrow m-menu__arrow--adjust" style="left: 58.8px;"></span>
+                    <ul class="m-menu__subnav">
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/SummaryHours" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Hours Summary</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/DailyHours" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Daily Hours</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/InOutActivity" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">In/Out Activity</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/PTOSummary" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">PTO Summary</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/InOutDetailReport" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Employee Detail</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCardReport" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Time Card Report</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/DeleteReport" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Deleted Time Report</span>
+                </span>
+            </span>
+        </a>
+    </li>
+    <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Report/PayrollExport" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Payroll Export</span>
+                </span>
+            </span>
+        </a>
+    </li>
+                    </ul>
+            </div>
+    </li>
+
+    <li class="m-menu__item m-menu__item--submenu
+     m-menu__item--rel" m-menu-submenu-toggle="click" aria-haspopup="true">
+        <a href="javascript:;" class="m-menu__link m-menu__toggle">
+            <span class="m-menu__item-here"></span>
+            <span class="m-menu__link-text">Settings</span>
+                <i class="m-menu__hor-arrow la la-angle-down"></i>
+                <i class="m-menu__ver-arrow la la-angle-right"></i>
+        </a>
+            <div class="m-menu__submenu m-menu__submenu--fixed m-menu__submenu--left" style="width: 600px">
+                <span class="m-menu__arrow m-menu__arrow--adjust" style="left: 58.8px;"></span>
+                    <div class="m-menu__subnav">
+                        <ul class="m-menu__content">
+                                <li class="m-menu__item">
+    <h3 class="m-menu__heading m-menu__toggle">
+        <span class="m-menu__link-text">Basic</span>
+        <i class="m-menu__ver-arrow la la-angle-right"></i>
+    </h3>
+                                    <ul class="m-menu__inner">
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/Edit" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Account Settings</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/AdminList" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Administrators</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/ViewPlan" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Billing</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Integration" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Integrations</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/PayPeriod" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Pay Periods</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+    <li class="m-menu__item">
+
+        <h3 class="m-menu__heading m-menu__toggle">
+            <span class="m-menu__link-text"></span>
+        </h3>
+
+    </li>
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Location" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Locations</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/JobCode" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Department Codes</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+                                    </ul>
+                                </li>
+                                <li class="m-menu__item">
+    <h3 class="m-menu__heading m-menu__toggle">
+        <span class="m-menu__link-text">Advanced</span>
+        <i class="m-menu__ver-arrow la la-angle-right"></i>
+    </h3>
+                                    <ul class="m-menu__inner">
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/BreakRule" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Automatic Break Rules</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Face" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Facial Recognition</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Geofence" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Geofences</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/GpsSettings" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">GPS Settings</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/IpAddressLock" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">IP Address Locks</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/OvertimeSettings" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Overtime</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/OvertimeAlertRule" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Overtime Alerts</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/PTOSettings" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">PTO</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/PunchLimitRule" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Punch Limiting</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/PunchRounding" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Punch Rounding</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/QrCodeSettings" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">QR Code Settings</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/TimesheetApprovalSettings" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Time Card Approvals Settings</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/TimeEntryOptions" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Time Entry Options</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+         <li class="m-menu__item " aria-haspopup="true">
+        <a href="https://buddypunchapp-qa.azurewebsites.net/Account/WebcamSettings" class="m-menu__link ">
+
+            <span class="m-menu__link-title">
+                <span class="m-menu__link-wrap">
+                    <span class="m-menu__link-text">Webcam Settings</span>
+                </span>
+            </span>
+        </a>
+    </li>
+
+                                    </ul>
+                                </li>
+                        </ul>
+                    </div>
+            </div>
+    </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <!-- end::Horizontal Menu -->
+            </div>
+        </div>
+</div>
+</header>
+
+        <!-- END TOP NAVIGATION BAR -->
+        <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body m-page__container m--margin-bottom-20">
+                <div class="m-grid__item m-grid__item--fluid m-wrapper">
+
+
+<div class="m-subheader ">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- BEGIN PAGE CONTAINER-->
+<div class="dashboard">
+    <!-- BEGIN PAGE CONTENT-->
+    <div class="row">
+        <div class="col-xl-4">
+
+<div class="m-portlet "><div class="m-portlet__head">                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">Punches Pending Approval</h3>
+                    </div>
+                </div>
+                    <div class="m-portlet__head-tools">
+                        <ul class="m-portlet__nav">
+                            <li class="m-portlet__nav-item">
+                                <a href="#" class="m-portlet__nav-link btn btn-secondary m-btn--hover-brand m-btn m-btn--pill approve-all">
+                                    Approve All
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+</div><div class="m-portlet__body ">                <div class="m-widget4 timesheets-operations-pending">
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/8ffc7ef0-40be-4ae2-a668-af0e66bae988.dms" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    James Cummingham
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    7/4/2018 - 7/10/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="35439" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/35439" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/2bfc102b-230e-4861-817d-f7d7af0bc707.dms" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Joe Hodgin
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    7/11/2018 - 7/17/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="35463" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/35463" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/facial_recognition_login.png" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Will Byers
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    7/11/2018 - 7/17/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+                                            <td><span class="m-badge m-badge--danger">2</span></td>
+
+                                        <td><a href="#" data-timesheet-id="35484" data-pending-punch-count="2" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/35484" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/8ffc7ef0-40be-4ae2-a668-af0e66bae988.dms" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    James Cummingham
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    7/18/2018 - 7/24/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="35616" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/35616" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/2bfc102b-230e-4861-817d-f7d7af0bc707.dms" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Joe Hodgin
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    7/25/2018 - 7/31/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="35641" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/35641" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/facial_recognition_login.png" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Janey Doe
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    8/1/2018 - 8/7/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="35787" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/35787" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/facial_recognition_login.png" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Drew Kent
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    8/29/2018 - 9/4/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="36143" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36143" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/facial_recognition_login.png" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Will Byers
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    8/29/2018 - 9/4/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="36161" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36161" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/2bfc102b-230e-4861-817d-f7d7af0bc707.dms" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Joe Hodgin
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    11/28/2018 - 12/4/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="37240" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37240" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                        <div class="m-widget4__item pending-approval">
+                                <div class="m-widget4__img m-widget4__img--pic">
+                                    <img src="Buddy%20Punch_files/facial_recognition_login.png" alt="">
+                                </div>
+                            <div class="m-widget4__info">
+                                <span class="m-widget4__title">
+                                    Will Byers
+                                </span><br>
+                                <span class="m-widget4__sub">
+                                    12/12/2018 - 12/18/2018
+                                </span>
+                            </div>
+                            <div class="m-widget4__ext">
+                                <table>
+                                    <tbody><tr>
+
+                                        <td><a href="#" data-timesheet-id="37438" data-pending-punch-count="1" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-button">Approve</a></td>
+                                        <td><a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37438" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                        </div>
+                </div>
+                <div class="no-entires-content" style="display: none">
+                    No pending punches
+                </div>
+</div></div>
+<div class="m-portlet "><div class="m-portlet__head">    <div class="m-portlet__head-caption">
+        <div class="m-portlet__head-title">
+            <h3 class="m-portlet__head-text">PTO Pending Approval</h3>
+        </div>
+    </div>
+</div><div class="m-portlet__body ">                 <div class="m-widget4 pto-operations-pending">
+                         <div class="m-widget4__item pto-pending-approval">
+                                 <div class="m-widget4__img m-widget4__img--pic">
+                                     <img src="Buddy%20Punch_files/facial_recognition_login.png" alt="">
+                                 </div>
+                             <div class="m-widget4__info">
+                                 <span class="m-widget4__title">
+                                     Will Byers
+                                 </span><br>
+
+                             </div>
+                             <div class="m-widget4__ext">
+                                 <table>
+                                     <tbody><tr>
+                                             <td><span class="m-badge m-badge--danger">2</span></td>
+
+                                         <td><a href="#" data-staff-id="14218" data-pending-pto-count="2" class="btn m-btn--pill btn-secondary m-btn--hover-brand btn-sm approve-pto-button">Approve</a></td>
+                                         <td><a href="https://buddypunchapp-qa.azurewebsites.net/PTO/PTOCalendar?defaultView=listYear&amp;employeeId=14218&amp;punchApprovalStatusId=1&amp;startDate=11%2F19%2F2018" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">View</a></td>
+                                     </tr>
+                                 </tbody></table>
+                             </div>
+                         </div>
+                 </div>
+</div></div>
+<div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head"><div class="m-portlet__head-caption"><div class="m-portlet__head-title"><h3 class="m-portlet__head-text ">Time Cards Pending Approval</h3></div></div></div><div class="m-portlet__body ">                    <div class="m-widget11">
+                        <div class="table-responsive">
+                            <!--begin::Table-->
+                            <table class="table">
+                                <!--begin::Thead-->
+                                <thead>
+                                    <tr>
+                                        <td>Pay Period</td>
+                                        <td># of Time Cards</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <!--end::Thead-->
+                                <!--begin::Tbody-->
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="m-widget11__title">7/4/2018 - 7/10/2018</span>
+                                            </td>
+                                            <td><span class="m-widget11__title">1</span></td>
+                                            <td class="m--align-right">
+                                                <a href="https://buddypunchapp-qa.azurewebsites.net/TimeCard/PendingApproval?PayPeriodId=19575" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">
+                                                    Review
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="m-widget11__title">6/20/2018 - 6/26/2018</span>
+                                            </td>
+                                            <td><span class="m-widget11__title">2</span></td>
+                                            <td class="m--align-right">
+                                                <a href="https://buddypunchapp-qa.azurewebsites.net/TimeCard/PendingApproval?PayPeriodId=19496" class="m-btn m-btn--pill m-btn--hover-brand btn btn-sm btn-secondary">
+                                                    Review
+                                                </a>
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+</div></div>        </div>
+
+        <div class="col-xl-8">
+<div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head"><div class="m-portlet__head-caption"><div class="m-portlet__head-title"><h3 class="m-portlet__head-text m--font-success">Punched In</h3></div></div></div><div class="m-portlet__body ">                <div id="punchedin_table_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12"><table class="light-table dataTable no-footer" id="punchedin_table" role="grid">
+                    <thead>
+                        <tr role="row"><th class="sorting" tabindex="0" aria-controls="punchedin_table" rowspan="1" colspan="1" style="width: 133.167px;" aria-label="
+                                Name
+                            : activate to sort column ascending">
+                                Name
+                            </th><th class="sorting_desc" tabindex="0" aria-controls="punchedin_table" rowspan="1" colspan="1" style="width: 153.767px;" aria-sort="descending" aria-label="
+                                Punched In
+                            : activate to sort column ascending">
+                                Punched In
+                            </th><th class="sorting" tabindex="0" aria-controls="punchedin_table" rowspan="1" colspan="1" style="width: 115.3px;" aria-label="
+                                Current Shift
+                            : activate to sort column ascending">
+                                Current Shift
+                            </th><th class="sorting" tabindex="0" aria-controls="punchedin_table" rowspan="1" colspan="1" style="width: 79.0667px;" aria-label="Location: activate to sort column ascending">Location</th><th class="sorting" tabindex="0" aria-controls="punchedin_table" rowspan="1" colspan="1" style="width: 96.6833px;" aria-label="Dept Code: activate to sort column ascending">Dept Code</th><th class="sorting" tabindex="0" aria-controls="punchedin_table" rowspan="1" colspan="1" style="width: 123.75px;" aria-label="
+                                    GPS Location
+                                : activate to sort column ascending">
+                                    GPS Location
+                                </th></tr>
+                    </thead>
+                    <tbody>
+
+                    <tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37558">Will Byers</a>
+                                </td>
+                                <td class="sorting_1">
+                                    12/20/18 7:15 PM
+                                </td>
+                                <td>
+                                    1:28
+                                </td>
+                                    <td>
+                                        Alaska
+                                    </td>
+                                                                    <td>
+                                        Expenses
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr></tbody>
+                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7 dataTables_pager"></div></div></div>
+</div></div>            <div class="m-portlet m-portlet--responsive-mobile m-portlet--mobile "><div class="m-portlet__head"><div class="m-portlet__head-caption"><div class="m-portlet__head-title"><h3 class="m-portlet__head-text m--font-danger">Punched Out</h3></div></div></div><div class="m-portlet__body ">                <div id="punchedout_table_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12"><table class="light-table dataTable no-footer" id="punchedout_table" role="grid">
+                    <thead>
+                        <tr role="row"><th class="sorting" tabindex="0" aria-controls="punchedout_table" rowspan="1" colspan="1" style="width: 210.933px;" aria-label="
+                                Name
+                            : activate to sort column ascending">
+                                Name
+                            </th><th class="sorting_desc" tabindex="0" aria-controls="punchedout_table" rowspan="1" colspan="1" style="width: 143.967px;" aria-sort="descending" aria-label="
+                                Punched Out
+                            : activate to sort column ascending">
+                                Punched Out
+                            </th><th class="sorting" tabindex="0" aria-controls="punchedout_table" rowspan="1" colspan="1" style="width: 69.2833px;" aria-label="Location: activate to sort column ascending">Location</th><th class="sorting" tabindex="0" aria-controls="punchedout_table" rowspan="1" colspan="1" style="width: 169.133px;" aria-label="Dept Code: activate to sort column ascending">Dept Code</th><th class="sorting" tabindex="0" aria-controls="punchedout_table" rowspan="1" colspan="1" style="width: 108.417px;" aria-label="
+                                    GPS Location
+                                : activate to sort column ascending">
+                                    GPS Location
+                                </th></tr>
+                    </thead>
+                    <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37418">Janey Doe</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    12/17/18 12:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/8ffc7ef0-40be-4ae2-a668-af0e66bae988.dms" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37427">James Cummingham</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    12/17/18 12:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/2bfc102b-230e-4861-817d-f7d7af0bc707.dms" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37240">Joe Hodgin</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    11/30/18 1:49 PM
+                                </td>
+                                    <td>
+                                        Alaska
+                                    </td>
+                                                                    <td>
+                                        Department Code 456
+                                    </td>
+                                                                                                    <td>
+                                            <a href="https://buddypunchapp-qa.azurewebsites.net/Employee/PunchMap/22359?isPunchIn=false">
+                                                View
+                                            </a>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36143">Drew Kent</a>                                                                            <a class="popovers" data-container="body" data-trigger="hover" data-content="Shift automatically closed after 1 hour and 5 minutes." data-original-title="Notes"><i class="fa fa-comment-o"></i></a>
+                                </td>
+                                <td class="sorting_1">
+                                    8/30/18 10:43 PM
+                                </td>
+                                    <td>
+                                        Chicago
+                                    </td>
+                                                                    <td>
+                                        Job ABC
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36139">Maria Shoemaker</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36142">Bart Star</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36144">Kevin Singleton</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36145">Joseph Flowers</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36146">Maggie Potter</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36147">Sam Smith</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36148">Chanel Porras</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36149">Jennifer McCrea</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36151">Suzie Orman</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36152">Jon Smith</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36153">Jon Trump</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36154">Steven Covington</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36155">Hank Roland</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/cb673374-73e5-4f74-bcde-11b8f8523a6b.dms" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36156">Sam Wise</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36157">Liz Parker</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36158">Rob Robertson</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36159">Stephanie Cruise</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36160">Leanne Mercado</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="odd">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36162">Nina Drake</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr><tr role="row" class="even">
+                                <td>
+                                        <img class="profile-mini-picture" src="Buddy%20Punch_files/facial_recognition_login.png" width="30" height="30">
+                                    <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/36163">First Name Last Name</a>                                                                    </td>
+                                <td class="sorting_1">
+                                    8/30/18 8:00 AM
+                                </td>
+                                    <td>
+
+                                    </td>
+                                                                    <td>
+
+                                    </td>
+                                                                                                    <td>
+                                    </td>
+                            </tr></tbody>
+                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7 dataTables_pager"></div></div></div>
+</div></div>        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="confirm-approve" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <a href="#" type="button" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                <a href="#" class="btn btn-success btn-ok">Approve</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!--DOC: Aplly "modal-cached" class after "modal" class to enable ajax content caching-->
+<div class="modal fade" id="ajax" role="basic" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="Buddy%20Punch_files/loading-spinner-grey.gif" alt="" class="loading">
+                <span>
+                    &nbsp;&nbsp;Loading...
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+        </div>
+        <div class="m-grid__item m-footer">
+<div class="m-container m-container--fluid m-container--full-height m-page__container">
+    <div class="m-footer__wrapper">
+        <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+            <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+                <div class="m-footer__copyright">
+                    © 2013-2018 BuddyPunch.com<br>
+                    Version: 4.0.18354.4
+                </div>
+            </div>
+            <div class="m-stack__item m-stack__item--right m-stack__item--middle m-stack__item--first">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script type="text/javascript">
+
+                    mixpanel.identify("14105");
+                    mixpanel.people.set({
+                        "$first_name": "Admin",
+                        "$last_name": "Demo",
+                        "$email": "etczerwonka+demo1@gmail.com",
+                        'Company': 'Buddy Demo',
+                        'Plan': 'Starter',
+                        'Active Employees': 25
+                    });
+        </script>
+
+        <script>
+    window.intercomSettings = {
+        name: 'Admin Demo',
+        email: 'etczerwonka+demo1@gmail.com',
+        created_at: 1408457523,
+        'Company': 'Buddy Demo',
+        'Plan': 'Starter',
+        'Active Employees': 25,
+        'utm_source'       : '',
+        'utm_medium'       : '',
+        app_id: 'y9a0fwwv',
+        user_id: '14105', // User ID
+        user_hash: 'A0D4999070FB98371E3AF30ADD6990EE777308AA9CEEB2D29183A265B1BEA6BF'
+    };
+        </script>
+        <script>(function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', intercomSettings); } else { var d = document; var i = function () { i.c(arguments) }; i.q = []; i.c = function (args) { i.q.push(args) }; w.Intercom = i; function l() { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/u0j03ozi'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })()</script>
+
+        <!-- Beginning of Profitwell Awesomeness Code (which loads totally asynchronously) -->
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['ProfitWellObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);  })(window,document,'script','https://dna8twue3dlxq.cloudfront.net/js/profitwell.js','profitwell');
+            profitwell('auth_token', '91024a64964613289e097dc128aa7f83');
+            profitwell('user_email', 'etczerwonka+demo1@gmail.com');
+        </script>
+        <!-- End of Profitwell Awesomeness Code. -->
+
+
+<!-- begin Wootric code -->
+<script type="text/javascript">
+    // wootric_survey_immediately = true; Shows survey immediately for testing purposes.  TODO: Comment out for production.
+    window.wootricSettings = {
+        email: 'etczerwonka+demo1@gmail.com',
+        external_id: '14105', // TODO: The current logged in user's unique ID in your system.  Reference field for external integrations only.  OPTIONAL
+        created_at: 1408457523, // TODO: The current logged in user's sign-up date as a 10 digit Unix timestamp in seconds. OPTIONAL
+        account_token: 'NPS-33f71483', // This is your unique account token.
+        properties:{
+            role: 'Administrator'
+        }
+    };
+</script>
+<script type="text/javascript" src="Buddy%20Punch_files/beacon.js"></script>
+<script type="text/javascript">
+    // This loads the Wootric survey
+    window.wootric('run');
+</script>
+<!-- end Wootric code -->
+
+<script type="text/javascript">
+    _linkedin_data_partner_id = "315010";
+</script><script type="text/javascript">
+             (function(){var s = document.getElementsByTagName("script")[0];
+                 var b = document.createElement("script");
+                 b.type = "text/javascript";b.async = true;
+                 b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                 s.parentNode.insertBefore(b, s);})();
+         </script>
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=315010&fmt=gif" />
+</noscript>
+
+<script>
+    function SetSessionTimeout() {
+        // initialize session timeout settings
+        $.sessionTimeout({
+            title: 'Session Timeout Notification',
+            message: 'Your session is about to expire, please click below to stay logged in.',
+            keepAliveUrl: '/Account/KeepAlive',
+            redirUrl: '/Account/LogOff',
+            logoutUrl: '/Account/LogOff',
+
+            warnAfter: 1800000, //warn after 30 minutes
+            redirAfter: 1830000, //redirect after 30:30
+
+        });
+    }
+</script>
+
+
+        </div>
+    </div>
+
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+    <script src="/dist/bundleIE8.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="Buddy%20Punch_files/bundle.js"></script>
+    <script type="text/javascript" src="Buddy%20Punch_files/datatables.js"></script>
+
+    <script type="text/javascript" src="Buddy%20Punch_files/js.js"></script>
+
+    <script type="text/javascript" src="Buddy%20Punch_files/gmaps.js"></script>
+    <script type="text/javascript">
+
+        jQuery(document).ready(function () {
+            initPunchedInTable();
+            initPunchedOutTable();
+            var dashboardTimesheets = new DashboardTimesheets();
+            dashboardTimesheets.Init();
+        });
+
+
+    </script>
+
+        <script type="text/javascript">
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "positionClass": "toast-top-right",
+                "showDuration": "0",
+                "hideDuration": "0",
+                "timeOut": "15000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut",
+            };
+
+
+            toastr.options.onclick = function () {
+                window.location.href = '/Account/ViewPlan';
+            }
+            ;
+
+/**/
+/**/
+            toastr.error('You have an invoice awaiting payment. Please click here to update your payment information.', 'Invoice Due');
+        </script><div id="toast-container" class="toast-top-right"><div class="toast toast-error" aria-live="assertive" style=""><div class="toast-title">Invoice Due</div><div class="toast-message">You have an invoice awaiting payment. Please click here to update your payment information.</div></div></div>
+
+
+
+
+    <script>
+        jQuery(document).ready(function() {
+            SetSessionTimeout();
+
+            $('#intuitPlatformAppMenu').css('margin-right', '3.2%');
+            $('#intuitPlatformAppMenu').css('position', 'none');
+
+            if (jQuery().fancybox) {
+                // jquery fancybox is there now we can use it!
+                //console.log("fancybox is loaded");
+                $('.fancybox').fancybox();
+            } else {
+                //console.log("fancybox is not loaded");
+            }
+
+
+            $('.date-picker').datepicker({
+                assumeNearbyYear: true,
+                startDate: '01/01/1900',
+                todayHighlight: true,
+                orientation: "bottom left",
+                autoclose: true,
+                templates: {
+                    leftArrow: '<i class="la la-angle-left"></i>',
+                    rightArrow: '<i class="la la-angle-right"></i>'
+                }
+            }).attr('autocomplete', 'off');
+
+            $(".timepicker-default").datetimepicker({
+                widgetPositioning: {
+                    horizontal: 'auto',
+                    vertical: 'bottom'
+                },
+                sideBySide: true,
+                icons: {
+                    time: 'fa fa-time',
+                    date: 'fa fa-calendar',
+                    up: 'fa fa-chevron-up',
+                    down: 'fa fa-chevron-down',
+                    previous: 'fa fa-chevron-left',
+                    next: 'fa fa-chevron-right',
+                    today: 'fa fa-screenshot',
+                    clear: 'fa fa-trash',
+                    close: 'fa fa-remove'
+                }
+            });
+
+            jQuery.validator.setDefaults({
+                focusInvalid: false
+            });
+
+            $('.bp-select2:visible').select2({
+                matcher: select2CustomMatch
+            });
+
+            $('.popovers').popover();
+
+            $('.m_selectpicker').selectpicker();
+
+        });
+
+
+    </script>
+    <!-- END JAVASCRIPTS -->
+
+
+
+
+<div class="modal fade" id="session-timeout-dialog">               <div class="modal-dialog">                 <div class="modal-content">                   <div class="modal-header">                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                     <h4 class="modal-title">Session Timeout Notification</h4>                   </div>                   <div class="modal-body">                     <p>Your session is about to expire, please click below to stay logged in.</p>                                                             </div>                   <div class="modal-footer">                     <button id="session-timeout-dialog-logout" type="button" class="btn btn-default">Logout</button>                     <button id="session-timeout-dialog-keepalive" type="button" class="btn btn-primary" data-dismiss="modal">Stay Connected</button>                   </div>                 </div>               </div>              </div></body><!-- END BODY --></html>
