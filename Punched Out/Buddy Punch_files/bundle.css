@@ -72842,6 +72842,12 @@ fieldset.container {
     border-radius: 2em;
 }
 
+.m-table .m-td-small,
+.table.m-table thead > tr > th.m-td-small {
+    padding-left: .4em;
+    padding-right: .4em;
+}
+
 .m-badge-danger.m-badge-ghostly {
     background-color: rgba(232, 69, 86, 0.2);
     color: #e84556;
