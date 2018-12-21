@@ -72797,7 +72797,7 @@ fieldset.container {
 }
 
 .m-table .m-widget4__info a {
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: underline;
     color: #0c67c4;
 }
