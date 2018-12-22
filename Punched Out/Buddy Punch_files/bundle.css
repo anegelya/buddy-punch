@@ -72849,6 +72849,15 @@ fieldset.container {
     padding-right: .4em;
 }
 
+.m-table .text-muted {
+    color: #a3a5ad !important;
+    transition: color 250ms;
+}
+
+.m-table a.text-muted:hover {
+    color: #364151 !important;
+}
+
 .m-badge-danger.m-badge-ghostly {
     background-color: rgba(232, 69, 86, 0.2);
     color: #e84556;
