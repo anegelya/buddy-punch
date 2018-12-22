@@ -31585,7 +31585,115 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
     ];
 
     // FIXME: Here is json with PTO. Should be removed
-    var ptoEvents = [{"Hours":24,"Title":"Janey Doe","StaffId":"12060","Start":"\/Date(1544918400000)\/","Code":"Vac","EarningCodeId":20,"Id":22376,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":24,"Title":"James Cummingham","StaffId":"14185","Start":"\/Date(1544918400000)\/","Code":"Vac","EarningCodeId":20,"Id":22377,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":3,"Title":"Will Byers","StaffId":"14218","Start":"\/Date(1544572800000)\/","Code":"Personal","EarningCodeId":2443,"Id":22369,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":2,"StatusName":"Approved","StatusId":2,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":8,"Title":"Will Byers","StaffId":"14218","Start":"\/Date(1545091200000)\/","Code":"Holiday","EarningCodeId":118,"Id":22373,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":10,"Title":"Will Byers","StaffId":"14218","Start":"\/Date(1544832000000)\/","Code":"Sick","EarningCodeId":69,"Id":22375,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true}];
+    var ptoEvents = [{
+        "Hours": 24,
+        "Title": "Janey Doe",
+        "StaffId": "12060",
+        "Start": "\/Date(1544918400000)\/",
+        "Code": "Vac",
+        "EarningCodeId": 20,
+        "Id": 22376,
+        "PtoType": 1,
+        "Notes": "",
+        "ErrorMessage": null,
+        "Status": 4,
+        "StatusName": "Changed By Manager",
+        "StatusId": 4,
+        "Deleted": false,
+        "Approved": true,
+        "Ignored": false,
+        "Selectable": true
+    }, {
+        "Hours": 24,
+        "Title": "James Cummingham",
+        "StaffId": "14185",
+        "Start": "\/Date(1544918400000)\/",
+        "Code": "Vac",
+        "EarningCodeId": 20,
+        "Id": 22377,
+        "PtoType": 1,
+        "Notes": "",
+        "ErrorMessage": null,
+        "Status": 4,
+        "StatusName": "Changed By Manager",
+        "StatusId": 4,
+        "Deleted": false,
+        "Approved": true,
+        "Ignored": false,
+        "Selectable": true
+    }, {
+        "Hours": 3,
+        "Title": "Will Byers",
+        "StaffId": "14218",
+        "Start": "\/Date(1544572800000)\/",
+        "Code": "Personal",
+        "EarningCodeId": 2443,
+        "Id": 22369,
+        "PtoType": 1,
+        "Notes": "",
+        "ErrorMessage": null,
+        "Status": 2,
+        "StatusName": "Approved",
+        "StatusId": 2,
+        "Deleted": false,
+        "Approved": true,
+        "Ignored": false,
+        "Selectable": true
+    }, {
+        "Hours": 3,
+        "Title": "Will Byers",
+        "StaffId": "14218",
+        "Start": "\/Date(1544832000000)\/",
+        "Code": "Personal",
+        "EarningCodeId": 2443,
+        "Id": 22370,
+        "PtoType": 1,
+        "Notes": "",
+        "ErrorMessage": null,
+        "Status": 2,
+        "StatusName": "Approved",
+        "StatusId": 2,
+        "Deleted": false,
+        "Approved": true,
+        "Ignored": false,
+        "Selectable": true
+    }, {
+        "Hours": 8,
+        "Title": "Will Byers",
+        "StaffId": "14218",
+        "Start": "\/Date(1545091200000)\/",
+        "Code": "Holiday",
+        "EarningCodeId": 118,
+        "Id": 22373,
+        "PtoType": 1,
+        "Notes": "",
+        "ErrorMessage": null,
+        "Status": 4,
+        "StatusName": "Changed By Manager",
+        "StatusId": 4,
+        "Deleted": false,
+        "Approved": false,
+        "Ignored": false,
+        "Selectable": true
+    }, {
+        "Hours": 10,
+        "Title": "Will Byers",
+        "StaffId": "14218",
+        "Start": "\/Date(1544832000000)\/",
+        "Code": "Sick",
+        "EarningCodeId": 69,
+        "Id": 22375,
+        "PtoType": 1,
+        "Notes": "",
+        "ErrorMessage": null,
+        "Status": 4,
+        "StatusName": "Changed By Manager",
+        "StatusId": 4,
+        "Deleted": false,
+        "Approved": false,
+        "Ignored": false,
+        "Selectable": true
+    }];
 
     var sources = {
         pto: function (start, end, timezone, callback) {
@@ -31630,7 +31738,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
             scheduleService.GetSchedule(start, end, timezone, locationIds, jobCodeIds, positionIds, employeeIds)
                 .done(function (events) {
-                    console.log("get schedule done");
+                    console.log("get schedule done", start, end);
                     
                     callback(events.Shifts.map(function (shift) {
                         //console.log(value);
@@ -31746,7 +31854,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 });
 
                 var ptos = $('#schedule_calendar').fullCalendar('clientEvents', function (event) {
-                    return event.eventTypeId === eventTypeEnum.PTO;
+                    return event.start >= view.start && event.start < view.end && event.eventTypeId === eventTypeEnum.PTO;
                 });
 
                 var unpublishedShifts = $.grep(shifts,
@@ -31770,46 +31878,61 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 $('.resource_totalHours').text("0");
                 $('.resource_totalDuration').val("0");
                 $.each(shifts, (function (index, shift) {
-                    var shiftDuration = moment.duration(shift.duration);
-                    var currentTotal = moment.duration($('#resource_' + shift.resourceId + '_totalDuration').val());
-                    currentTotal.add(shiftDuration);
-                    $('#resource_' + shift.resourceId + '_totalDuration').val(currentTotal.toISOString());
-                    $('#resource_' + shift.resourceId + '_totalHours').text((currentTotal.hours() + (currentTotal.minutes() / 60.0)).toFixed(2));
+
+                    if(shift.published) {
+
+                        var shiftDuration = moment.duration(shift.duration);
+
+                        if(currentTotal = $('#resource_' + shift.resourceId + '_totalDuration').val()) {
+
+                            var newTotal = Number(currentTotal) + Number(shiftDuration.hours());
+
+                            $('#resource_' + shift.resourceId + '_totalDuration')
+                            .val(newTotal);
+
+                            $('#resource_' + shift.resourceId + '_totalHours')
+                            .text(newTotal);
+                        }
+                    }
                 })); 
 
                 $.each(ptos, (function (index, pto) {
-                    var ptoDuration = pto.hours;
-                    
-                    if(currentTotal = $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration').val()) {
+
+                    if(pto.approved == true) {
+
+                        var ptoDuration = pto.hours;
                         
-                        var newTotal = moment.duration(currentTotal).add(moment.duration(ptoDuration, 'hours'));
+                        if(currentTotal = $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration').val()) {
+                            
+                            var newTotal = Number(currentTotal) + Number(ptoDuration);
 
-                        $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration')
-                        .val(currentTotal + ptoDuration);
+                            $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration')
+                            .val(newTotal);
 
-                        $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours')
-                        .text(pto.code + " " + newTotal.hours() + " hs")
-                        .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
+                            $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours')
+                            .text(pto.code + " " + newTotal + " hs")
+                            .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
 
-                    } else {
+                        } else {
 
-                        $('<input/>', {
-                            type: 'hidden',
-                            value: moment.duration(ptoDuration, 'hours').toISOString(),
-                            id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration'
-                        })
-                        .insertAfter('#resource_' + pto.resourceId + '_totalDuration');
+                            $('<input/>', {
+                                type: 'hidden',
+                                value: moment.duration(ptoDuration, 'hours').hours(),
+                                id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration'
+                            })
+                            .insertAfter('#resource_' + pto.resourceId + '_totalDuration');
 
-                        $('<p/>', {
-                            class: 'resource_pto_hours_duration',
-                            type: 'hidden',
-                            id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours'
-                        })
-                        .text(pto.code + " " + ptoDuration + " hs")
-                        .insertAfter($('#resource_' + pto.resourceId + '_totalHours').parent())
-                        .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
-                        
-                        $('#schedule_calendar').fullCalendar('render');
+                            $('<p/>', {
+                                class: 'resource_pto_hours_duration',
+                                type: 'hidden',
+                                id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours'
+                            })
+                            .text(pto.code + " " + ptoDuration + " hs")
+                            .insertAfter($('#resource_' + pto.resourceId + '_totalHours').parent())
+                            .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
+                            
+                            $('#schedule_calendar').fullCalendar('render');
+                        }
                     }
                 }));
 
@@ -31840,6 +31963,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
             },
             resourceLabelText: 'Employees',
             resourceAreaWidth: '20%',
+            refetchResourcesOnNavigate: true,
             //resourceGroupField: 'groupId',
 
             header: {
@@ -32064,7 +32188,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                         '<input type="hidden" id="resource_' +
                             resourceObj.id +
                             '_totalDuration" class="resource_totalDuration" value="0"/>' +
-                            '<p class="resource_hours"><span id="resource_' +
+                            '<p class="resource_hours">Scheduled <span id="resource_' +
                             resourceObj.id +
                             '_totalHours" class="resource_totalHours">0</span> hrs</p>'));
                     // if (resourceObj.profileminiimageurl) {
