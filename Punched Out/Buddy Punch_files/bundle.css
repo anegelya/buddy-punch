@@ -72872,3 +72872,7 @@ fieldset.container {
     background-color: rgba(113, 106, 202, 0.19);
     color: #716aca;
 }
+
+.m-portlet .nav.nav-pills {
+    flex-wrap: nowrap;
+}
