@@ -1092,7 +1092,7 @@ fbq('track', 'PageView');
                                     <div class="m-portlet__head-tools">
                                         <ul class="m-portlet__nav">
                                             <li class="m-portlet__nav-item">
-                                                <a href="#" class="m-portlet__nav-link btn m-btn m-btn-primary approve-all">
+                                                <a id="btn-approve-all-punches" href="#" class="m-portlet__nav-link btn m-btn m-btn-primary approve-all">
                                                     Approve All
                                                 </a>
                                             </li>
@@ -2001,6 +2001,18 @@ fbq('track', 'PageView');
             $('.popovers').popover();
 
             $('.m_selectpicker').selectpicker();
+
+            $('#pending-punches-tab').click(function(){
+                $('#btn-approve-all-punches').show();
+            });
+
+            $('#pending-pto-tab').click(function(){
+                $('#btn-approve-all-punches').hide();
+            });
+
+            $('#pending-timecards-tab').click(function(){
+                $('#btn-approve-all-punches').hide();
+            });
 
         });
 
