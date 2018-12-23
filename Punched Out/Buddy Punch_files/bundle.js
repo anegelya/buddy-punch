@@ -31848,6 +31848,22 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 //}
 
             },
+            eventAfterRender: function(event, element, view) {
+
+                if(event.eventTypeId === eventTypeEnum.Shift && event.published === true) {
+
+                    var currentDay = event.start.format("YYYY-MM-DD");
+    
+                    var prev = $("#dailytotal-"+currentDay).text() || 0;
+                    var prevTotal = $("#totalHoursScheduledLabel").text() || 0;
+
+                    var eventDuration = moment.duration(event.duration);
+
+                    var newDuration = +prev + +eventDuration.hours();
+                    $("#dailytotal-"+currentDay).text(newDuration);
+                    $("#totalHoursScheduledLabel").text(+prevTotal + +eventDuration.hours());
+                }
+            },
             eventAfterAllRender: function(view) {               
                 var shifts = $('#schedule_calendar').fullCalendar('clientEvents', function (event) {
                     return event.start >= view.start && event.end <= view.end && event.eventTypeId === eventTypeEnum.Shift;
@@ -32034,6 +32050,9 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
             },
             eventRender: function (event, element, view) {
 
+                $(".fc-dailytotal").text(0); //Clear total daily sum
+                $("#totalHoursScheduledLabel").text(0); //Clear total sum
+
                 var title,
                     classes,
                     css = {},
@@ -32204,29 +32223,38 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 //$("#loadTemplateButton").toggle(view.name === 'timelineWeek');
                 //$("#templateDivider").toggle(view.name === 'timelineWeek');
                 window.location.hash = view.name;
-                if ($(".fc-view").eq(0).has("#totalHoursScheduledLabel").length === 0) {
-                    if (view.name === 'timelineWeek') {                    
-                        $(".fc-view table").eq(0).append(
-                            '<tfoot style="border-top:2px solid black;" class="sticky" ><tr><td style="border-color:transparent;text-align:center;" colspan="3"><table><tbody><tr><td class="fc-axis" style="border:none;text-align:left;font-weight:bold;width:14.5% !important;" >Hours Scheduled</td>' +
-                            '<td style="border-color:transparent;padding:5px;color:#ddd;">Non</td>' +
-                            '<td style="border-color:transparent;padding:5px;">320hs</td>' +
-                            '<td style="border-color:transparent;padding:5px;">320hs</td>' +
-                            '<td style="border-color:transparent;padding:5px;">320hs</td>' +
-                            '<td style="border-color:transparent;padding:5px;">320hs</td>' +
-                            '<td style="border-color:transparent;padding:5px;">320hs</td>' +
-                            '<td style="border-color:transparent;padding:5px;color:#ddd;">Non</td>' +
-                            '</tr></tbody></table></tr></tfoot>');
+
+                    if (view.name === 'timelineWeek') {
+
+                        $("#schedule-calendar-footer").remove();
+                        $("#schedule-calendar-subfooter").remove();
+
+                        $(".fc-view table").eq(0).append('<thead class="fc-head fc-foot" id="schedule-calendar-footer"> <tr> <td class="fc-resource-area fc-widget-header" style="width: 20%;"><div class="fc-scroller-clip"><div class="fc-scroller fc-no-scrollbars" style="overflow: scroll hidden; margin: 0px;"><div class="fc-scroller-canvas" style="min-width: 70px;"> <div class="fc-content"><table class="" style="height: 45px;"><colgroup><col class="fc-main-col"></colgroup><tbody><tr><th class="fc-widget-header"><div><div class="fc-cell-content"><span class="fc-expander-space"><span class="fc-icon"></span></span><span class="fc-cell-text">Hours Scheduled</span></div></div></th></tr></tbody></table></div> <div class="fc-bg"></div> </div></div></div></td> <td class="fc-divider fc-col-resizer fc-widget-header"></td> <td class="fc-time-area fc-widget-header"><div class="fc-scroller-clip"><div class="fc-scroller fc-no-scrollbars" style="overflow: scroll hidden; margin: 0px;"><div class="fc-scroller-canvas" style="width: 1050px; min-width: 0px;"> <div class="fc-content"><table class="" style="height: 45px;"><colgroup><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col></colgroup><tbody><tr class="fc-foot-timerow"><!--<th class="fc-widget-header fc-wed fc-past" data-date="2018-12-19"><div class="fc-cell-content"><span class="fc-cell-text">Wed 12/19</span></div></th><th class="fc-widget-header fc-thu fc-past" data-date="2018-12-20"><div class="fc-cell-content"><span class="fc-cell-text">Thu 12/20</span></div></th><th class="fc-widget-header fc-fri fc-past" data-date="2018-12-21"><div class="fc-cell-content"><span class="fc-cell-text">Fri 12/21</span></div></th><th class="fc-widget-header fc-sat fc-today" data-date="2018-12-22"><div class="fc-cell-content"><span class="fc-cell-text">Sat 12/22</span></div></th><th class="fc-widget-header fc-sun fc-future" data-date="2018-12-23"><div class="fc-cell-content"><span class="fc-cell-text">Sun 12/23</span></div></th><th class="fc-widget-header fc-mon fc-future" data-date="2018-12-24"><div class="fc-cell-content"><span class="fc-cell-text">Mon 12/24</span></div></th><th class="fc-widget-header fc-tue fc-future" data-date="2018-12-25"><div class="fc-cell-content"><span class="fc-cell-text">Tue 12/25</span></div></th>--></tr></tbody></table></div> <div class="fc-bg"></div> </div></div></div></td> </tr> </thead>');
                         $(".fc-view table").eq(0).after(
-                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;" id="totalHoursScheduledLabel"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#5198e3;font-weight:bold;">1600hs</span><br/><span style="color:#A3A5AD;">' +
+                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" id="schedule-calendar-subfooter" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hs</span><br/><span style="color:#A3A5AD;">' +
                             $(".fc-header-toolbar .fc-center h2").text() +
                             '</span></span></div>');
+
+                        $tr = $(".fc-view table .fc-foot .fc-time-area .fc-content .fc-foot-timerow");
+
+                        $.each($(".fc-widget-header[data-date]"), function(key, val) {
+                            var dateYMD = $(this).attr("data-date");
+                            $tr.append('<td class="fc-widget-header" style="vertical-align: middle;">'+
+                            '<div class="fc-cell-content text-center"><span class="fc-cell-text"><span class="fc-dailytotal" id="dailytotal-'+dateYMD+'">0</span> hs</span></div>'
+                            +'</td>');
+                        });  
+
                     } else {
                         $(".fc-view table").eq(0).after(
-                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;" id="totalHoursScheduledLabel"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#5198e3;font-weight:bold;">1600hs</span><br/><span style="color:#f8f8f8;">' +
+                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hs</span><br/><span style="color:#a3a5ad;">' +
                             $(".fc-header-toolbar .fc-center h2").text() +
                             '</span></span></div>');
                     }
-                }
+
+
+                $(".fc-time-area .fc-scroller").on('scroll', function (e) {
+                    $("#schedule-calendar-footer .fc-scroller").scrollLeft(e.target.scrollLeft);
+                });
             }
         });
 

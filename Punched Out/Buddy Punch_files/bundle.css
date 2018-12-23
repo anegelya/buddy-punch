@@ -71309,6 +71309,11 @@ body.m-content--skin-light2 {
     border-bottom: 3px solid #364150
 }
 
+#schedule_calendar .fc-view-container thead.fc-head.fc-foot td {
+    border-bottom: none;
+    border-top: 3px solid #364150
+}
+
 #schedule_calendar .fc-view-container .fc-resource-area td {
     border-bottom-color: #fff
 }
