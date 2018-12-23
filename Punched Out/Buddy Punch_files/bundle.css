@@ -72785,20 +72785,42 @@ fieldset.container {
     background-color: #0c67c4;
 }
 
+.col-xl-4 .m-portlet .m-portlet__body {
+    padding: 1em 1.5em;
+}
+
+.col-xl-4 .table.m-table tr td,
+.m-table thead th {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
 .table.m-table tr td {
     vertical-align: top;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 .m-table thead th {
     border-top: none;
     border-bottom-color: #364151;
     color: #364151;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+table.m-table thead > tr > th.sorting {
+    padding-right: 0;
 }
 
 .m-table .m-widget4__img--pic img {
     width: 34px;
     height: 34px;
     border-radius: 50%;
+}
+
+.m-table .m-widget4__img--cam img {
+    max-width: 40px;
 }
 
 .m-table .m-widget4__info a {
