@@ -72834,6 +72834,10 @@ table.m-table thead > tr > th.sorting {
     font-size: 12px;
 }
 
+.m-table .m-widget4__ext.no-wrap {
+    white-space: nowrap;
+}
+
 .m-table .m-widget4__ext .btn {
     border-color: #e0e3e7;
     color: #a3a5ad;
