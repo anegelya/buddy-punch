@@ -72889,6 +72889,11 @@ table.m-table thead > tr > th.sorting {
     color: #364151 !important;
 }
 
+.m-table .m-widget4__timewrap {
+    display: block;
+    max-width: 3em;
+}
+
 .m-badge-danger.m-badge-ghostly {
     background-color: rgba(232, 69, 86, 0.2);
     color: #e84556;
