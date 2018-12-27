@@ -923,13 +923,13 @@
                                 <div class="row">
                                     <div class="col row">
                                         <div class="col-md-auto">
-                                            <p class="h6 font-weight-bold">Total PTO</p>
+                                            <p class="h6 font-weight-bold d-inline-block w-auto mb-0">Total PTO</p>
                                             <p class="m-icon m-icon-expand" data-toggle="modal" data-target="#totalPTOModal">
                                                 12.00 Hours 
                                             </p>
                                         </div>
                                         <div class="col-md-auto">
-                                            <p class="h6 font-weight-bold">Total Time</p>
+                                            <p class="h6 font-weight-bold d-inline-block w-auto mb-0" data-toggle="tooltip" data-placement="bottom" title="Excludes current shift"><u class="dotted">Total Time</u></p>
                                             <p class="m-icon m-icon-expand" data-toggle="modal" data-target="#totalHoursModal">
                                                 1 Hour, 34 Minutes
                                             </p>
@@ -2177,7 +2177,9 @@
             //     $('#positionselection').show();
             // }
 
-
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip(); 
+            });
 
             // initiate layout and plugins
 
@@ -2346,7 +2348,7 @@
             function render() {
                 var hoursText   = h > 0 ? (h > 1 ? h + " hrs, " : h + " hr, ") : "";
                 var minutesText = m > 0 ? (h > 0 ? (m <= 1 ? m + " min" : m + " mins") : (m <= 1 ? m + " minute" : m + " minutes")) : m + " minutes";
-                wrapper.innerHTML = "For " + hoursText + minutesText;
+                wrapper.innerHTML = h > 0 || m > 0 ? "For " + hoursText + minutesText : "";
             }
 
             this.run = function(startDate) {

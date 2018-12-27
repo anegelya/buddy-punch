@@ -72920,3 +72920,8 @@ table.m-table thead > tr > th.sorting {
 #schedule_calendar .fc-header-toolbar {
     margin-bottom: 0.5em;
 }
+
+u.dotted {
+    border-bottom: 1px dotted #000;
+    text-decoration: none;
+}
