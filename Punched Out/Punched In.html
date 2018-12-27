@@ -925,13 +925,13 @@
                                         <div class="col-md-auto">
                                             <p class="h6 font-weight-bold">Total PTO</p>
                                             <p class="m-icon m-icon-expand" data-toggle="modal" data-target="#totalPTOModal">
-                                                    3.5 Hs 
+                                                12.00 Hours 
                                             </p>
                                         </div>
                                         <div class="col-md-auto">
-                                            <p class="h6 font-weight-bold">Total Hours</p>
+                                            <p class="h6 font-weight-bold">Total Time</p>
                                             <p class="m-icon m-icon-expand" data-toggle="modal" data-target="#totalHoursModal">
-                                                    38.30 Hs 
+                                                1 Hour, 34 Minutes
                                             </p>
                                         </div>
                                     </div>
@@ -1671,13 +1671,26 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="totalHoursModalLabel">Total Hours</h5>
+                    <div>
+                        <h5 class="modal-title" id="totalHoursModalLabel">Total Time</h5>
+                        <p class="text-muted" style="margin-bottom: 0">(excludes current shift)</p>
+                    </div>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                    <p class="h1">38.30 hs</p>
+                    <table class="totalHoursModal-table">
+                        <tr>
+                            <td class="text-right h5">Hours & Minutes:</td>
+                            <td>1 hour, 32 minutes</td>
+                        </tr>
+                        <tr>
+                            <td class="text-right h5">Hours:</td>
+                            <td>1.530 hours</td>
+                        </tr>
+                    </table>
+                    <br>
                     <p class="text-muted">Worked hours for 19/06/2018 - 10/19/2018</p>
                     <br>
                     <table class="modal-table">

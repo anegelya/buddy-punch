@@ -72911,3 +72911,7 @@ table.m-table thead > tr > th.sorting {
 .m-portlet .nav.nav-pills {
     flex-wrap: nowrap;
 }
+
+.totalHoursModal-table {
+    font-size: 1.2em;
+}
