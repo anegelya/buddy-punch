@@ -462,13 +462,16 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-md-7 m--margin-bottom-10">
+                                            <div class="col-md-6 m--margin-bottom-10">
                                                 <span>You are working on <b>Alaska - Expenses - Vacation</b></small>
                                             </div>
-                                            <div class="col-md-5 text-right">
-                                                <span class="m-badge m-badge--success m-badge--wide">
+                                            <div class="col-md-6 text-right">
+                                                <span class="m-badge m-badge--success m-badge--wide m--margin-bottom-10">
                                                     Punched In
                                                 </span>
+                                                <div class="row">
+                                                    <p class="timer-count col" id="punch-timer"></p>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -491,9 +494,6 @@
                                                     value=""><input class="geoLocationTimeStamp" data-val="true"
                                                     data-val-date="The field GeoLocationTimeStamp must be a date." id="GeoLocationTimeStamp"
                                                     name="GeoLocationTimeStamp" type="hidden" value="1/1/0001 12:00:00 AM">
-                                                    <div class="row">
-                                                        <p class="timer-count col" id="punch-timer"></p>
-                                                    </div>
 
                                                     <div class="row">
                                                         <div class="col-md-12">
@@ -2195,8 +2195,10 @@
 
             var breakTimer = new Timer(document.getElementById('breakPunch-timer'));
 
-            var punchTimer = new Timer(document.getElementById('punch-timer'));
-            punchTimer.run();
+            if (document.getElementById('punch-timer')) {
+                var punchTimer  = new Timer(document.getElementById('punch-timer'));
+                punchTimer.run(1545841529000);
+            }
 
             function switchToLatePunchIn() {
                 $(".bp-select2.select2-hidden-accessible").select2("destroy");
@@ -2329,15 +2331,17 @@
             }
 
             function render() {
-                wrapper.innerHTML = (h > 0 ? h + ":" : "") + m + ":" + (s >= 10 ? s : "0" + s);
+                var hoursText   = h > 0 ? (h > 1 ? h + " hrs, " : h + " hr, ") : "";
+                var minutesText = m > 0 ? (h > 0 ? (m <= 1 ? m + " min" : m + " mins") : (m <= 1 ? m + " minute" : m + " minutes")) : m + " minutes";
+                wrapper.innerHTML = "For " + hoursText + minutesText;
             }
 
-            this.run = function() {
-                date = new Date();
+            this.run = function(startDate) {
+                date = new Date(startDate);
                 interval = setInterval(function() {
                     update();
                     render();
-                 }, 1000 );
+                }, 1000 );
             }
 
             this.pause = function() {
