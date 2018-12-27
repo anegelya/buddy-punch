@@ -71400,7 +71400,7 @@ body.m-content--skin-light2 {
 #schedule_calendar .fc-view-container .fc-timeline .fc-body .fc-scroller {
     /*! overflow-x: hidden !important; */
     /*! margin: 0 -20px 0 0 !important */
-    height: 63vh !important;
+    height: calc(100vh - 420px) !important;
 }
 
 #schedule_calendar .fc-view-container .fc-scroller-canvas>.fc-content {
@@ -72911,4 +72911,12 @@ table.m-table thead > tr > th.sorting {
 
 .m--margin-bottom-0 {
     margin-bottom: 0 !important;
+}
+
+.m-portlet__head.m-portlet__head--thin {
+    height: auto;
+}
+
+#schedule_calendar .fc-header-toolbar {
+    margin-bottom: 0.5em;
 }
