@@ -71400,6 +71400,7 @@ body.m-content--skin-light2 {
 #schedule_calendar .fc-view-container .fc-timeline .fc-body .fc-scroller {
     /*! overflow-x: hidden !important; */
     /*! margin: 0 -20px 0 0 !important */
+    height: 63vh !important;
 }
 
 #schedule_calendar .fc-view-container .fc-scroller-canvas>.fc-content {
@@ -72906,4 +72907,8 @@ table.m-table thead > tr > th.sorting {
 
 .totalHoursModal-table {
     font-size: 1.2em;
+}
+
+.m--margin-bottom-0 {
+    margin-bottom: 0 !important;
 }

@@ -736,13 +736,13 @@ fbq('track', 'PageView');
 </header>
 
         <!-- END TOP NAVIGATION BAR -->
-        <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body m-page__container m--margin-bottom-20">
+        <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body m-page__container">
                 <div class="m-grid__item m-grid__item--fluid m-wrapper">
                     
 
 
 
-<div class="m-portlet m-portlet--metal fc-filter-header m-portlet--head-solid-bg m-portlet--responsive-mobile m-portlet--mobile" style="background: #f4f5f8; border-color: #f4f5f8">
+<div class="m-portlet m-portlet--metal fc-filter-header m-portlet--head-solid-bg m-portlet--responsive-mobile m-portlet--mobile m--margin-bottom-0" style="background: #f4f5f8; border-color: #f4f5f8">
      <div class="m-portlet__head" style="background: #f7fafc; border-color: #f7fafc">
          <div class="m-portlet__head-caption">
              <div class="m-form__group row align-items-center ">
@@ -1562,8 +1562,8 @@ fbq('track', 'PageView');
 
                 </div>
         </div>
-        <div class="m-grid__item m-footer">
-<div class="m-container m-container--fluid m-container--full-height m-page__container">
+        <div>
+<!-- <div class="m-container m-container--fluid m-container--full-height m-page__container">
     <div class="m-footer__wrapper">
         <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
             <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
@@ -1578,7 +1578,7 @@ fbq('track', 'PageView');
             </div>
         </div>
     </div>
-</div>
+</div> -->
     
         <script type="text/javascript">
 
@@ -1689,7 +1689,7 @@ fbq('track', 'PageView');
                         var startDate = '';
                         var employeeId = '0';
                         var punchApprovalStatusId = '0';
-                        var schedule = new Schedule("https://buddypunchapiapp-qa.azurewebsites.net/api/", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSIsImtpZCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSJ9.eyJpc3MiOiJodHRwczovL2J1ZGR5cHVuY2h3ZWJhdXRob3JpemF0aW9uLXFhLmF6dXJld2Vic2l0ZXMubmV0L2lkZW50aXR5IiwiYXVkIjoiaHR0cHM6Ly9idWRkeXB1bmNod2ViYXV0aG9yaXphdGlvbi1xYS5henVyZXdlYnNpdGVzLm5ldC9pZGVudGl0eS9yZXNvdXJjZXMiLCJleHAiOjE1NDU3NDc3NjIsIm5iZiI6MTU0NTY2MTM2MiwiY2xpZW50X2lkIjoiQnVkZHlQdW5jaFdlYkFwcCIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwib3BlbmlkIiwicHJvZmlsZSIsInJvbGVzIl0sInN1YiI6IjE0MTA1IiwiYXV0aF90aW1lIjoxNTQ1NjYxMzYyLCJpZHAiOiJpZHNydiIsImFtciI6WyJwYXNzd29yZCJdfQ.TkJESQIXJ4_kBE-DdFUDl6UWmAmbgJderTTjhyfg65PEE1n-FI7rGhHw9OtjXloCovS_UlgP8djQCah3PaBPWOG5Ud09epJj-ttOibAsZLb6ql9YSCWeknieArarNY1zL9aGJcgHht9oCsgyG4oZmfDxVj0JoAt7WVRXtqlqBUFUqJ29144FG4XnP3YPW2_p1nGFtD5Uzq_8LQzh-J8ZLe8a0fGi1gWfiMhIMQfd6nAPEHXdHFA7ZiPoLAVujlgYl2q0obvm9mIMdyqvxVdHuAEaCo8xy-2SarfmNH1mHKUGLHiclgSVdXmw7UZ4GNMTVVZuRFUOPPFE9mXcbdO-3A", 3, "/Employee/EditPto", "/PTO/EditPtoRequest", undefined, 'PTOCalendar');
+                        var schedule = new Schedule("https://buddypunchapiapp-qa.azurewebsites.net/api/", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSIsImtpZCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSJ9.eyJpc3MiOiJodHRwczovL2J1ZGR5cHVuY2h3ZWJhdXRob3JpemF0aW9uLXFhLmF6dXJld2Vic2l0ZXMubmV0L2lkZW50aXR5IiwiYXVkIjoiaHR0cHM6Ly9idWRkeXB1bmNod2ViYXV0aG9yaXphdGlvbi1xYS5henVyZXdlYnNpdGVzLm5ldC9pZGVudGl0eS9yZXNvdXJjZXMiLCJleHAiOjE1NDU5OTQ0NDIsIm5iZiI6MTU0NTkwODA0MiwiY2xpZW50X2lkIjoiQnVkZHlQdW5jaFdlYkFwcCIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwib3BlbmlkIiwicHJvZmlsZSIsInJvbGVzIl0sInN1YiI6IjE0MTA1IiwiYXV0aF90aW1lIjoxNTQ1OTA4MDQyLCJpZHAiOiJpZHNydiIsImFtciI6WyJwYXNzd29yZCJdfQ.dLV_CU0saJQ2wtvkAIzX7UBslRAn5dgAu0mXWj3XWY9b-4uy6y7bO0zyFIE861nX4zYPCaiPZBQxcJDkDdfeGVkI0pG5PQh64VnZQjcwDV6YbkkphJVm2abUgiwWpniGD3TTAIT7Gy-84CdiFDfcZKNHu2tFv71m2qV1TbgGF6Sszu00jY9ySj5Tlv7jXXZy8ovkzNYefZH955w0eV13n4n53jDp2u70GGBD7YSLX2udnSsB53ZPYQeE8Jsb4S6auoU5JxF8oPcC4Tk2YzkG0WLeE5C9jG2mY7NH6NO07rlmvxtoSk5QCv_le8wT4_lQZkdBdrIizPE-ymTELR3P4Q", 3, "/Employee/EditPto", "/PTO/EditPtoRequest", undefined, 'PTOCalendar');
                         schedule.Init(defaultView, startDate, employeeId, punchApprovalStatusId);
 
 
