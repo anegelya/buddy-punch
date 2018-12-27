@@ -72604,8 +72604,8 @@ fieldset.container {
 }
 
 #schedule_calendar .fc-body .fc-resource-area .fc-cell-content {
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding-top: 5px;
+    padding-bottom: 0;
     padding-left: 14px;
 }
 
@@ -72702,14 +72702,6 @@ fieldset.container {
 
 #schedule_calendar .event-openshift .fc-details {
     opacity: 0.75;
-}
-
-#schedule_calendar .fc-timelineWeek-view .fc-event:not(.event-pto) .fc-details:not(:empty) {
-    margin-top: 1em;
-}
-
-#schedule_calendar .fc-timelineWeek-view .fc-event:not(.event-pto) .fc-details.fc-position {
-    margin-top: 0;
 }
 
 .m-checkbox > span {

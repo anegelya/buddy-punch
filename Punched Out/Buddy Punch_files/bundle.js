@@ -32094,7 +32094,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                             classes = 'event-published';
                             css = {
                                 'background-color': event.shiftcolorcode,
-                                'border-color': event.shiftcolorcode,
+                                'border': 0,
                             };
                             hoursCountCss = {'color': event.shiftcolorcode};
 
