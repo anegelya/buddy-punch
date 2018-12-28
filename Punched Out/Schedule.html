@@ -1685,15 +1685,14 @@ fbq('track', 'PageView');
     <script src="Buddy%20Punch_files/scheduler.js"></script>
     <script type="text/javascript">
             jQuery(document).ready(function () {
-                        var defaultView = 'month';
-                        var startDate = '';
-                        var employeeId = '0';
-                        var punchApprovalStatusId = '0';
-                        var schedule = new Schedule("https://buddypunchapiapp-qa.azurewebsites.net/api/", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSIsImtpZCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSJ9.eyJpc3MiOiJodHRwczovL2J1ZGR5cHVuY2h3ZWJhdXRob3JpemF0aW9uLXFhLmF6dXJld2Vic2l0ZXMubmV0L2lkZW50aXR5IiwiYXVkIjoiaHR0cHM6Ly9idWRkeXB1bmNod2ViYXV0aG9yaXphdGlvbi1xYS5henVyZXdlYnNpdGVzLm5ldC9pZGVudGl0eS9yZXNvdXJjZXMiLCJleHAiOjE1NDU5OTQ0NDIsIm5iZiI6MTU0NTkwODA0MiwiY2xpZW50X2lkIjoiQnVkZHlQdW5jaFdlYkFwcCIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwib3BlbmlkIiwicHJvZmlsZSIsInJvbGVzIl0sInN1YiI6IjE0MTA1IiwiYXV0aF90aW1lIjoxNTQ1OTA4MDQyLCJpZHAiOiJpZHNydiIsImFtciI6WyJwYXNzd29yZCJdfQ.dLV_CU0saJQ2wtvkAIzX7UBslRAn5dgAu0mXWj3XWY9b-4uy6y7bO0zyFIE861nX4zYPCaiPZBQxcJDkDdfeGVkI0pG5PQh64VnZQjcwDV6YbkkphJVm2abUgiwWpniGD3TTAIT7Gy-84CdiFDfcZKNHu2tFv71m2qV1TbgGF6Sszu00jY9ySj5Tlv7jXXZy8ovkzNYefZH955w0eV13n4n53jDp2u70GGBD7YSLX2udnSsB53ZPYQeE8Jsb4S6auoU5JxF8oPcC4Tk2YzkG0WLeE5C9jG2mY7NH6NO07rlmvxtoSk5QCv_le8wT4_lQZkdBdrIizPE-ymTELR3P4Q", 3, "/Employee/EditPto", "/PTO/EditPtoRequest", undefined, 'PTOCalendar');
-                        schedule.Init(defaultView, startDate, employeeId, punchApprovalStatusId);
+                var defaultView = 'month';
+                var startDate = '';
+                var employeeId = '0';
+                var punchApprovalStatusId = '0';
+                var schedule = new Schedule("https://buddypunchapiapp-qa.azurewebsites.net/api/", "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSIsImtpZCI6ImEzck1VZ01Gdjl0UGNsTGE2eUYzekFrZnF1RSJ9.eyJpc3MiOiJodHRwczovL2J1ZGR5cHVuY2h3ZWJhdXRob3JpemF0aW9uLXFhLmF6dXJld2Vic2l0ZXMubmV0L2lkZW50aXR5IiwiYXVkIjoiaHR0cHM6Ly9idWRkeXB1bmNod2ViYXV0aG9yaXphdGlvbi1xYS5henVyZXdlYnNpdGVzLm5ldC9pZGVudGl0eS9yZXNvdXJjZXMiLCJleHAiOjE1NDYwOTMxMDAsIm5iZiI6MTU0NjAwNjcwMCwiY2xpZW50X2lkIjoiQnVkZHlQdW5jaFdlYkFwcCIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwib3BlbmlkIiwicHJvZmlsZSIsInJvbGVzIl0sInN1YiI6IjE0MTA1IiwiYXV0aF90aW1lIjoxNTQ2MDA2NzAwLCJpZHAiOiJpZHNydiIsImFtciI6WyJwYXNzd29yZCJdfQ.jrc8V5ha3t11D-7kPIKSELiOF78YpESzLl76HJwEQMTUZi-ISk5dOp7LXxhBOqEaB6sNwDXJdQFPYLXj_FXQ8ncgDWeGI29g7TYH8u-rsfzZeU6sNpbkG3nliDM88BAlQPnMwjGroMGwWufI0nF9XgD8xGibqLCCkcFuAvfdR75-x2dD64oVvfiGGK12rOfSK7c3NNP-Mm2Qv49wVHvehNCOPld_UvXaDoJPQaZ1QIeJraKMs5RCKgg2wXp_UAvRSl0lsnTvEHQJ1XNSVNG6bINpoxZ-7LEOtkvHyJQO3awbeEc3jwMShR-F39sSkF2ZFMskilmkwQnbJJgjqPm46g", 3, "/Employee/EditPto", "/PTO/EditPtoRequest", undefined, 'PTOCalendar');
+                schedule.Init(defaultView, startDate, employeeId, punchApprovalStatusId);
 
-
-                    });
+            });
     </script>
 
     <script>
