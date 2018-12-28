@@ -903,7 +903,7 @@
                                 </div>
                                 <div class="m-portlet__head-tools">
                                     <div class="btn-group">
-                                        <button type="button" class="btn grey dropdown-toggle m-btn-primary" data-toggle="dropdown"
+                                        <button type="button" class="btn grey btn-dark dropdown-toggle m-btn-primary" data-toggle="dropdown"
                                             data-delay="1000" data-close-others="true">
                                             Add New
                                         </button>
@@ -916,20 +916,20 @@
                                         </ul>
                                     </div>
                                     <a href="https://buddypunchapp-qa.azurewebsites.net/Report/TimeCard/37403"
-                                        class="btn m-btn-primary">Edit</a>
+                                        class="btn btn-dark m-btn-primary">Edit</a>
                                 </div>
                             </div>
                             <div class="m-portlet__body container-fluid">
                                 <div class="row">
                                     <div class="col row">
                                         <div class="col-md-auto">
-                                            <p class="h6 font-weight-bold">Total PTO</p>
+                                            <p class="h6 font-weight-bold d-inline-block w-auto mb-0">Total PTO</p>
                                             <p class="m-icon m-icon-expand" data-toggle="modal" data-target="#totalPTOModal">
                                                 12.00 Hours 
                                             </p>
                                         </div>
                                         <div class="col-md-auto">
-                                            <p class="h6 font-weight-bold"><abbr title="Excludes current shift">Total Time</abbr></p>
+                                            <p class="h6 font-weight-bold d-inline-block w-auto mb-0" data-toggle="tooltip" data-placement="bottom" title="Excludes current shift"><u class="dotted">Total Time</u></p>
                                             <p class="m-icon m-icon-expand" data-toggle="modal" data-target="#totalHoursModal">
                                                 1 Hour, 34 Minutes
                                             </p>
@@ -952,11 +952,11 @@
                                                 <th>Time</th>
                                                 <th>Status</th>
                                                 <th>
-                                                    <abbr title="Regular Hours">Reg</abbr>
+                                                    <p class="mb-0" data-toggle="tooltip" data-placement="bottom" title="Regular Hours"><u class="dotted">Reg</u></p>
                                                 </th>
-                                                                                    <th>
-                                                        <abbr title="Paid Time Off">PTO</abbr>
-                                                    </th>
+                                                <th>
+                                                    <p class="mb-0" data-toggle="tooltip" data-placement="bottom" title="Paid Time Off"><u class="dotted">PTO</u></p>
+                                                </th>
                                                 <th>Total</th>
                                                     <th>Type</th>
                                             </tr>
@@ -2176,6 +2176,10 @@
             //     $('#locationdepartmentselection').show();
             //     $('#positionselection').show();
             // }
+
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip(); 
+            });
 
             // initiate layout and plugins
 
