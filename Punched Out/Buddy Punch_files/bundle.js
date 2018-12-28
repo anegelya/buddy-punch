@@ -31849,6 +31849,10 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
             },
             eventAfterRender: function(event, element, view) {
 
+                if(event.start.format("HH:mm:ss") < $('#schedule_calendar').fullCalendar('option', 'scrollTime')) {
+                    element.addClass('before-scroll-time');
+                }
+
                 if(event.eventTypeId === eventTypeEnum.Shift && event.published === true) {
 
                     var currentDay = event.start.format("YYYY-MM-DD");
@@ -31961,7 +31965,33 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 $(".fc-resource-area .resourceTitle").parent().find(".resourceTotalHour").remove();
                 $(".fc-resource-area .resourceTitle").eq(0).parent().find(".resourceTotalHour").remove();
 
-                $('#schedule_calendar .fc-scroller').animate({ scrollTop: (0) }, 'slow');
+                var scrollLeft;
+                
+                if(view.name === 'timelineDay'){
+                    if($('.fc-timeline-event.before-scroll-time').length>0){
+                        var renderedEvents = $('div.fc-event-container a');
+                        if(renderedEvents) {
+                            if(renderedEvents.length>0) {
+                                for(var i = 0; i < renderedEvents.length; i++) {
+                                    if(renderedEvents[i]) {
+                                        if(scrollLeft) {
+                                            scrollLeft = renderedEvents[i].offsetLeft < scrollLeft ? renderedEvents[i].offsetLeft : scrollLeft;
+                                        } else {
+                                            scrollLeft = renderedEvents[i].offsetLeft;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                var animateProps = {
+                    scrollTop: (0),
+                };
+
+                if(scrollLeft) animateProps['scrollLeft'] = scrollLeft;
+                $('#schedule_calendar .fc-scroller').animate(animateProps, 'slow');
             },
             selectable: true,
             defaultView: 'timelineWeek',
@@ -32223,10 +32253,11 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 //$("#templateDivider").toggle(view.name === 'timelineWeek');
                 window.location.hash = view.name;
 
-                    if (view.name === 'timelineWeek') {
 
-                        $("#schedule-calendar-footer").remove();
-                        $("#schedule-calendar-subfooter").remove();
+                $("#schedule-calendar-footer").remove();
+                $("#schedule-calendar-subfooter").remove();
+
+                    if (view.name === 'timelineWeek') {
 
                         $(".fc-view table").eq(0).append('<thead class="fc-head fc-foot" id="schedule-calendar-footer"> <tr> <td class="fc-resource-area fc-widget-header" style="width: 20%;"><div class="fc-scroller-clip"><div class="fc-scroller fc-no-scrollbars" style="overflow: scroll hidden; margin: 0px;"><div class="fc-scroller-canvas" style="min-width: 70px;"> <div class="fc-content"><table class="" style="height: 45px;"><colgroup><col class="fc-main-col"></colgroup><tbody><tr><th class="fc-widget-header"><div><div class="fc-cell-content"><span class="fc-expander-space"><span class="fc-icon"></span></span><span class="fc-cell-text">Hours Scheduled</span></div></div></th></tr></tbody></table></div> <div class="fc-bg"></div> </div></div></div></td> <td class="fc-divider fc-col-resizer fc-widget-header"></td> <td class="fc-time-area fc-widget-header"><div class="fc-scroller-clip"><div class="fc-scroller fc-no-scrollbars" style="overflow: scroll hidden; margin: 0px;"><div class="fc-scroller-canvas" style="width: 1050px; min-width: 0px;"> <div class="fc-content"><table class="" style="height: 45px;"><colgroup><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"></col></colgroup><tbody><tr class="fc-foot-timerow"><!--<th class="fc-widget-header fc-wed fc-past" data-date="2018-12-19"><div class="fc-cell-content"><span class="fc-cell-text">Wed 12/19</span></div></th><th class="fc-widget-header fc-thu fc-past" data-date="2018-12-20"><div class="fc-cell-content"><span class="fc-cell-text">Thu 12/20</span></div></th><th class="fc-widget-header fc-fri fc-past" data-date="2018-12-21"><div class="fc-cell-content"><span class="fc-cell-text">Fri 12/21</span></div></th><th class="fc-widget-header fc-sat fc-today" data-date="2018-12-22"><div class="fc-cell-content"><span class="fc-cell-text">Sat 12/22</span></div></th><th class="fc-widget-header fc-sun fc-future" data-date="2018-12-23"><div class="fc-cell-content"><span class="fc-cell-text">Sun 12/23</span></div></th><th class="fc-widget-header fc-mon fc-future" data-date="2018-12-24"><div class="fc-cell-content"><span class="fc-cell-text">Mon 12/24</span></div></th><th class="fc-widget-header fc-tue fc-future" data-date="2018-12-25"><div class="fc-cell-content"><span class="fc-cell-text">Tue 12/25</span></div></th>--></tr></tbody></table></div> <div class="fc-bg"></div> </div></div></div></td> </tr> </thead>');
                         $(".fc-view table").eq(0).after(
