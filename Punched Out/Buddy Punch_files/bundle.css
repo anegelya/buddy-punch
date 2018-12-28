@@ -56873,7 +56873,7 @@ select.m-select2 {
 
 .fc-unthemed .fc-event .fc-title,
 .fc-unthemed .fc-event-dot .fc-title {
-    font-size: .9rem;
+    font-size: .8571rem;
     font-weight: bold;
     color: inherit;
     overflow: hidden;
@@ -71334,7 +71334,7 @@ body.m-content--skin-light2 {
     padding: 6px 6px 6px 12px;
     border-color: #eceef1;
     border-radius: 2px;
-    line-height: 1.5;
+    line-height: 1.3333;
     margin: 3px 2px 0 2px;
 }
 
@@ -72755,7 +72755,9 @@ fieldset.container {
 }
 
 .resource_hours {
-    margin-bottom: .5em;
+    margin-bottom: .1em;
+    font-size: 0.857em;
+    font-weight: 500;
 }
 
 .resource_pto_hours_duration {
