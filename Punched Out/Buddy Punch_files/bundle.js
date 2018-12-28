@@ -32247,6 +32247,9 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                             tfootCols[key].style.width = theadCols[key].style.width || theadCols[key-1].style.width;
                         });
 
+                        $('#schedule_calendar .fc-resource-area.fc-widget-content').addClass('bordered');
+                        $('#schedule_calendar .fc-time-area.fc-widget-content').addClass('bordered');
+        
                     } else {
                         $(".fc-view table").eq(0).after(
                             '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hs</span><br/><span style="color:#a3a5ad;">' +

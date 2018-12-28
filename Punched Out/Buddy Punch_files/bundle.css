@@ -71311,7 +71311,6 @@ body.m-content--skin-light2 {
 
 #schedule_calendar .fc-view-container thead.fc-head.fc-foot td {
     border-bottom: none;
-    border-top: 3px solid #364150
 }
 
 #schedule_calendar .fc-view-container .fc-resource-area td {
@@ -72924,4 +72923,9 @@ table.m-table thead > tr > th.sorting {
 u.dotted {
     border-bottom: 1px dotted #000;
     text-decoration: none;
+}
+
+#schedule_calendar .fc-time-area.fc-widget-content.bordered,
+#schedule_calendar .fc-resource-area.fc-widget-content.bordered {
+    border-bottom: 3px solid #364150 !important;
 }
