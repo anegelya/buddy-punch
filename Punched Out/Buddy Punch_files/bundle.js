@@ -32283,7 +32283,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
         
                     } else {
                         $(".fc-view table").eq(0).after(
-                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" class="" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hs</span><br/><span style="color:#a3a5ad;">' +
+                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" id="schedule-calendar-subfooter" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hs</span><br/><span style="color:#a3a5ad;">' +
                             $(".fc-header-toolbar .fc-center h2").text() +
                             '</span></span></div>');
                     }
