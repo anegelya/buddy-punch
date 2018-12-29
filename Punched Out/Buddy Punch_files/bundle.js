@@ -32093,9 +32093,9 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 if (event.eventTypeId === eventTypeEnum.PTO) {
 
                     title = view.name === "month" ? event.title : event.code;
-                    classes = 'event-pto event-pto-' + event.code.toLowerCase();
+                    classes = 'event-pto event-pto-' + event.code.toLowerCase() + (event.approved == true ? "" : " event-pto-disapproved");
                     hoursCount = event.hours;
-                    eventDetails = (view.name === "month" ? (event.code + " ") : "") + "8AM - 5PM" // FIXME: Replace this dummy text
+                    eventDetails = (view.name === "month" ? (event.code + " ") : "") + "8 AM - 5 PM" // FIXME: Replace this dummy text
 
                 } else {
 
