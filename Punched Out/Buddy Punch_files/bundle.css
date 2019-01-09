@@ -55474,7 +55474,7 @@ html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
 }
 
 .bootstrap-select>.dropdown-toggle.bs-placeholder.btn-light {
-    color: #a3a5ad;
+    color: #282a3c;
 }
 
 .bootstrap-select>.dropdown-toggle.bs-placeholder.btn-accent,
@@ -71977,7 +71977,14 @@ select {
 .btn.btn-default,
 .form-control,
 .select2-container--default .select2-selection--single {
-    border: 1px solid #eceef1
+    border: 1px solid #CCC
+}
+
+#punchOnTime-form .form-control,
+#latePunchOut-form .form-control,
+#switchPunch-form .form-control,
+#breakPunch-form .form-control {
+    border-color: #eceef1;
 }
 
 .form-control:focus {
@@ -72949,4 +72956,14 @@ u.dotted {
 #schedule_calendar .fc-time-area.fc-widget-content.bordered,
 #schedule_calendar .fc-resource-area.fc-widget-content.bordered {
     border-bottom: 3px solid #364150 !important;
+}
+
+#editShiftModal .bootstrap-select>.dropdown-toggle.bs-placeholder.btn-light,
+#createShiftModal .bootstrap-select>.dropdown-toggle.bs-placeholder.btn-light,
+#editShiftModal .bootstrap-select > .dropdown-toggle.btn-light,
+#createShiftModal .bootstrap-select > .dropdown-toggle.btn-light,
+#editShiftModal .form-control,
+#createShiftModal .form-control {
+    border-color: #e0e3e7;
+    color: #a3a5ad;
 }
