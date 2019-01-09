@@ -32003,7 +32003,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 timelineWeek: {
                     slotDuration: '24:00',
                     slotLabelFormat: 'ddd M/D',
-                    slotWidth: 150
+                    slotWidth: 120
                 }
             },
             resourceLabelText: 'Employees',
