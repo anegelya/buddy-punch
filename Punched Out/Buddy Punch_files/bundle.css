@@ -72944,6 +72944,10 @@ table.m-table thead > tr > th.sorting {
     height: auto;
 }
 
+.m-portlet__head--thin .dropdown-menu {
+    min-width: 14.5em;
+}
+
 #schedule_calendar .fc-header-toolbar {
     margin-bottom: 0.5em;
 }
