@@ -72889,7 +72889,7 @@ table.m-table thead > tr > th.sorting {
 
 .overflow-y-scroll {
     max-height: 22em;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .m-table .badge {
