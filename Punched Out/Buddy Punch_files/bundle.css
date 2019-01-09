@@ -71297,6 +71297,7 @@ body.m-content--skin-light2 {
 }
 
 #m_calendar .fc-view-container .fc-event {
+    margin: 6px;
     padding: 5px;
     border-color: #CCC;
     -webkit-box-shadow: 0 1px 15px 1px rgba(77, 77, 92, .08);
