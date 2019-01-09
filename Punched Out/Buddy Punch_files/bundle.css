@@ -72736,6 +72736,10 @@ fieldset.container {
     border-radius: 2px;
 }
 
+.m-checkbox > span:after {
+    box-sizing: border-box;
+}
+
 .fc-filter-header .m-portlet__head{
     border-bottom: 1px solid #e3e8ee;
 }
