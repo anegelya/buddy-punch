@@ -32538,9 +32538,18 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
             if ($('#createShiftPanel').is(':visible')) {
                 $('#createShiftModal #Published').val('False'); 
                 setBreaksForSave('#createShiftModal');
+
+                var isOpen = $('#createShiftModal #StaffIds').val().length <= 0;
                 scheduleService.CreateShift($('#createShiftForm').serializeArray()).done(function(data) {
                     $("#createShiftModal").modal('toggle');
                     notificationService.ShowSuccess("Shift Added");
+
+                    if(isOpen) {
+                        setTimeout(function() {
+                            $('#schedule_calendar .fc-scroller').animate({scrollTop: (0)});
+                        }, 1000);
+                    }
+
                 }).always(function() {
                     setButtonToActive($(button));
                     refreshUi();
@@ -32629,6 +32638,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 });
             } else {
                 var published = $('#editShiftModal #Published').val();
+                var isOpen = $('#editShiftModal #StaffId').val().length <= 0;
                 $('#editShiftModal #Published').val('False');
                 setBreaksForSave('#editShiftModal');
                 scheduleService.UpdateShift($('#editShiftForm #Id').val(), $('#editShiftForm').serializeArray()).done(function (data) {
@@ -32637,6 +32647,12 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                         notificationService.ShowSuccess("Shift Unpublished");
                     } else {
                         notificationService.ShowSuccess("Shift Saved");
+                    }
+
+                    if(isOpen) {
+                        setTimeout(function() {
+                            $('#schedule_calendar .fc-scroller').animate({scrollTop: (0)}, 'slow');
+                        }, 1000);
                     }
                 }).always(function () {
                     setButtonToActive($(button));
