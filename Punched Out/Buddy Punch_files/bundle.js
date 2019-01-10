@@ -31825,6 +31825,10 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 var shift = mapEventToShiftDto(event);
                 scheduleService.UpdateShift(event.id, shift).done(function (data) {
                     //notificationService.ShowSuccess("Shift Updated");
+                    // ScrollTop View if event is dropped into resource with id = null (Open Shifts)
+                    if(event.resourceId == null) {
+                        $('#schedule_calendar .fc-scroller').animate({scrollTop: (0)}, 'slow');
+                    }
                 }).fail(function () {
                     //alert("UpdateShift failed!");
                     revertFunc();
@@ -31848,10 +31852,6 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 //}
             },
             eventAfterRender: function(event, element, view) {
-
-                if(event.start.format("HH:mm:ss") < $('#schedule_calendar').fullCalendar('option', 'scrollTime')) {
-                    element.addClass('before-scroll-time');
-                }
 
                 if(event.eventTypeId === eventTypeEnum.Shift && event.published === true) {
 
@@ -31964,34 +31964,6 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                 $(".fc-resource-area .resourceTitle").parent().find(".resourceTotalHour").remove();
                 $(".fc-resource-area .resourceTitle").eq(0).parent().find(".resourceTotalHour").remove();
-
-                var scrollLeft;
-                
-                if(view.name === 'timelineDay'){
-                    if($('.fc-timeline-event.before-scroll-time').length>0){
-                        var renderedEvents = $('div.fc-event-container a');
-                        if(renderedEvents) {
-                            if(renderedEvents.length>0) {
-                                for(var i = 0; i < renderedEvents.length; i++) {
-                                    if(renderedEvents[i]) {
-                                        if(scrollLeft) {
-                                            scrollLeft = renderedEvents[i].offsetLeft < scrollLeft ? renderedEvents[i].offsetLeft : scrollLeft;
-                                        } else {
-                                            scrollLeft = renderedEvents[i].offsetLeft;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                var animateProps = {
-                    scrollTop: (0),
-                };
-
-                if(scrollLeft) animateProps['scrollLeft'] = scrollLeft;
-                $('#schedule_calendar .fc-scroller').animate(animateProps, 'slow');
             },
             selectable: true,
             defaultView: 'timelineWeek',
@@ -32078,6 +32050,11 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 }
             },
             eventRender: function (event, element, view) {
+
+                // Add .before-scroll-time class to event if start time before scrollTime
+                if(event.start.format("HH:mm:ss") < $('#schedule_calendar').fullCalendar('option', 'scrollTime')) {
+                    element.addClass('before-scroll-time');
+                }
 
                 $(".fc-dailytotal").text(0); //Clear total daily sum
                 $("#totalHoursScheduledLabel").text(0); //Clear total sum
@@ -32287,6 +32264,38 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                             $(".fc-header-toolbar .fc-center h2").text() +
                             '</span></span></div>');
                     }
+
+
+                /* Scroll the view into top position when rendered
+                   Scroll the view if any event before scrollTime on timelineDay is present
+                   */
+                var scrollLeft;
+                
+                if(view.name === 'timelineDay'){
+                    if($('.fc-timeline-event.before-scroll-time').length>0){
+                        var renderedEvents = $('div.fc-event-container a');
+                        if(renderedEvents) {
+                            if(renderedEvents.length>0) {
+                                for(var i = 0; i < renderedEvents.length; i++) {
+                                    if(renderedEvents[i]) {
+                                        if(scrollLeft) {
+                                            scrollLeft = renderedEvents[i].offsetLeft < scrollLeft ? renderedEvents[i].offsetLeft : scrollLeft;
+                                        } else {
+                                            scrollLeft = renderedEvents[i].offsetLeft;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                var animateProps = {
+                    scrollTop: (0),
+                };
+
+                if(scrollLeft) animateProps['scrollLeft'] = scrollLeft;
+                $('#schedule_calendar .fc-scroller').animate(animateProps, 'slow');
 
 
                 $(".fc-time-area .fc-scroller").on('scroll', function (e) {
