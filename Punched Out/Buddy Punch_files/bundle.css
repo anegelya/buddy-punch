@@ -71318,6 +71318,10 @@ body.m-content--skin-light2 {
     border-bottom-color: #fff
 }
 
+#schedule_calendar .fc-view-container .fc-resource-area td:empty {
+    width: 0 !important;
+}
+
 #schedule_calendar .fc-view-container .fc-timeline .fc-head>tr>.fc-divider {
     background-color: #fff
 }
