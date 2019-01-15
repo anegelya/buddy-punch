@@ -72652,6 +72652,15 @@ fieldset.container {
     align-self: center;
 }
 
+#schedule_calendar .fc-view-container .event-pto .badge-primary {
+    display: block;
+}
+
+#schedule_calendar .fc-view-container .event-pto .fc-details .badge-primary {
+    display: inline-block;
+    margin-left: 2.5em;
+}
+
 #schedule_calendar .event-published {
     color: #fff;
 }

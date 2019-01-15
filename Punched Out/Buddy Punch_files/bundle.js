@@ -32093,10 +32093,10 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                             .addClass('m--font-success');
                     }
 
-                    title = event.title;
+                    title = view.name === "month" ? event.title : badge.prop('outerHTML');
                     classes = 'event-pto event-pto-' + event.code.toLowerCase() + (event.approved == true ? "" : " event-pto-disapproved");
                     hoursCount = event.hours;
-                    eventDetails = badge.prop('outerHTML');
+                    eventDetails = view.name === "month" ? badge.prop('outerHTML') : '';
 
                 } else {
 
@@ -32150,7 +32150,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 }
 
                 // Replace title
-                element.find('.fc-title').text(title);
+                element.find('.fc-title').html(title);
 
                 // Add status icon
                 if(status !== undefined) {
