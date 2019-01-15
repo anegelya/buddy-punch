@@ -72759,12 +72759,24 @@ fieldset.container {
 .fc-filter-header .m-portlet__head .col-lg-auto,
 .fc-filter-header .m-portlet__head .dropdown .btn.dropdown-toggle.btn-light {
     padding: 0;
-    padding-right: .5em;
 }
 
 .fc-filter-header .m-portlet__head .dropdown .btn.dropdown-toggle.btn-light {
     background: #f7fafc;
     border-color: #f7fafc;
+}
+
+.fc-filter-header .bootstrap-select > .dropdown-toggle::after {
+    right: 1.5em;
+}
+
+@media (max-width: 1100px) {
+
+    .fc-filter-header .m-portlet__head-caption .m-form__group label.col-form-label {
+        padding-right: 0;
+        padding-left: 0;
+        max-width: 30px;
+    }
 }
 
 .fc-filter-header .m-portlet__head .dropdown .btn.dropdown-toggle.btn-light .filter-option {
