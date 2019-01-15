@@ -31650,9 +31650,9 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
         "PtoType": 1,
         "Notes": "",
         "ErrorMessage": null,
-        "Status": 2,
+        "Status": 1,
         "StatusName": "Approved",
-        "StatusId": 2,
+        "StatusId": 1,
         "Deleted": false,
         "Approved": true,
         "Ignored": false,
@@ -32060,6 +32060,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 $("#totalHoursScheduledLabel").text(0); //Clear total sum
 
                 var title,
+                    status,
                     classes,
                     css = {},
                     hoursCount,
@@ -32069,10 +32070,33 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 
                 if (event.eventTypeId === eventTypeEnum.PTO) {
 
-                    title = view.name === "month" ? event.title : event.code;
+                    status = $("<i/>", {
+                        "class": "fa",
+                        "style": "font-family: FontAwesome; font-size: 1.5rem; margin-right: 5px"
+                    });
+
+                    var badge = $("<div/>", {
+                        "class": "pto-calendar-event-code badge badge-primary badge-roundless"
+                    }).text(event.code);
+
+                    status.tooltip({ title: event.statusname });
+
+                    if (event.status === 1) {
+                        status
+                            .addClass('fa-circle-o')
+                            .addClass('m--font-warning');
+                    }
+
+                    if (event.status === 2 || event.status === 4) {
+                        status
+                            .addClass('fa-check-circle-o')
+                            .addClass('m--font-success');
+                    }
+
+                    title = event.title;
                     classes = 'event-pto event-pto-' + event.code.toLowerCase() + (event.approved == true ? "" : " event-pto-disapproved");
                     hoursCount = event.hours;
-                    eventDetails = (view.name === "month" ? (event.code + " ") : "") + "8 AM - 5 PM" // FIXME: Replace this dummy text
+                    eventDetails = badge.prop('outerHTML');
 
                 } else {
 
@@ -32128,6 +32152,11 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 // Replace title
                 element.find('.fc-title').text(title);
 
+                // Add status icon
+                if(status !== undefined) {
+                    status.insertBefore(element.find('.fc-title'))
+                };
+
                 // Style element
                 element.css(css);
                 element.addClass(classes);
@@ -32142,9 +32171,9 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                 // Create details line
                 $("<div/>", {
-                    "class": "fc-details",
-                    "text": eventDetails
+                    "class": "fc-details"
                 })
+                .html(eventDetails)
                 .appendTo(element);
 
                 // Create position details line

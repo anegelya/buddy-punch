@@ -72638,81 +72638,17 @@ fieldset.container {
 }
 
 #schedule_calendar .fc-view-container .event-pto {
-    border: 0;
-    padding-left: 25px;
+    border: 1.5px solid #CCC;
+    color: #575962;
 }
 
-#schedule_calendar .fc-view-container .event-pto::before {
-    content: "\f017";
-    font-family: FontAwesome;
-    font-size: 16px;
-    position: absolute;
-    top: 3px;
-    left: 5px;
+#schedule_calendar .fc-view-container .event-pto .fc-content {
+    align-items: center;
 }
 
-/* Personal PTO */
-#schedule_calendar .fc-view-container .event-pto-personal {
-    background: #e3e1f4;
-    color: #716aca;
-}
-
-#schedule_calendar .fc-view-container .event-pto-personal.event-pto-disapproved {
-    background: #fff;
-    border: 1.5px solid #716aca;
-}
-
-#schedule_calendar .fc-view-container .event-pto-personal .fc-hour-count,
-.badge-personal {
-    background-color: #716aca;
-}
-
-/* Vacation PTO */
-#schedule_calendar .fc-view-container .event-pto-vac {
-    background: #ccf0e5;
-    color: #00b47d;
-}
-
-#schedule_calendar .fc-view-container .event-pto-vac.event-pto-disapproved {
-    background: #fff;
-    border: 1.5px solid #00b47d;
-}
-
-#schedule_calendar .fc-view-container .event-pto-vac .fc-hour-count,
-.badge-vac {
-    background-color: #00b47d;
-}
-
-/* Sick PTO */
-#schedule_calendar .fc-view-container .event-pto-sick {
-    background: #dce6fe;
-    color: #4f83f8;
-}
-
-#schedule_calendar .fc-view-container .event-pto-sick.event-pto-disapproved {
-    background: #fff;
-    border: 1.5px solid #4f83f8;
-}
-
-#schedule_calendar .fc-view-container .event-pto-sick .fc-hour-count,
-.badge-sick {
-    background-color: #4f83f8;
-}
-
-/* Holiday PTO */
-#schedule_calendar .fc-view-container .event-pto-holiday {
-    background: #fad9dd;
-    color: #e84556;
-}
-
-#schedule_calendar .fc-view-container .event-pto-holiday.event-pto-disapproved {
-    background: #fff;
-    border: 1.5px solid #e84556;
-}
-
-#schedule_calendar .fc-view-container .event-pto-holiday .fc-hour-count,
-.badge-holiday {
-    background-color: #e84556;
+#schedule_calendar .fc-view-container .event-pto .fc-hour-count {
+    background: #575962;
+    align-self: center;
 }
 
 #schedule_calendar .event-published {
