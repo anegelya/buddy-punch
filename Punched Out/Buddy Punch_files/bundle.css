@@ -72386,9 +72386,10 @@ table.dataTable thead .sorting_desc_disabled::before {
 }
 
 .m-badge.m-badge--wide {
-    padding: 0.3em 0.8em;
+    padding: 0.3rem 0.8rem;
     border-radius: 1em;
     font-weight: bold;
+    height: auto;
 }
 
 .m-badge.m-badge--wide.m-badge--rounded {
