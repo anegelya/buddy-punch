@@ -72433,6 +72433,10 @@ table.dataTable thead .sorting_desc_disabled::before {
     position: relative;
 }
 
+.m-icon-expand {
+    cursor: pointer;
+}
+
 .m-icon-expand::after {
     content: "";
     color: #0c67c4;
