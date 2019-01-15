@@ -72584,6 +72584,10 @@ fieldset.container {
     color: #364151;
 }
 
+.fc-month-view .fc-row.fc-widget-header {
+    border-right-width: 0 !important;
+}
+
 .fc-state-default {
     box-shadow: none;
 }
