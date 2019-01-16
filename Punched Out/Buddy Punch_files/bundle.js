@@ -32198,22 +32198,33 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                             return (n.IsActive == true);
                         });
                         resources = defaultResources.concat(resources.sort(SortByName));
-                        callback(resources.map(function (employee) {
+
+                        var orderedResources;
+
+                        if(localStorage.getItem('schedule_employee_order')) {
+                            orderedResources = JSON.parse(localStorage.getItem('schedule_employee_order'));
+                        }
+
+                        callback(resources.map(function (employee, index) {
                             //console.log(employee);
 
                             return {
                                 id: employee.Id,
                                 title: employee.FullName,
-                                profileminiimageurl: employee.ProfileMiniImageUrl
+                                profileminiimageurl: employee.ProfileMiniImageUrl,
+                                sortOrder: orderedResources ? orderedResources[employee.Id] : undefined
                             };
                         }));
+
+                        initSorting(resources);
+
                     }).fail(function (jqXHR, textStatus, errorThrown) {
                         console.log("getting resources fail" + JSON.stringify(jqXHR));
                         callback([]);
                     });
             },
+            resourceOrder: 'sortOrder',
             resourceRender: function (resourceObj, $td) {
-                console.log(resourceObj);
 
                 //var newElement = $("<div/>").addClass('fc-widget-content');
                 var resourceTable = $('<table>').css("border", "0");
@@ -32343,6 +32354,62 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
             function (event) {
                 clearCreateShiftForm();
             });
+    }
+
+    function initSorting(resources) {
+
+        var initialPos, finalPos;
+
+        $(".fc-resource-area table tbody").sortable({
+            axis: "y"
+        })
+        .on("sortstart", function(event, ui) {
+            initialPos = ui.item.index();
+        })
+        .on("sortupdate", function(event, ui) {
+
+            finalPos = ui.item.index();
+
+            if (finalPos == -1) return;
+
+            var tmpResources = [];
+
+            for (var i = 0; i < resources.length; i++) {
+                tmpResources.push(resources[i]);
+            }
+
+            if (finalPos > initialPos) {
+                tmpResources[finalPos] = resources[initialPos];
+                tmpResources[finalPos].sortOrder = finalPos + 1;
+
+                for (var i = initialPos + 1; i <= finalPos; i++) {
+                    tmpResources[i - 1] = resources[i];
+                    tmpResources[i - 1].sortOrder -= 1;
+                }
+            } else {
+                tmpResources[finalPos] = resources[initialPos];
+                tmpResources[finalPos].sortOrder = finalPos + 1;
+
+                for (var i = initialPos - 1; i >= finalPos; i--) {
+                    tmpResources[i + 1] = resources[i];
+                    tmpResources[i + 1].sortOrder += 1;
+                }
+            }
+
+            for (var i = 0; i < tmpResources.length; i++) {
+                resources[i] = tmpResources[i];
+            }
+
+            var orders = {};
+            
+            resources.map(function(item, index) {
+                orders[item.Id] = index;
+            })
+
+            localStorage.setItem('schedule_employee_order', JSON.stringify(orders));
+
+            $('#schedule_calendar').fullCalendar('refetchResources');
+        })
     }
 
     function setBreaksForSave(modalSelector) {

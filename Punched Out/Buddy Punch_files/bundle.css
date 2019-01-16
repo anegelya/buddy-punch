@@ -72946,3 +72946,16 @@ u.dotted {
     border-color: #e0e3e7;
     color: #a3a5ad;
 }
+
+.ui-sortable > * {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.ui-sortable-helper .fc-widget-content{
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+    background-color: #eff8ff !important;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
