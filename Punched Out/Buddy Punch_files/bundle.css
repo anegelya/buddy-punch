@@ -71478,6 +71478,14 @@ body.m-content--skin-light2 {
     align-self: self-start;
 }
 
+@media (min-width: 1440px) {
+    .fc-event .fc-hour-count,
+    .fc-view-container .pto-calendar-event-hours {
+        line-height: 1rem;
+        height: 1rem;
+    }
+}
+
 .fc-view-container .pto-calendar-event-hours {
     margin-left: 5px;
 }
