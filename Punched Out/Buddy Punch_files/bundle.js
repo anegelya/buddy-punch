@@ -33111,25 +33111,37 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
         });
 
         function PrintElem(elem) {
-            console.log(document.getElementById(elem).innerHTML);
-            var mywindow = window.open('', 'PRINT', 'height=800,width=800');
+            if($('.fc-month-view').length > 0) {
+                setTimeout(function() {
+                    window.print();
+                }, 100);  
+            } else {
 
-            mywindow.document.write('<html><head><title>' + document.title + '</title>');
-            //mywindow.document.write('<link href="/dist/v-636753780425282515/bundle.css" rel="stylesheet" type="text/css" />');
-            mywindow.document.write('<link href="/Scripts/scheduler.min.css" rel="stylesheet" />');
-            mywindow.document.write('<link href="https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.print.min.css" rel="stylesheet" media="print" />');
-            mywindow.document.write('</head><body >');
-            //mywindow.document.write('<h1>' + document.title + '</h1>');
-            mywindow.document.write(document.getElementById(elem).innerHTML);
-            mywindow.document.write('</body></html>');
+                $('.fc-view > table').css('max-width', '200mm');
+                $(window).trigger('resize');
+                
+                setTimeout(function() {
+                    var mywindow = window.open('', 'PRINT', 'height=800,width=800');
 
-            mywindow.document.close(); // necessary for IE >= 10
-            mywindow.focus(); // necessary for IE >= 10*/
+                    mywindow.document.write('<html><head><title>' + document.title + '</title>');
+                    //mywindow.document.write('<link href="/dist/v-636753780425282515/bundle.css" rel="stylesheet" type="text/css" />');
+                    mywindow.document.write('<link href="https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.min.css" rel="stylesheet" media="print" />');
+                    mywindow.document.write('<link href="https://fullcalendar.io/releases/fullcalendar/3.9.0/fullcalendar.print.min.css" rel="stylesheet" media="print" />');
+                    mywindow.document.write('<link href="Buddy%20Punch_files/print.css" rel="stylesheet"/>');
+                    mywindow.document.write('</head><body >');
+                    //mywindow.document.write('<h1>' + document.title + '</h1>');
+                    mywindow.document.write(document.getElementById(elem).innerHTML)
+                    mywindow.document.write('<script>document.addEventListener("DOMContentLoaded", function() {window.print(); /*window.close()*/;})</script>');
+                    mywindow.document.write('</body></html>');
 
-            mywindow.print();
-            mywindow.close();
+                    mywindow.document.close(); // necessary for IE >= 10
+                    mywindow.focus(); // necessary for IE >= 10*/
+                    $('.fc-view > table').css('max-width', 'unset');
+                    $(window).trigger('resize');
+                }, 100);
 
-            return true;
+                return true;
+            }
         }
 
 

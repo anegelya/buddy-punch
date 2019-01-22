@@ -1,0 +1,140 @@
+body {
+    zoom: 80%;
+}
+
+table {
+    page-break-inside: auto;
+    break-inside: auto;
+}
+
+.fc-timeline-event {
+    position: absolute;
+    font-size: 11px;
+    padding: 5px;
+    border: 1px solid !important;
+    margin: 2px 5px 0 1px;
+    border-radius: 3px;
+    box-sizing: content-box;
+}
+
+.fc-timeline-event.event-unpublished {
+    border: 1px dotted !important
+}
+
+col {
+    width: 120px;
+}
+
+.fc-view-container .fc-event .fc-content {
+    padding: 0 !important;
+    text-align: left;
+    display: flex;
+}
+
+.fc-event .fc-hour-count {
+    padding: 0 5px;
+    border: 0;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #fff;
+    background: #fff;
+    margin-left: auto;
+    align-self: self-start;
+}
+
+.fc-event-container {
+    position: relative;
+}
+
+.fc-bg,
+.fc-slats {
+  display: block !important; 
+}
+
+
+.fc-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    height: 100%;
+}
+
+.fc-scroller-canvas {
+    position: relative;
+}
+
+.fc-slats {
+    height: 100%;
+}
+
+.fc-slats>table {
+    height: 100%;
+}
+
+table {
+    border-collapse: collapse !important;
+}
+
+table td p {
+    margin: 0;
+}
+
+.fc-resource-area [data-resource-id] table tr td:empty {
+    width: 0 !important;
+    padding: 0 !important;
+}
+
+.fc-content .fc-widget-content,
+.fc-bg .fc-widget-content {
+    border: 1px solid #CCC !important;
+}
+
+.fc-resource-area .fc-scroller-canvas {
+    width: 140px !important;
+}
+
+.resource_hours {
+    font-size: 11px;
+}
+
+.resourceTitle {
+    font-size: 13px;
+}
+
+.fc-divider {
+    display: none;
+}
+
+.fc-time-area, .fc-resource-area {
+    padding: 0;
+    border-collapse: collapse;
+}
+
+.fc-widget-content>div {
+    width: 100%;
+}
+
+.fc-rows tr {
+    position: relative;
+}
+
+.fc-rows>table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.fc-time-area .fc-event-container {
+    width: 0;
+}
+
+.resourceTitle {
+    white-space: nowrap;
+}
+
+.fc-time-area .fc-rows .fc-widget-content {
+    border: 1px solid #CCC !important;
+}
+
+td.fc-time-area {
+    display: block;
+}
