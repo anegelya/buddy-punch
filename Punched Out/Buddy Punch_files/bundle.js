@@ -31891,6 +31891,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 }
             },
             eventAfterAllRender: function(view) {               
+                $('.fc-today .fc-cell-text').text('Today').css('color', '#1271c4');
                 var shifts = $('#schedule_calendar').fullCalendar('clientEvents', function (event) {
                     return event.start >= view.start && event.end <= view.end && event.eventTypeId === eventTypeEnum.Shift;
                 });
