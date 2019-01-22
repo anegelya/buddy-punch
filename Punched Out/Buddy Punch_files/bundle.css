@@ -56872,7 +56872,8 @@ select.m-select2 {
 }
 
 .fc-unthemed .fc-event .fc-title,
-.fc-unthemed .fc-event-dot .fc-title {
+.fc-unthemed .fc-event-dot .fc-title,
+.fc-event .pto-calendar-event-name {
     font-size: .8571rem;
     font-weight: bold;
     color: inherit;
@@ -71375,11 +71376,14 @@ body.m-content--skin-light2 {
     border: 0
 }
 
-#schedule_calendar .fc-view-container .fc-content::before {
+#schedule_calendar .fc-view-container .fc-content::before,
+#m_calendar .fc-event.fc-start .fc-content::before {
     display: none !important
 }
 
-#schedule_calendar .fc-view-container .fc-event .fc-content {
+#schedule_calendar .fc-view-container .fc-event .fc-content,
+#m_calendar .fc-view-container .fc-event .fc-content,
+#m_calendar .fc-view-container .fc-h-event .fc-content {
     padding: 0 !important;
     text-align: left;
     display: flex;
@@ -71462,7 +71466,8 @@ body.m-content--skin-light2 {
     font-weight: 700;
 }
 
-.fc-event .fc-hour-count {
+.fc-event .fc-hour-count,
+.fc-view-container .pto-calendar-event-hours {
     padding: 0 5px;
     border: 0;
     border-radius: 10px;
@@ -71471,6 +71476,10 @@ body.m-content--skin-light2 {
     background: #fff;
     margin-left: auto;
     align-self: self-start;
+}
+
+.fc-view-container .pto-calendar-event-hours {
+    margin-left: 5px;
 }
 
 .fc-timeline-event .fc-content .fc-hour-count.red {
@@ -72638,16 +72647,19 @@ fieldset.container {
     font-weight: 500;
 }
 
-#schedule_calendar .fc-view-container .event-pto {
+#schedule_calendar .fc-view-container .event-pto,
+#m_calendar .fc-view-container .fc-event {
     border: 1.5px solid #CCC;
     color: #575962;
 }
 
-#schedule_calendar .fc-view-container .event-pto .fc-content {
+#schedule_calendar .fc-view-container .event-pto .fc-content,
+#m_calendar .fc-view-container .fc-event .fc-content {
     align-items: center;
 }
 
-#schedule_calendar .fc-view-container .event-pto .fc-hour-count {
+#schedule_calendar .fc-view-container .event-pto .fc-hour-count,
+#m_calendar .fc-view-container .pto-calendar-event-hours {
     background: #575962;
     align-self: center;
 }
@@ -72656,7 +72668,8 @@ fieldset.container {
     display: block;
 }
 
-#schedule_calendar .fc-view-container .event-pto .fc-details .badge-primary {
+#schedule_calendar .fc-view-container .event-pto .fc-details .badge-primary,
+#m_calendar .fc-view-container .pto-calendar-event-code {
     display: inline-block;
     margin-left: 2.5em;
 }
@@ -72667,7 +72680,8 @@ fieldset.container {
 
 #schedule_calendar .event-unpublished .fc-hour-count,
 #schedule_calendar .event-openshift .fc-hour-count,
-#schedule_calendar .fc-view-container .event-pto .fc-hour-count {
+#schedule_calendar .fc-view-container .event-pto .fc-hour-count,
+#m_calendar .fc-view-container .pto-calendar-event-hours {
     color: #fff;
 }
 

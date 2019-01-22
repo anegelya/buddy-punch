@@ -31525,18 +31525,32 @@ function PTOCalendar(d, u, o, h) {
             eventRender: function (t, e, n) {
                 var i, r = $("<div/>");
                 (i = t.selectable ? $("<a/>").addClass("fc-day-grid-event fc-h-event fc-event fc-start fc-end").css("cursor", "pointer") : $("<a/>").addClass("fc-day-grid-event fc-h-event fc-event fc-start fc-end").css("cursor", "default"), "listYear" === n.type) && (r.addClass("checkbox-event-container"), i.removeClass("fc-event"), t.selectable ? (r.append($('<label class="m-checkbox"><input class="select-event" type="checkbox"/>&nbsp;<span></span></label>')), r.find("input").data().event = t) : r.append($('<label class="m-checkbox m-checkbox--disabled"><input class="select-event" type="checkbox" disabled/>&nbsp;<span></span></label>')));
-                var a = $('<div class="pto-calendar-event-hours"/>').text(t.hours.toFixed(1));
-                i.append(a);
+                
+                var v = $('<div/>').addClass("fc-content");
+
+                var c = $('<i class="fa" style="font-family: FontAwesome"></i>').css("font-family", "FontAwesome").css("font-size", "1.5rem").css("margin-right", "5px");
+                c.tooltip({ title: t.statusname });
+                if (1 === t.status) {
+                    c.addClass("fa-circle-o").addClass("m--font-warning");
+                } else if (2 !== t.status || 4 !== t.status) {
+                    c.addClass("fa-check-circle-o").addClass("m--font-success");
+                }
+                v.append(c);
+
+                var l = $('<div class="pto-calendar-event-name"/>').text(t.title);
+                v.append(l);
+
+                var a = $('<div class="pto-calendar-event-hours"/>').text(t.hours + ' hs');
+                v.append(a);
+
+                i.append(v);
+
                 var o = $('<div class="pto-calendar-event-code badge badge-primary badge-roundless"/>').text(t.code);
                 i.append(o);
+            
                 var s = $("<div/>").css("display", "flex").css("align-items", "flex-end");
                 i.append(s), "listYear" !== n.type && s.css("justify-content", "space-between");
-                var l = $('<div class="pto-calendar-event-name"/>').text(t.title);
-                s.append(l);
-                var c = $('<i class="fa" style="font-family: FontAwesome"></i>').css("font-family", "FontAwesome").css("font-size", "1.5rem").css("margin-left", "5px");
-                return c.tooltip({
-                    title: t.statusname
-                }), 1 === t.status && (c.addClass("fa-circle-o").addClass("m--font-warning"), s.append(c)), 2 !== t.status && 4 !== t.status || (c.addClass("fa-check-circle-o").addClass("m--font-success"), s.append(c)), i.click(function () {
+                return i.click(function () {
                     var e = "?source=" + h;
                     "listYear" == $("#m_calendar").fullCalendar("getView").name && (e += "List"), t.selectable && (1 === t.ptotype ? window.location = d + "/" + t.id + e : window.location = u + "/" + t.id + e)
                 }), null != t.errormessage && i.append($("<div/>").text(t.errormessage).addClass("m--font-danger")), r.append(i), r
