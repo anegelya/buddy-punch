@@ -31433,6 +31433,9 @@ function PTOAccrualPage(e, t, n) {
     }
 }
 
+// FIXME: Here is json with PTO. Should be removed
+var ptoEvents = [{"Hours":8,"Title":"Will Byers","StaffId":"14218","Start":"\/Date(1546905600000)\/","Code":"Holiday","EarningCodeId":118,"Id":22395,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true},{"Hours":6,"Title":"Will Byers","StaffId":"14218","Start":"\/Date(1547769600000)\/","Code":"Holiday","EarningCodeId":118,"Id":22422,"PtoType":1,"Notes":"","ErrorMessage":null,"Status":4,"StatusName":"Changed By Manager","StatusId":4,"Deleted":false,"Approved":false,"Ignored":false,"Selectable":true}]
+
 function PTOCalendar(d, u, o, h) {
     var s = new PTOCalendarService,
         l = new NotificationService;
@@ -31551,7 +31554,13 @@ function PTOCalendar(d, u, o, h) {
                             var n
                         }))
                     }).fail(function () {
-                        i([])
+                        // FIXME: Here is the function. Should be removed
+                        i(ptoEvents.map(function (e) {
+                            return n = e, Object.keys(n).reduce(function (e, t) {
+                                return e[t.toLowerCase()] = n[t], e
+                            }, {});
+                            var n
+                        }))
                     })
                 }
             }],
