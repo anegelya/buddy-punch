@@ -72941,7 +72941,7 @@ table.m-table thead > tr > th.sorting {
     height: auto;
 }
 
-.m-portlet__head--thin .dropdown-menu {
+.m-portlet__head--thin .m-portlet__head-caption .dropdown-menu {
     min-width: 14.5em;
 }
 
