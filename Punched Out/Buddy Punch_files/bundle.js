@@ -31816,6 +31816,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
     }
 
     this.Init = function (defaultView, startDate, selectedEmployeeId, punchApprovalStatusId) {
+        getScheduleFilterOptions();
         setUpShiftButtons();
 
         $('#location-select').on('hidden.bs.select', function (e) {
@@ -32434,6 +32435,36 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
             $('#schedule_calendar').fullCalendar('refetchResources');
         })
+    }
+
+    $(document).on("change", ".fc-filter-header .m-portlet__head .dropdown select", function() {
+        saveScheduleFilterOptions();
+    });
+
+    function saveScheduleFilterOptions() {
+
+        var selects = $('.fc-filter-header .m-portlet__head .dropdown select');
+
+        if(selects) {
+            var savedFilterOptions = {};
+            selects.each(function(index, select) {
+                savedFilterOptions[select.id] = $(this).val();
+            });
+
+            localStorage.setItem('schedule_filter_options', JSON.stringify(savedFilterOptions));
+        }
+    }
+
+    function getScheduleFilterOptions() {
+
+        var options = JSON.parse(localStorage.getItem('schedule_filter_options'));
+
+        if(options) {
+            for(key in options) {
+                $('#'+key).val(options[key]);
+                $('#'+key).selectpicker('refresh');
+            }
+        }
     }
 
     function setBreaksForSave(modalSelector) {
