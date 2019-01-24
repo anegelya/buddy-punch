@@ -72981,3 +72981,17 @@ u.dotted {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
 }
 
+@media print {
+    .fc-widget-content {
+        background: none !important;
+    }
+
+    .fc th, .fc td, .fc hr, .fc thead, .fc tbody, .fc-row {
+        border-width: 3px;
+    }
+    
+    /* .fc-day-grid.fc-unselectable {
+        border: 2px solid #CCC;
+    } */
+}
+
