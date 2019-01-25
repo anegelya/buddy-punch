@@ -31886,9 +31886,9 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                     var eventDuration = moment.duration(event.duration);
 
-                    var newDuration = +prev + +eventDuration.hours();
-                    $("#dailytotal-"+currentDay).text(newDuration);
-                    $("#totalHoursScheduledLabel").text(+prevTotal + +eventDuration.hours());
+                    var newDuration = +prev + +eventDuration.asHours().toFixed(2);
+                    $("#dailytotal-"+currentDay).text(newDuration.toFixed(2));
+                    $("#totalHoursScheduledLabel").text((+prevTotal + +eventDuration.asHours().toFixed(2)).toFixed(2));
                 }
             },
             eventAfterAllRender: function(view) {               
@@ -31929,39 +31929,41 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                         if(currentTotal = $('#resource_' + shift.resourceId + '_totalDuration').val()) {
 
-                            var newTotal = Number(currentTotal) + Number(shiftDuration.hours());
+                            var newTotal = Number(currentTotal) + Number(shiftDuration.asHours().toFixed(2));
 
                             $('#resource_' + shift.resourceId + '_totalDuration')
-                            .val(newTotal);
+                            .val((newTotal % 1 == 0) ? newTotal : newTotal.toFixed(2));
 
                             $('#resource_' + shift.resourceId + '_totalHours')
-                            .text(newTotal);
+                            .text((newTotal % 1 == 0) ? newTotal : newTotal.toFixed(2));
                         }
                     }
                 })); 
 
                 $.each(ptos, (function (index, pto) {
 
-                    if(pto.approved == true) {
+                    if(pto.approved === true) {
 
-                        var ptoDuration = pto.hours;
+                        var ptoDuration = moment.duration(pto.hours, 'hours').asHours().toFixed(2);
                         
                         if(currentTotal = $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration').val()) {
                             
                             var newTotal = Number(currentTotal) + Number(ptoDuration);
 
+                            newTotal = (newTotal % 1 === 0) ? newTotal : newTotal.toFixed(2);
+
                             $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration')
                             .val(newTotal);
 
                             $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours')
-                            .text(pto.code + " " + newTotal + " hs")
+                            .text(pto.code + " " + newTotal + " hours")
                             .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
 
                         } else {
 
                             $('<input/>', {
                                 type: 'hidden',
-                                value: moment.duration(ptoDuration, 'hours').hours(),
+                                value: ptoDuration,
                                 id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration'
                             })
                             .insertAfter('#resource_' + pto.resourceId + '_totalDuration');
@@ -31971,7 +31973,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                                 type: 'hidden',
                                 id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours'
                             })
-                            .text(pto.code + " " + ptoDuration + " hs")
+                            .text(pto.code + " " + ((ptoDuration % 1 === 0) ? Math.round(ptoDuration) : ptoDuration) + " hs")
                             .insertAfter($('#resource_' + pto.resourceId + '_totalHours').parent())
                             .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
                             
@@ -32120,12 +32122,12 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                     title = view.name === "month" ? event.title : badge.prop('outerHTML');
                     classes = 'event-pto event-pto-' + event.code.toLowerCase() + (event.approved == true ? "" : " event-pto-disapproved");
-                    hoursCount = event.hours;
+                    hoursCount = (event.hours % 1 === 0) ? event.hours : moment.duration(event.hours, 'hours').asHours().toFixed(2);
                     eventDetails = view.name === "month" ? badge.prop('outerHTML') : '';
 
                 } else {
-
-                    var duration = moment.duration(event.end - event.start).hours();
+                    var rawDuration = moment.duration(event.end - event.start).asHours();
+                    var duration = (rawDuration % 1 == 0) ? rawDuration : rawDuration.toFixed(2);
                     hoursCount = duration;
 
                     if (event.staffname === 'Open Shifts') {
@@ -32189,7 +32191,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                 // Create hours count tag
                 $("<span/>", {
                     "class": "fc-hour-count",
-                    "text": hoursCount + " hs"
+                    "text": hoursCount + " h"
                 })
                 .css(hoursCountCss)
                 .insertAfter(element.find('.fc-title'));
@@ -32280,7 +32282,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                             '_totalDuration" class="resource_totalDuration" value="0"/>' +
                             '<p class="resource_hours">Scheduled <span id="resource_' +
                             resourceObj.id +
-                            '_totalHours" class="resource_totalHours">0</span> hrs</p>'));
+                            '_totalHours" class="resource_totalHours">0</span> hours</p>'));
                     // if (resourceObj.profileminiimageurl) {
                     //    $td.eq(0).find('.fc-cell-content').prepend($('<img class="profile-mini-picture" src="' +
                     //        resourceObj.profileminiimageurl +
@@ -32303,7 +32305,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                         $(".fc-view table").eq(0).append('<thead class="fc-head fc-foot" id="schedule-calendar-footer"> <tr> <td class="fc-resource-area fc-widget-header" style="width: 20%;"><div class="fc-scroller-clip"><div class="fc-scroller fc-no-scrollbars"><div class="fc-scroller-canvas" style="min-width: 70px;"> <div class="fc-content"><table class="" style="height: 45px;"><colgroup><col class="fc-main-col"></colgroup><tbody><tr><th class="fc-widget-header"><div><div class="fc-cell-content"><span class="fc-expander-space"><span class="fc-icon"></span></span><span class="fc-cell-text">Hours Scheduled</span></div></div></th></tr></tbody></table></div> <div class="fc-bg"></div> </div></div></div></td> <td class="fc-divider fc-col-resizer fc-widget-header"></td> <td class="fc-time-area fc-widget-header"><div class="fc-scroller-clip"><div class="fc-scroller fc-no-scrollbars" style="overflow-x: hidden;"><div class="fc-scroller-canvas" style="width: 840px; min-width: 0px;"> <div class="fc-content"><table class="" style="height: 45px;"><colgroup><col style="width: 120px;"><col style="width: 120px;"><col style="width: 120px;"><col style="width: 120px;"><col style="width: 120px;"><col style="width: 120px;"><col style="width: 120px;"></col></colgroup><tbody><tr class="fc-foot-timerow"><!--<th class="fc-widget-header fc-wed fc-past" data-date="2018-12-19"><div class="fc-cell-content"><span class="fc-cell-text">Wed 12/19</span></div></th><th class="fc-widget-header fc-thu fc-past" data-date="2018-12-20"><div class="fc-cell-content"><span class="fc-cell-text">Thu 12/20</span></div></th><th class="fc-widget-header fc-fri fc-past" data-date="2018-12-21"><div class="fc-cell-content"><span class="fc-cell-text">Fri 12/21</span></div></th><th class="fc-widget-header fc-sat fc-today" data-date="2018-12-22"><div class="fc-cell-content"><span class="fc-cell-text">Sat 12/22</span></div></th><th class="fc-widget-header fc-sun fc-future" data-date="2018-12-23"><div class="fc-cell-content"><span class="fc-cell-text">Sun 12/23</span></div></th><th class="fc-widget-header fc-mon fc-future" data-date="2018-12-24"><div class="fc-cell-content"><span class="fc-cell-text">Mon 12/24</span></div></th><th class="fc-widget-header fc-tue fc-future" data-date="2018-12-25"><div class="fc-cell-content"><span class="fc-cell-text">Tue 12/25</span></div></th>--></tr></tbody></table></div> <div class="fc-bg"></div> </div></div></div></td> </tr> </thead>');
                         $(".fc-view table").eq(0).after(
-                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" id="schedule-calendar-subfooter" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hs</span><br/><span style="color:#A3A5AD;">' +
+                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" id="schedule-calendar-subfooter" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hrs</span><br/><span style="color:#A3A5AD;">' +
                             $(".fc-header-toolbar .fc-center h2").text() +
                             '</span></span></div>');
 
@@ -32315,7 +32317,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                         $.each($(".fc-widget-header[data-date]"), function(key, val) {
                             var dateYMD = $(this).attr("data-date");
                             $tr.append('<td class="fc-widget-header" style="vertical-align: middle;">'+
-                            '<div class="fc-cell-content text-center"><span class="fc-cell-text"><span class="fc-dailytotal" id="dailytotal-'+dateYMD+'">0</span> hs</span></div>'
+                            '<div class="fc-cell-content text-center"><span class="fc-cell-text"><span class="fc-dailytotal" id="dailytotal-'+dateYMD+'">0</span> hrs</span></div>'
                             +'</td>');
                             tfootCols[key].style.width = theadCols[key].style.width || theadCols[key-1].style.width;
                         });
@@ -32325,7 +32327,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
         
                     } else {
                         $(".fc-view table").eq(0).after(
-                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" id="schedule-calendar-subfooter" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hs</span><br/><span style="color:#a3a5ad;">' +
+                            '<div style="display:block;height:45px;background:#eceef1;padding-top:10px;" id="schedule-calendar-subfooter" ><span style="float:right;margin-right:20px;"><strong>Total Hours Scheduled</strong><span style="margin-left:10px;color:#0c67c4;font-weight:bold;"><span id="totalHoursScheduledLabel">0</span> hrs</span><br/><span style="color:#a3a5ad;">' +
                             $(".fc-header-toolbar .fc-center h2").text() +
                             '</span></span></div>');
                     }
