@@ -72995,3 +72995,15 @@ u.dotted {
     } */
 }
 
+
+@media (max-width: 1300px) {
+    #schedule_calendar .fc-timeline-event .fc-title,
+    #schedule_calendar .fc-timeline-event .fc-details {
+        font-size: 0.8em;
+    }
+
+    #schedule_calendar .fc-timeline-event .fc-hour-count {
+        font-size: 0.75em;
+    }
+}
+

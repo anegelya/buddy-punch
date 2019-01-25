@@ -32132,6 +32132,12 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                     if (event.staffname === 'Open Shifts') {
 
+                        if (view.name !== "month") {
+                            title = event.title.replace(/\s*(A)?\s*(P)?M/g, function(match, g1, g2) {
+                                return (g1 || g2).toLowerCase();
+                            });
+                        }
+
                         classes = 'event-openshift';
                         eventDetails = event.locationname ? (event.locationname) : "";
                         eventDetails += event.jobcodename ? (" - " + event.jobcodename) : "";
@@ -32167,6 +32173,11 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                         if (view.name === "month") 
                             title = event.staffname;
+                        else {
+                            title = event.title.replace(/\s*(A)?\s*(P)?M/g, function(match, g1, g2) {
+                                return (g1 || g2).toLowerCase();
+                            });
+                        }
 
                         eventDetails = view.name === "month" ? event.title : "";
                         eventDetails += event.locationname ? ((view.name === "month" ? " / " : "") + event.locationname) : "";
