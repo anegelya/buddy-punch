@@ -33199,7 +33199,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                     mywindow.document.write('</head><body >');
                     //mywindow.document.write('<h1>' + document.title + '</h1>');
                     mywindow.document.write(document.getElementById(elem).innerHTML)
-                    mywindow.document.write('<script>document.addEventListener("DOMContentLoaded", function() {window.print(); /*window.close()*/;})</script>');
+                    mywindow.document.write('<script>document.addEventListener("DOMContentLoaded", function() {window.print(); window.close();})</script>');
                     mywindow.document.write('</body></html>');
 
                     mywindow.document.close(); // necessary for IE >= 10
