@@ -138,3 +138,17 @@ table td p {
 td.fc-time-area {
     display: block;
 }
+
+.fc-view {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.fc-view > table {
+    margin: 0 auto !important;
+}
+
+.fc-scroller-canvas {
+    min-width: unset !important;
+    padding-right: 0px !important;
+}
