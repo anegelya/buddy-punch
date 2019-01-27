@@ -31886,9 +31886,9 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                     var eventDuration = moment.duration(event.duration);
 
-                    var newDuration = +prev + +eventDuration.asHours().toFixed(2);
-                    $("#dailytotal-"+currentDay).text(newDuration.toFixed(2));
-                    $("#totalHoursScheduledLabel").text((+prevTotal + +eventDuration.asHours().toFixed(2)).toFixed(2));
+                    var newDuration = +prev + +eventDuration.asHours().toFixed(2).replace(/\.?0*$/,'');
+                    $("#dailytotal-"+currentDay).text(newDuration.toFixed(2).replace(/\.?0*$/,''));
+                    $("#totalHoursScheduledLabel").text((+prevTotal + +eventDuration.asHours().toFixed(2)).toFixed(2).replace(/\.?0*$/,''));
                 }
             },
             eventAfterAllRender: function(view) {               
@@ -31929,13 +31929,13 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                         if(currentTotal = $('#resource_' + shift.resourceId + '_totalDuration').val()) {
 
-                            var newTotal = Number(currentTotal) + Number(shiftDuration.asHours().toFixed(2));
+                            var newTotal = Number(currentTotal) + Number(shiftDuration.asHours().toFixed(2).replace(/\.?0*$/,''));
 
                             $('#resource_' + shift.resourceId + '_totalDuration')
-                            .val((newTotal % 1 == 0) ? newTotal : newTotal.toFixed(2));
+                            .val((newTotal % 1 == 0) ? newTotal : newTotal.toFixed(2).replace(/\.?0*$/,''));
 
                             $('#resource_' + shift.resourceId + '_totalHours')
-                            .text((newTotal % 1 == 0) ? newTotal : newTotal.toFixed(2));
+                            .text((newTotal % 1 == 0) ? newTotal : newTotal.toFixed(2).replace(/\.?0*$/,''));
                         }
                     }
                 })); 
@@ -31944,13 +31944,13 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                     if(pto.approved === true) {
 
-                        var ptoDuration = moment.duration(pto.hours, 'hours').asHours().toFixed(2);
+                        var ptoDuration = moment.duration(pto.hours, 'hours').asHours().toFixed(2).replace(/\.?0*$/,'');
                         
                         if(currentTotal = $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration').val()) {
                             
                             var newTotal = Number(currentTotal) + Number(ptoDuration);
 
-                            newTotal = (newTotal % 1 === 0) ? newTotal : newTotal.toFixed(2);
+                            newTotal = (newTotal % 1 === 0) ? newTotal : newTotal.toFixed(2).replace(/\.?0*$/,'');
 
                             $('#resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration')
                             .val(newTotal);
@@ -32122,12 +32122,12 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
 
                     title = view.name === "month" ? event.title : badge.prop('outerHTML');
                     classes = 'event-pto event-pto-' + event.code.toLowerCase() + (event.approved == true ? "" : " event-pto-disapproved");
-                    hoursCount = (event.hours % 1 === 0) ? event.hours : moment.duration(event.hours, 'hours').asHours().toFixed(2);
+                    hoursCount = (event.hours % 1 === 0) ? event.hours : moment.duration(event.hours, 'hours').asHours().toFixed(2).replace(/\.?0*$/,'');
                     eventDetails = view.name === "month" ? badge.prop('outerHTML') : '';
 
                 } else {
                     var rawDuration = moment.duration(event.end - event.start).asHours();
-                    var duration = (rawDuration % 1 == 0) ? rawDuration : rawDuration.toFixed(2);
+                    var duration = (rawDuration % 1 == 0) ? rawDuration : rawDuration.toFixed(2).replace(/\.?0*$/,'');
                     hoursCount = duration;
 
                     if (event.staffname === 'Open Shifts') {
