@@ -71344,6 +71344,10 @@ body.m-content--skin-light2 {
     margin: 3px 2px 0 2px;
 }
 
+#schedule_calendar .fc-view-container .fc-event.event-openshift {
+    padding-left: 8px;
+}
+
 #schedule_calendar .fc-view-container .fc-description {
     white-space: nowrap;
     overflow: hidden;
