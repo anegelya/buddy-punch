@@ -31940,6 +31940,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                     }
                 })); 
 
+                $('.resource_pto_duration').val("0");
                 $.each(ptos, (function (index, pto) {
 
                     if(pto.approved === true) {
@@ -31964,6 +31965,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                             $('<input/>', {
                                 type: 'hidden',
                                 value: ptoDuration,
+                                class: 'resource_pto_duration',
                                 id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'duration'
                             })
                             .insertAfter('#resource_' + pto.resourceId + '_totalDuration');
@@ -31973,7 +31975,7 @@ function Schedule(apiBaseUrl, accessToken, firstDayOfWeek, editPtoUrl, editPtoRe
                                 type: 'hidden',
                                 id: 'resource_' + pto.resourceId + '_' + pto.code.toLowerCase() + '_' + 'hours'
                             })
-                            .text(pto.code + " " + ((ptoDuration % 1 === 0) ? Math.round(ptoDuration) : ptoDuration) + " hs")
+                            .text(pto.code + " " + ((ptoDuration % 1 === 0) ? Math.round(ptoDuration) : ptoDuration) + " hours")
                             .insertAfter($('#resource_' + pto.resourceId + '_totalHours').parent())
                             .append('<span class="m-badge badge-pto badge-' + pto.code.toLowerCase() + '"></span>');
                             
