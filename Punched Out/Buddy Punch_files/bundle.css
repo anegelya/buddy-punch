@@ -80732,3 +80732,24 @@ u.dotted {
 .bootstrap-select > .dropdown-toggle.bs-placeholder.btn-light {
   color: #282a3c;
 }
+
+@media screen and (max-width: 768px){
+  .m-portlet__body.schedule_calendar_portlet {
+    padding: 0;
+  }
+  #schedule_calendar .fc-view-container .fc-resource-area td:empty {
+    padding: 0 !important;
+  }
+
+  #schedule_calendar .fc-body .fc-resource-area .fc-cell-content {
+    padding-left: 0;
+  }
+
+  #schedule_calendar .fc-timeline td .resourceTitle {
+    white-space: normal;
+    hyphens: auto;
+  }
+  #schedule_calendar .fc-view-container .fc-timeline .fc-body .fc-scroller {
+    height: 100vh !important;
+  }
+}
