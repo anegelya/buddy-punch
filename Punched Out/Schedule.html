@@ -930,7 +930,7 @@ fbq('track', 'PageView');
 
                                             </td>
                                             <td>
-                                                <div class="dropdown bootstrap-select form-control m-bootstrap-select m_">
+                                                <div class="input-group bootstrap-timepicker timepicker">
                                                     <input autocomplete="off" class="form-control m-input timepicker" id="StartTime" name="StartTime" type="text" value="8:00 AM">
                                                 </div>
                                                 <span class="field-validation-valid" data-valmsg-for="StartTime" data-valmsg-replace="true"></span>
@@ -962,7 +962,7 @@ fbq('track', 'PageView');
 
                                             </td>
                                             <td>
-                                                <div class="dropdown bootstrap-select form-control m-bootstrap-select m_">
+                                                <div class="input-group bootstrap-timepicker timepicker">
                                                     <input autocomplete="off" class="form-control m-input timepicker m-bootstrap-select m_selectpicker" id="EndTime" name="EndTime" type="text" value="5:00 PM" data-val="true" data-val-date="The start time is after the end time.">
                                                 </div>
                                                 <input data-val="true" data-val-date="The field EndDateTime must be a date." id="EndDateTime" name="EndDateTime" type="hidden" value="1/1/0001 12:00:00 AM">
@@ -1255,7 +1255,9 @@ fbq('track', 'PageView');
 
                         </td>
                         <td>
-                            <input autocomplete="off" class="form-control m-input timepicker" id="StartTime" name="StartTime" type="text" value="8:00 AM">
+                            <div class="input-group bootstrap-timepicker timepicker">
+                                <input autocomplete="off" class="form-control m-input timepicker" id="StartTime" name="StartTime" type="text" value="8:00 AM">
+                            </div>
                             <span class="field-validation-valid" data-valmsg-for="StartTime" data-valmsg-replace="true"></span>
                             <input data-val="true" data-val-date="The field StartDateTime must be a date." id="StartDateTime" name="StartDateTime" type="hidden" value="1/1/0001 12:00:00 AM">
                         </td>
@@ -1285,7 +1287,9 @@ fbq('track', 'PageView');
 
                         </td>
                         <td>
-                            <input autocomplete="off" class="form-control m-input timepicker" id="EndTime" name="EndTime" type="text" value="5:00 PM">
+                            <div class="input-group bootstrap-timepicker timepicker">
+                                <input autocomplete="off" class="form-control m-input timepicker" id="EndTime" name="EndTime" type="text" value="5:00 PM">
+                            </div>
                             <span class="field-validation-valid" data-valmsg-for="EndTime" data-valmsg-replace="true"></span>
                             <input data-val="true" data-val-date="The field EndDateTime must be a date." id="EndDateTime" name="EndDateTime" type="hidden" value="1/1/0001 12:00:00 AM">
                         </td>
