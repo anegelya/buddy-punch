@@ -80753,3 +80753,7 @@ u.dotted {
     height: 100vh !important;
   }
 }
+
+.bootstrap-timepicker-widget.dropdown-menu.open {
+  z-index: 10000 !important;
+}
