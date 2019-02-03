@@ -79549,12 +79549,6 @@ Error Pages
     border-width: 3px;
   }
 
-  .m-header,
-  .portlet__head,
-  .m-portlet__head {
-    display:none !important;
-  }
-
   /* .fc-day-grid.fc-unselectable {
         border: 2px solid #CCC;
     } */
