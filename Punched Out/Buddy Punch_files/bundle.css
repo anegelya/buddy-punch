@@ -80757,3 +80757,7 @@ u.dotted {
 .bootstrap-timepicker-widget.dropdown-menu.open {
   z-index: 10000 !important;
 }
+
+.fc-timeline-event.fc-not-start .fc-title:not(.fc-following):before {
+  display: none !important;
+}
