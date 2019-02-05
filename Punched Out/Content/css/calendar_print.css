@@ -7,6 +7,10 @@ table {
     border-collapse: collapse;
     border-bottom: 1px solid #CCC;
 }
+
+table tbody {
+    border-top: 1px solid #CCC;
+}
 table tr {
     page-break-inside: avoid;
 }
@@ -19,20 +23,26 @@ table thead th:first-child {
     padding-left: 0.5em;
 }
 table td {
-    border: 1px solid #CCC;
+    border-right: 1px solid #CCC;
     width: 11.43%;
     vertical-align: top;
     text-align: center;
 }
-table tr td:first-child {
+.resource-column {
+    border-left: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
     padding: 0.5em;
     width: 20%;
     text-align: left;
 }
 table tr:last-child td {
+    padding: 1em 0;
     border: 0;
     font-size: 13px;
     vertical-align: middle;
+}
+.last-row {
+    border-bottom: 1px solid #CCC;
 }
 .resourceTitle {
     font-size: 13px;
