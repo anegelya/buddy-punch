@@ -79552,6 +79552,15 @@ Error Pages
   #schedule_calendar .fc-view-container .fc-event.event-published {
     border: 1px solid !important;
   }
+
+  #schedule_calendar .fc-title.fc-following {
+    visibility: hidden !important;
+  }
+
+  #schedule_calendar .fc-timeline-event .fc-title {
+    visibility: visible !important;
+    left: 0 !important;
+  }
 }
 
 @media (max-width: 1300px) {
@@ -80758,6 +80767,6 @@ u.dotted {
   z-index: 10000 !important;
 }
 
-.fc-timeline-event.fc-not-start .fc-title:not(.fc-following):before {
+.fc-ltr .fc-body .fc-time-area .fc-following:before, .fc-ltr .fc-timeline-event.fc-not-start .fc-title:before {
   display: none !important;
 }

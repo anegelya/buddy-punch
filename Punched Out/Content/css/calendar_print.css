@@ -83,3 +83,7 @@ table tr:last-child td {
     align-self: self-start;
     white-space: nowrap;
 }
+.fc-title {
+    visibility: visible !important;
+    left: 0 !important;
+}
