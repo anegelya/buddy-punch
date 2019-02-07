@@ -79549,9 +79549,9 @@ Error Pages
     border-width: 3px;
   }
 
-  /* .fc-day-grid.fc-unselectable {
-        border: 2px solid #CCC;
-    } */
+  #schedule_calendar .fc-view-container .fc-event.event-published {
+    border: 1px solid !important;
+  }
 }
 
 @media (max-width: 1300px) {
