@@ -80365,6 +80365,10 @@ table.dataTable thead .sorting_desc_disabled::after {
   cursor: pointer;
 }
 
+td .m-icon-chevron {
+  cursor: pointer;
+}
+
 .m-icon-chevron::after {
   font-size: 22px;
   cursor: pointer;
