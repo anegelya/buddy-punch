@@ -78947,6 +78947,10 @@ Error Pages
   height: calc(100vh - 420px) !important;
 }
 
+#schedule_calendar .fc-view-container .fc-timeline.fc-timelineDay-view .fc-body .fc-scroller {
+  height: calc(100vh - 370px) !important;
+}
+
 #schedule_calendar .fc-view-container .fc-scroller-canvas > .fc-content {
   border: none !important;
 }
