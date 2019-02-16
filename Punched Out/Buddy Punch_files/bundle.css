@@ -78941,14 +78941,38 @@ Error Pages
   width: 91.7%;
 }
 
+.m-header--fixed.m-header--minimize-off .m-header {
+  overflow: hidden;
+}
+
+.m-header ~ .m-body {
+  transition: padding 0.3s ease-in;
+}
+
+.m-header--fixed.m-header--minimize-off .m-header.m-header-hidden {
+  height: 0 !important;
+}
+
 #schedule_calendar .fc-view-container .fc-timeline .fc-body .fc-scroller {
   /*! overflow-x: hidden !important; */
   /*! margin: 0 -20px 0 0 !important */
   height: calc(100vh - 420px) !important;
 }
 
+.m-header.m-header-hidden ~ .m-body {
+  padding-top: 0 !important;
+}
+
+.m-header.m-header-hidden ~ .m-body #schedule_calendar .fc-view-container .fc-timeline .fc-body .fc-scroller {
+  height: calc(100vh - 310px) !important;
+}
+
 #schedule_calendar .fc-view-container .fc-timeline.fc-timelineDay-view .fc-body .fc-scroller {
   height: calc(100vh - 370px) !important;
+}
+
+.m-header.m-header-hidden ~ .m-body #schedule_calendar .fc-view-container .fc-timeline.fc-timelineDay-view .fc-body .fc-scroller {
+  height: calc(100vh - 260px) !important;
 }
 
 #schedule_calendar .fc-view-container .fc-scroller-canvas > .fc-content {
@@ -80777,4 +80801,28 @@ u.dotted {
 
 .fc-ltr .fc-body .fc-time-area .fc-following:before, .fc-ltr .fc-timeline-event.fc-not-start .fc-title:before {
   display: none !important;
+}
+
+.ui-tooltip {
+  max-width: 125px;
+  z-index: 1000;
+  background: #000;
+  color: #fff;
+  padding: 1em;
+  border-radius: 3px;
+}
+
+.ui-tooltip::after {
+  content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 85%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+
+.ui-helper-hidden-accessible {
+  display: none;
 }
