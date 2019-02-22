@@ -78941,15 +78941,12 @@ Error Pages
   width: 91.7%;
 }
 
-.m-header--fixed.m-header--minimize-off .m-header {
-  overflow: hidden;
-}
-
 .m-header ~ .m-body {
   transition: padding 0.3s ease-in;
 }
 
 .m-header--fixed.m-header--minimize-off .m-header.m-header-hidden {
+  overflow: hidden;
   height: 0 !important;
 }
 
