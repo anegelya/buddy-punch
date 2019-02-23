@@ -80801,6 +80801,7 @@ u.dotted {
 }
 
 .ui-tooltip {
+  position: absolute;
   max-width: 125px;
   z-index: 1000;
   background: #000;
